@@ -14,7 +14,7 @@
 
 <body>
     @@include('_header.html')
-    <section class="main">
+    <section id="main" class="main">
         <div class="socials">
             <a href="#" class="socials__link" title="Facebook">
                 <svg class="socials__svg" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
                             <h1 class="main__h1">
                                 ЗАКАЖИ 1 БУТЫЛЬ НА ПРОБУ ЗА 1 ГРН
                             </h1>
-                            <button class="main__btn">Хочу попробовать</button>
+                            <button class="main__btn btns">Хочу попробовать</button>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                             <h1 class="main__h1">
                                 ЗАКАЖИ 1 БУТЫЛЬ НА ПРОБУ ЗА 1 ГРН
                             </h1>
-                            <button class="main__btn">Хочу попробовать</button>
+                            <button class="main__btn btns">Хочу попробовать</button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                             <h1 class="main__h1">
                                 ЗАКАЖИ 1 БУТЫЛЬ НА ПРОБУ ЗА 1 ГРН
                             </h1>
-                            <button class="main__btn">Хочу попробовать</button>
+                            <button class="main__btn btns">Хочу попробовать</button>
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
             <a href="#" class="languages__link">EN</a>
         </div>
     </section>
+
     <section class="delivery">
         <div class="container">
             <div class="delivery__wrap">
@@ -193,11 +194,11 @@
             </div>
         </div>
     </section>
+
     <section class="schedule">
         <div class="container">
             <img src="img/bgSchedule.png" alt="" class="schedule__bg">
             <div class="schedule__wrap">
-
                 <div class="schedule__content">
                     <h3 class="schedule__h3 title__h3">
                         График приема заказов
@@ -243,11 +244,27 @@
                 <div class="schedule__imgs">
                     <img class="schedule__contentImg" src="img/ScheduleImg.jpg" alt="">
                 </div>
+            </div>
+        </div>
+    </section>
 
-
-
-
-
+    <section class="purchase">
+        <div class="container">
+            <div class="purchase__wrap">
+                <img src="img/bgPurchase.png" alt="" class="purchase__bg">
+                <div class="purchase__items purchase__items_left">
+                    <div class="purchase__item purchase__item_big">
+                        <img src="img/Bottles.png" alt="">
+                        <h3 class="purchase__h3 title__h3">
+                            заказать воду
+                        </h3>
+                    </div>
+                    <button class="purchase__btn btns">перейти в каталог</button>
+                </div>
+                <div class="purchase__items purchase__items_right">
+                    <div class="purchase__item purchase__item_middle"></div>
+                    <div class="purchase__item purchase__item_small"></div>
+                </div>
             </div>
         </div>
     </section>

@@ -23,6 +23,8 @@ $BNB: "BebasNeueBold", "Sans-serif";
     font-size: 2.57em;
     line-height: 1.4;
     color: $SecondColor;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 html {
@@ -43,12 +45,30 @@ body {
 .title__h3 {
     @extend %h3;
 }
+.btns {
+    font-family: $BNB;
+    font-size: 1.71em;
+    padding: 0.5em 1.75em;
+    border-radius: 1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+}
 .header {
     width: 100%;
-    height: 12vh;
+    height: 11vh;
     display: flex;
     align-items: center;
-
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px 1px rgba(112, 196, 241, 0.493);
+    z-index: 1000;
+    transition: 0.5s;
+    padding: 20px 0;
+    &__fixed {
+        height: 6vh;
+    }
     &__wrap {
         display: flex;
         justify-content: space-between;
@@ -56,6 +76,7 @@ body {
     &__logo {
         min-width: 145px;
         min-height: 55px;
+        display: flex;
     }
     &__text {
         width: 100%;
@@ -191,15 +212,13 @@ body {
         margin-bottom: 1.45em;
     }
     &__btn {
-        font-family: $BNB;
-        font-size: 1.71em;
-        padding: 0.5em 1.75em;
-        border-radius: 1em;
-        text-transform: uppercase;
-        border: none;
+        border: 1px solid $ThirdColor;
         color: #fff;
-        cursor: pointer;
         background: $ThirdColor;
+        &:hover {
+            color: $ThirdColor;
+            background: #fff;
+        }
     }
 }
 .slick-dots {
@@ -277,9 +296,6 @@ body {
 }
 .delivery {
     padding: 5em 0;
-    &__h3 {
-        margin: 0;
-    }
     &__content {
         margin-top: 80px;
         display: flex;
@@ -339,9 +355,6 @@ body {
     overflow: hidden;
     width: 100%;
     padding-top: 50px;
-    &__h3 {
-        margin: 0;
-    }
     &__wrap {
         display: flex;
         justify-content: space-between;
@@ -396,5 +409,38 @@ body {
         height: 100%;
         object-fit: cover;
         object-position: center;
+    }
+}
+.purchase {
+    &__wrap {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__bg {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__items {
+        width: 50%;
+    }
+    &__item {
+        width: 50%;
+        padding-bottom: 60px;
+        &_big {
+            width: 100%;
+            background: linear-gradient(transparent 11%, #1ea2e8 0%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__h3 {
+        margin-top: 30px;
+        color: #fff;
     }
 }
