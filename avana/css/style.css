@@ -1036,6 +1036,16 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.purchase__item:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .purchase__item_big {
@@ -1088,6 +1098,10 @@ body {
 .about {
   text-align: center;
   padding-top: 160px;
+}
+
+.about__h3 {
+  margin-bottom: 30px;
 }
 
 .about__wrap {
@@ -1185,4 +1199,123 @@ body {
 .about__img {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.certificates {
+  padding: 180px 0;
+}
+
+.certificates__h3 {
+  text-align: center;
+}
+
+.certificates__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.certificates__link {
+  max-height: 480px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.certificates__link:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.certificates__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.subscribe {
+  background: #ecf8ff;
+  padding: 95px 0 110px;
+}
+
+.subscribe__h4 {
+  font-size: 1.7em;
+  font-family: "BebasNeueBold", "Sans-serif";
+  font-weight: 700;
+  text-align: center;
+  color: #1ea2e8;
+}
+
+.subscribe__wrap {
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #70c4f1;
+  padding: 0;
+}
+
+.subscribe__input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  color: #70c4f1;
+}
+
+.subscribe__input::-webkit-input-placeholder {
+  color: #70c4f1;
+}
+
+.subscribe__input::-moz-placeholder {
+  color: #70c4f1;
+}
+
+.subscribe__input:-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.subscribe__input::-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.subscribe__input::placeholder {
+  color: #70c4f1;
+}
+
+.subscribe__btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: #70c4f1;
+  border: 1px solid #70c4f1;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.7em;
+  line-height: 1;
+  font-family: "BebasNeueBold", "Sans-serif";
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.subscribe__btn:hover {
+  background: #fff;
+  color: #70c4f1;
+}
+
+.subscribe__p {
+  text-align: center;
+  font-size: 0.85em;
 }
