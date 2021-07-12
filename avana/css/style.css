@@ -1319,3 +1319,13 @@ body {
   text-align: center;
   font-size: 0.85em;
 }
+
+.seo {
+  padding: 140px 0;
+}
+
+.seo__content {
+  margin: 25px 0;
+  font-size: 0.85em;
+  line-height: 1.4;
+}
