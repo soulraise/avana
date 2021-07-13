@@ -11,9 +11,6 @@ $(document).ready(function () {
       fade: true,
       cssEase: 'linear'
    });
-<<<<<<< HEAD
-});;
-=======
 });
 
 
@@ -31,7 +28,6 @@ function headerHidden() {
    })
 }
 headerHidden();;
->>>>>>> origin/tim
 
 function testWebP(callback) {
 
