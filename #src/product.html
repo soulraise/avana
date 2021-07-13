@@ -17,7 +17,7 @@
 <body>
    @@include('_header.html')
    <div id="anchor" class="anchor"></div>
-   <section class="general">
+   <section class="product">
       <div class="socials">
          <a href="#" class="socials__link" title="Facebook">
             <svg class="socials__svg" viewBox="0 0 24 24">
@@ -47,7 +47,8 @@
       <div class="container">
          <div class="way">
             <a href="index.html" class="way__link">Главная</a>
-            <a href="" class="way__link">Каталог</a>
+            <a href="catalog.html" class="way__link">Каталог</a>
+            <a href="" class="way__link">Продукт</a>
          </div>
          <div class="general__container">
             <a href="" class="general__anchor">
@@ -94,26 +95,21 @@
       </div>
    </section>
 
-   <section class="pomps">
+   <section class="related">
       <div class="container">
-         <h3 class="pomps__h3 title__h3">Помпы</h3>
-         <div class="pomps__items">
-
+         <h3 class="related__h3 title__h3">Сопутствующие товары</h3>
+         <div class="related__items">
             <div class="card">
                <div class="card__circle card__circle_dn">
                   mini
                </div>
                <div class="card__imgs">
-                  <a href="" class="card__link">
-                     <img src="img/HandPomp.png" alt="" class="card__img">
-                  </a>
+                  <img src="img/HandPomp.png" alt="" class="card__img">
                </div>
                <div class="card__wrap">
                   <div class="card__text">
                      <p class="card__price">150 грн</p>
-                     <a href="" class="card__link">
-                        <p class="card__name">Помпа BlueRain</p>
-                     </a>
+                     <p class="card__name">Помпа BlueRain</p>
                   </div>
                   <button class="card__cart">
                      <svg class="card__svg" viewBox="0 0 28 25">
@@ -123,32 +119,17 @@
                </div>
             </div>
 
-
-
-         </div>
-      </div>
-   </section>
-
-   <section class="coolers">
-      <div class="container">
-         <h3 class="coolers__h3 title__h3">Кулеры</h3>
-         <div class="coolers__items">
-
             <div class="card">
-               <div class="card__circle card__circle_dn">
+               <div class="card__circle">
                   mini
                </div>
                <div class="card__imgs">
-                  <a href="" class="card__link">
-                     <img src="img/HandPomp.png" alt="" class="card__img">
-                  </a>
+                  <img src="img/HandPomp.png" alt="" class="card__img">
                </div>
                <div class="card__wrap">
                   <div class="card__text">
                      <p class="card__price">150 грн</p>
-                     <a href="" class="card__link">
-                        <p class="card__name">Помпа BlueRain</p>
-                     </a>
+                     <p class="card__name">Помпа BlueRain</p>
                   </div>
                   <button class="card__cart">
                      <svg class="card__svg" viewBox="0 0 28 25">
@@ -158,7 +139,25 @@
                </div>
             </div>
 
-
+            <div class="card">
+               <div class="card__circle card__circle_dn">
+                  mini
+               </div>
+               <div class="card__imgs">
+                  <img src="img/PompBox.png" alt="" class="card__img">
+               </div>
+               <div class="card__wrap">
+                  <div class="card__text">
+                     <p class="card__price">150 грн</p>
+                     <p class="card__name">Помпа BlueRain</p>
+                  </div>
+                  <button class="card__cart">
+                     <svg class="card__svg" viewBox="0 0 28 25">
+                        <use xlink:href="img/icons/icons.svg#CartBlue" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
 
          </div>
       </div>
@@ -168,26 +167,6 @@
 
 
 
-
-
-   @@include('_subscribe.html')
-
-   <section class="seo">
-      <div class="container">
-         <p class="seo__content">
-            CEO текст
-         </p>
-         <p class="seo__content">
-            Бутилированная питьевая вода «AVANA» – это ежедневный вклад в Ваше здоровье. Когда чистая питьевая вода
-            всегда под рукой, можно быть уверенным, что одна из самых важных составляющих здорового образа жизни
-            полностью безопасна и приносит только пользу
-         </p>
-         <p class="seo__content">
-            Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
-            безопасность во всех вопросах и, в первую очередь, в вопросах здоровья.
-         </p>
-      </div>
-   </section>
 
    @@include('_footer.html')
 

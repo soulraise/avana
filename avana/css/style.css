@@ -861,6 +861,7 @@ body {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+  min-width: 200px;
 }
 
 .item:hover {
@@ -955,6 +956,8 @@ body {
 .schedule__img {
   width: 45px;
   height: 45px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .schedule__svg {
@@ -969,6 +972,7 @@ body {
 .schedule__text {
   margin: 0;
   line-height: 1.4;
+  white-space: nowrap;
 }
 
 .schedule__text_bold {
@@ -1085,6 +1089,7 @@ body {
 }
 
 .purchase__btn {
+  display: inline-block;
   margin-top: 60px;
   border: 1px solid #70c4f1;
   color: #70c4f1;
@@ -1229,9 +1234,9 @@ body {
 }
 
 .certificates__link:hover {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .certificates__img {
@@ -1399,6 +1404,7 @@ body {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+  white-space: nowrap;
 }
 
 .footer__phone:hover {
@@ -1665,11 +1671,13 @@ body {
   color: #70c4f1;
 }
 
+.related,
 .coolers,
 .pomps {
   padding: 40px 0;
 }
 
+.related__items,
 .coolers__items,
 .pomps__items {
   display: grid;
@@ -1779,6 +1787,23 @@ body {
           transform: scale(1.05);
 }
 
+.card__link {
+  text-decoration: none;
+  color: #444;
+}
+
 .coolers {
   padding-bottom: 70px;
+}
+
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
 }
