@@ -1789,6 +1789,7 @@ body {
 .card__link {
   text-decoration: none;
   color: #444;
+  cursor: pointer;
 }
 
 .coolers {
