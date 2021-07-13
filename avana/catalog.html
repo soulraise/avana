@@ -1,21 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-	<link rel="stylesheet" href="css/style.min.css">
-	<title>Каталог - Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
-		безопасность
-		во всех вопросах и, в первую очередь, в вопросах здоровья.</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+   <link rel="manifest" href="img/favicon/site.webmanifest">
+   <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+   <meta name="msapplication-TileColor" content="#da532c">
+   <meta name="theme-color" content="#ffffff">
+
+   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+   <link rel="stylesheet" href="css/style.min.css">
+   <title>Каталог - Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
+      безопасность
+      во всех вопросах и, в первую очередь, в вопросах здоровья.</title>
 </head>
 
 <body>
-	<header class="header">
+   <div class="modal__product modal__product_dn">
+      <div class="product__container">
+         <div class="product__imgs">
+            <img src="img/product1.jpg" alt="" class="product__img">
+         </div>
+         <div class="product__content">
+            <h3 class="product__h3 title__h3">Кулер HotFrost D1150R</h3>
+            <p class="product__description">
+               Помпа – то механический насосос, надеваемый на горлышко бутылки. Закрепляется после снятия крышки. Не
+               меняет температуру воды.
+            </p>
+            <div class="product__wrap">
+               <div class="product__sale">
+                  <p class="product__method">
+                     Аренда
+                  </p>
+                  <p class="product__text">
+                     на 1 месяц - 20 грн
+                  </p>
+                  <p class="product__text">
+                     на 6 месяцев - 100 грн
+                  </p>
+               </div>
+               <div class="product__delimiter"></div>
+               <div class="product__sale">
+                  <p class="product__method">
+                     Продажа
+                  </p>
+                  <p class="product__text">
+                     1 кулер - 130 грн.
+                  </p>
+                  <p class="product__text">
+
+                  </p>
+               </div>
+            </div>
+            <div class="product__wrap product__wrap_mt20">
+               <button class="product__btn btns product__btn_orange">купить</button>
+               <button class="product__btn btns product__btn_blue">в 1 клик</button>
+            </div>
+         </div>
+         <button class="product__close">X</button>
+      </div>
+   </div>
+
+
+
+
+
+   <header class="header">
     <div class="container">
         <div class="header__wrap">
             <a href="index.html" class="header__logo" title="На главную">
@@ -44,14 +102,14 @@
                         <use xlink:href="img/icons/icons.svg#RegBlue" />
                     </svg>
                 </button>
-                <button class="header__button" title="Корзина">
+                <a href="cart.html" class="header__button" title="Корзина">
                     <svg class="header__svg" viewBox="0 0 28 25">
                         <use xlink:href="img/icons/icons.svg#Cart" />
                     </svg>
                     <svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
                         <use xlink:href="img/icons/icons.svg#CartBlue" />
                     </svg>
-                </button>
+                </a>
                 <div class="header__link burger" title="Меню">
                     <span class="burger__line"></span>
                     <span class="burger__line"></span>
@@ -63,159 +121,159 @@
         </div>
     </div>
 </header>
-	<div id="anchor" class="anchor"></div>
-	<section class="general">
-		<div class="socials">
-			<a href="#" class="socials__link" title="Facebook">
-				<svg class="socials__svg" viewBox="0 0 24 24">
-					<use xlink:href="img/icons/icons.svg#Facebook" />
-				</svg>
-				<svg class="socials__svg socials__svg_blue" viewBox="0 0 24 24">
-					<use xlink:href="img/icons/icons.svg#FacebookBlue" />
-				</svg>
-			</a>
-			<a href="#" class="socials__link" title="Viber">
-				<svg class="socials__svg" viewBox="0 0 26 25">
-					<use xlink:href="img/icons/icons.svg#Viber" />
-				</svg>
-				<svg class="socials__svg socials__svg_blue" viewBox="0 0 26 25">
-					<use xlink:href="img/icons/icons.svg#ViberBlue" />
-				</svg>
-			</a>
-			<a href="#" class="socials__link" title="Telegram">
-				<svg class="socials__svg" viewBox="0 0 25 26">
-					<use xlink:href="img/icons/icons.svg#Telegram" />
-				</svg>
-				<svg class="socials__svg socials__svg_blue" viewBox="0 0 25 26">
-					<use xlink:href="img/icons/icons.svg#TelegramBlue" />
-				</svg>
-			</a>
-		</div>
-		<div class="container">
-			<div class="way">
-				<a href="index.html" class="way__link">Главная</a>
-				<a href="" class="way__link">Каталог</a>
-			</div>
-			<div class="general__container">
-				<a href="" class="general__anchor">
-					<div class="general__wrap">
-						<p class="general__p">Помпы</p>
-						<p class="general__p">Кулеры</p>
-						<svg class="general__svg" viewBox="0 0 8 211">
-							<use xlink:href="img/icons/icons.svg#GeneralArrow" />
-						</svg>
-					</div>
-				</a>
-				<div class="general__content">
-					<div class="general__shell general__shell_mb60">
-						<h2 class="general__h2">Вода Avana 18,9 л</h2>
-						<p class="general__text">
-							Сертификаты: ISO 22000/HACCP, соответствия УКРСЕПРО
-						</p>
-						<p class="general__text">
-							Источник:
-							артезианская скважина
-						</p>
-						<p class="general__text">
-							Минирализация: 100-150 мг/дмз
-						</p>
-						<button class="general__button btns">Добавить в корзину</button>
-					</div>
-					<div class="general__shell general__shell_mr60">
-						<div class="general__circle">
-							<p class="general__text general__text_blue">
-								80 грн за бутылку
-							</p>
-						</div>
-					</div>
-					<div class="general__shell general__shell_center">
-						<img src="img/BottleRotate.png" alt="" class="general__img">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="languages">
-			<a href="#" class="languages__link">RU</a>
-			<a href="#" class="languages__link">UA</a>
-			<a href="#" class="languages__link">EN</a>
-		</div>
-	</section>
-	<div id="app">
-		<section class="pomps">
-			<div class="container">
-				<h3 class="pomps__h3 title__h3">Помпы</h3>
-				<div class="pomps__items">
-					<div class="card" v-for="(pomp, i) in pomps" :key="i">
-						<div class="card__circle" v-if="pomp.label">
-							{{pomp.label}}
-						</div>
-						<div class="card__imgs">
-							<a href="product.html" class="card__link" @click="transition(pomp)">
-								<img :src="pomp.img" :alt="pomp.title" class="card__img">
-							</a>
-						</div>
-						<div class="card__wrap">
-							<div class="card__text">
-								<p class="card__price">{{pomp.price}} грн</p>
-								<a href="" class="card__link">
-									<p class="card__name">{{pomp.title}}</p>
-								</a>
-							</div>
-							<button class="card__cart">
-								<svg class="card__svg" viewBox="0 0 28 25">
-									<use xlink:href="img/icons/icons.svg#CartBlue" />
-								</svg>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+   <div id="anchor" class="anchor"></div>
+   <section class="general">
+      <div class="socials">
+         <a href="#" class="socials__link" title="Facebook">
+            <svg class="socials__svg" viewBox="0 0 24 24">
+               <use xlink:href="img/icons/icons.svg#Facebook" />
+            </svg>
+            <svg class="socials__svg socials__svg_blue" viewBox="0 0 24 24">
+               <use xlink:href="img/icons/icons.svg#FacebookBlue" />
+            </svg>
+         </a>
+         <a href="#" class="socials__link" title="Viber">
+            <svg class="socials__svg" viewBox="0 0 26 25">
+               <use xlink:href="img/icons/icons.svg#Viber" />
+            </svg>
+            <svg class="socials__svg socials__svg_blue" viewBox="0 0 26 25">
+               <use xlink:href="img/icons/icons.svg#ViberBlue" />
+            </svg>
+         </a>
+         <a href="#" class="socials__link" title="Telegram">
+            <svg class="socials__svg" viewBox="0 0 25 26">
+               <use xlink:href="img/icons/icons.svg#Telegram" />
+            </svg>
+            <svg class="socials__svg socials__svg_blue" viewBox="0 0 25 26">
+               <use xlink:href="img/icons/icons.svg#TelegramBlue" />
+            </svg>
+         </a>
+      </div>
+      <div class="container">
+         <div class="way">
+            <a href="index.html" class="way__link">Главная</a>
+            <a href="" class="way__link">Каталог</a>
+         </div>
+         <div class="general__container">
+            <a href="#app" class="general__anchor">
+               <div class="general__wrap">
+                  <p class="general__p">Помпы</p>
+                  <p class="general__p">Кулеры</p>
+                  <svg class="general__svg" viewBox="0 0 8 211">
+                     <use xlink:href="img/icons/icons.svg#GeneralArrow" />
+                  </svg>
+               </div>
+            </a>
+            <div class="general__content">
+               <div class="general__shell general__shell_mb60">
+                  <h2 class="general__h2">Вода Avana 18,9 л</h2>
+                  <p class="general__text">
+                     Сертификаты: ISO 22000/HACCP, соответствия УКРСЕПРО
+                  </p>
+                  <p class="general__text">
+                     Источник:
+                     артезианская скважина
+                  </p>
+                  <p class="general__text">
+                     Минирализация: 100-150 мг/дмз
+                  </p>
+                  <button class="general__button btns">Добавить в корзину</button>
+               </div>
+               <div class="general__shell general__shell_mr60">
+                  <div class="general__circle">
+                     <p class="general__text general__text_blue">
+                        80 грн за бутылку
+                     </p>
+                  </div>
+               </div>
+               <div class="general__shell general__shell_center">
+                  <img src="img/BottleRotate.png" alt="" class="general__img">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="languages">
+         <a href="#" class="languages__link">RU</a>
+         <a href="#" class="languages__link">UA</a>
+         <a href="#" class="languages__link">EN</a>
+      </div>
+   </section>
+   <div id="app">
+      <section class="pomps">
+         <div class="container">
+            <h3 class="pomps__h3 title__h3">Помпы</h3>
+            <div class="pomps__items">
+               <div class="card" v-for="(pomp, i) in pomps" :key="i">
+                  <div class="card__circle" v-if="pomp.label">
+                     {{pomp.label}}
+                  </div>
+                  <div class="card__imgs">
+                     <a href="product.html" class="card__link" @click="transition(pomp)">
+                        <img :src="pomp.img" :alt="pomp.title" class="card__img">
+                     </a>
+                  </div>
+                  <div class="card__wrap">
+                     <div class="card__text">
+                        <p class="card__price">{{pomp.price}} грн</p>
+                        <a href="" class="card__link">
+                           <p class="card__name">{{pomp.title}}</p>
+                        </a>
+                     </div>
+                     <button class="card__cart">
+                        <svg class="card__svg" viewBox="0 0 28 25">
+                           <use xlink:href="img/icons/icons.svg#CartBlue" />
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
 
-		<section class="coolers">
-			<div class="container">
-				<h3 class="coolers__h3 title__h3">Кулеры</h3>
-				<div class="coolers__items">
+      <section class="coolers">
+         <div class="container">
+            <h3 class="coolers__h3 title__h3">Кулеры</h3>
+            <div class="coolers__items">
 
-					<div class="card" v-for="(culer, i) in culers" :key="i">
-						<div class="card__circle" v-if="culer.label">
-							{{culer.label}}
-						</div>
-						<div class="card__imgs">
-							<a href="" class="card__link">
-								<img :src="culer.img" :alt="culer.title" class="card__img">
-							</a>
-						</div>
-						<div class="card__wrap">
-							<div class="card__text">
-								<p class="card__price">{{culer.price}} грн</p>
-								<a href="" class="card__link">
-									<p class="card__name">{{culer.title}}</p>
-								</a>
-							</div>
-							<button class="card__cart">
-								<svg class="card__svg" viewBox="0 0 28 25">
-									<use xlink:href="img/icons/icons.svg#CartBlue" />
-								</svg>
-							</button>
-						</div>
-					</div>
-
-
-
-				</div>
-			</div>
-		</section>
-	</div>
+               <div class="card" v-for="(culer, i) in culers" :key="i">
+                  <div class="card__circle" v-if="culer.label">
+                     {{culer.label}}
+                  </div>
+                  <div class="card__imgs">
+                     <a href="" class="card__link">
+                        <img :src="culer.img" :alt="culer.title" class="card__img">
+                     </a>
+                  </div>
+                  <div class="card__wrap">
+                     <div class="card__text">
+                        <p class="card__price">{{culer.price}} грн</p>
+                        <a href="" class="card__link">
+                           <p class="card__name">{{culer.title}}</p>
+                        </a>
+                     </div>
+                     <button class="card__cart">
+                        <svg class="card__svg" viewBox="0 0 28 25">
+                           <use xlink:href="img/icons/icons.svg#CartBlue" />
+                        </svg>
+                     </button>
+                  </div>
+               </div>
 
 
+
+            </div>
+         </div>
+      </section>
+   </div>
 
 
 
 
 
 
-	<section class="subscribe">
+
+
+   <section class="subscribe">
    <div class="container">
       <h4 class="subscribe__h4">Хочешь узнавать первым о наших акциях и новостях?</h4>
       <div class="subscribe__wrap">
@@ -228,24 +286,24 @@
    </div>
 </section>
 
-	<section class="seo">
-		<div class="container">
-			<p class="seo__content">
-				CEO текст
-			</p>
-			<p class="seo__content">
-				Бутилированная питьевая вода «AVANA» – это ежедневный вклад в Ваше здоровье. Когда чистая питьевая вода
-				всегда под рукой, можно быть уверенным, что одна из самых важных составляющих здорового образа жизни
-				полностью безопасна и приносит только пользу
-			</p>
-			<p class="seo__content">
-				Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
-				безопасность во всех вопросах и, в первую очередь, в вопросах здоровья.
-			</p>
-		</div>
-	</section>
+   <section class="seo">
+      <div class="container">
+         <p class="seo__content">
+            CEO текст
+         </p>
+         <p class="seo__content">
+            Бутилированная питьевая вода «AVANA» – это ежедневный вклад в Ваше здоровье. Когда чистая питьевая вода
+            всегда под рукой, можно быть уверенным, что одна из самых важных составляющих здорового образа жизни
+            полностью безопасна и приносит только пользу
+         </p>
+         <p class="seo__content">
+            Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
+            безопасность во всех вопросах и, в первую очередь, в вопросах здоровья.
+         </p>
+      </div>
+   </section>
 
-	<footer class="footer">
+   <footer class="footer">
    <div class="container">
       <div class="footer__wrap">
          <a href="index.html" class="footer__logo" title="На главную">
@@ -289,10 +347,10 @@
 
 
 </footer>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="js/script.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script src="js/script.min.js"></script>
 </body>
 
 </html>
