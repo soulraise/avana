@@ -9,9 +9,8 @@
    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
    <link rel="stylesheet" href="css/style.min.css">
-   <title>Каталог - Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
-      безопасность
-      во всех вопросах и, в первую очередь, в вопросах здоровья.</title>
+   <title>Продукт - Питьевая вода «AVANA» - выбор серьезных современных людей, которым важна стабильность, престиж и
+      безопасность во всех вопросах и, в первую очередь, в вопросах здоровья.</title>
 </head>
 
 <body>
@@ -98,41 +97,54 @@
             <a href="catalog.html" class="way__link">Каталог</a>
             <a href="" class="way__link">Продукт</a>
          </div>
-         <div class="general__container">
-            <a href="" class="general__anchor">
-               <div class="general__wrap">
-                  <p class="general__p">Помпы</p>
-                  <p class="general__p">Кулеры</p>
-                  <svg class="general__svg" viewBox="0 0 8 211">
-                     <use xlink:href="img/icons/icons.svg#GeneralArrow" />
-                  </svg>
-               </div>
-            </a>
-            <div class="general__content">
-               <div class="general__shell general__shell_mb60">
-                  <h2 class="general__h2">Вода Avana 18,9 л</h2>
-                  <p class="general__text">
-                     Сертификаты: ISO 22000/HACCP, соответствия УКРСЕПРО
-                  </p>
-                  <p class="general__text">
-                     Источник:
-                     артезианская скважина
-                  </p>
-                  <p class="general__text">
-                     Минирализация: 100-150 мг/дмз
-                  </p>
-                  <button class="general__button btns">Добавить в корзину</button>
-               </div>
-               <div class="general__shell general__shell_mr60">
-                  <div class="general__circle">
-                     <p class="general__text general__text_blue">
-                        80 грн за бутылку
+         <div class="product__container">
+
+
+            <div class="product__imgs">
+               <img src="img/product1.jpg" alt="" class="product__img">
+            </div>
+
+
+            <div class="product__content">
+               <h3 class="product__h3 title__h3">Кулер HotFrost D1150R</h3>
+               <p class="product__description">
+                  Помпа – то механический насосос, надеваемый на горлышко бутылки. Закрепляется после снятия крышки. Не
+                  меняет температуру воды.
+               </p>
+               <div class="product__wrap">
+                  <div class="product__sale">
+                     <p class="product__method">
+                        Аренда
+                     </p>
+                     <p class="product__text">
+                        на 1 месяц - 20 грн
+                     </p>
+                     <p class="product__text">
+                        на 6 месяцев - 100 грн
+                     </p>
+                  </div>
+                  <div class="product__delimiter"></div>
+                  <div class="product__sale">
+                     <p class="product__method">
+                        Продажа
+                     </p>
+                     <p class="product__text">
+                        1 кулер - 130 грн.
+                     </p>
+                     <p class="product__text">
+
                      </p>
                   </div>
                </div>
-               <div class="general__shell general__shell_center">
-                  <img src="img/BottleRotate.png" alt="" class="general__img">
+               <div class="product__wrap product__wrap_mt20">
+                  <button class="product__btn btns product__btn_orange">купить</button>
+                  <button class="product__btn btns product__btn_blue">в 1 клик</button>
                </div>
+
+
+
+
+
             </div>
          </div>
       </div>
@@ -146,38 +158,23 @@
    <section class="related">
       <div class="container">
          <h3 class="related__h3 title__h3">Сопутствующие товары</h3>
-         <div class="related__items">
+         <div id="related__slider" class="related__items">
+
             <div class="card">
                <div class="card__circle card__circle_dn">
                   mini
                </div>
                <div class="card__imgs">
-                  <img src="img/HandPomp.png" alt="" class="card__img">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
                </div>
                <div class="card__wrap">
                   <div class="card__text">
                      <p class="card__price">150 грн</p>
-                     <p class="card__name">Помпа BlueRain</p>
-                  </div>
-                  <button class="card__cart">
-                     <svg class="card__svg" viewBox="0 0 28 25">
-                        <use xlink:href="img/icons/icons.svg#CartBlue" />
-                     </svg>
-                  </button>
-               </div>
-            </div>
-
-            <div class="card">
-               <div class="card__circle">
-                  mini
-               </div>
-               <div class="card__imgs">
-                  <img src="img/HandPomp.png" alt="" class="card__img">
-               </div>
-               <div class="card__wrap">
-                  <div class="card__text">
-                     <p class="card__price">150 грн</p>
-                     <p class="card__name">Помпа BlueRain</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
                   </div>
                   <button class="card__cart">
                      <svg class="card__svg" viewBox="0 0 28 25">
@@ -192,12 +189,16 @@
                   mini
                </div>
                <div class="card__imgs">
-                  <img src="img/PompBox.png" alt="" class="card__img">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
                </div>
                <div class="card__wrap">
                   <div class="card__text">
                      <p class="card__price">150 грн</p>
-                     <p class="card__name">Помпа BlueRain</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
                   </div>
                   <button class="card__cart">
                      <svg class="card__svg" viewBox="0 0 28 25">
@@ -206,6 +207,104 @@
                   </button>
                </div>
             </div>
+
+            <div class="card">
+               <div class="card__circle card__circle_dn">
+                  mini
+               </div>
+               <div class="card__imgs">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
+               </div>
+               <div class="card__wrap">
+                  <div class="card__text">
+                     <p class="card__price">150 грн</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
+                  </div>
+                  <button class="card__cart">
+                     <svg class="card__svg" viewBox="0 0 28 25">
+                        <use xlink:href="img/icons/icons.svg#CartBlue" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card__circle card__circle_dn">
+                  mini
+               </div>
+               <div class="card__imgs">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
+               </div>
+               <div class="card__wrap">
+                  <div class="card__text">
+                     <p class="card__price">150 грн</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
+                  </div>
+                  <button class="card__cart">
+                     <svg class="card__svg" viewBox="0 0 28 25">
+                        <use xlink:href="img/icons/icons.svg#CartBlue" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card__circle card__circle_dn">
+                  mini
+               </div>
+               <div class="card__imgs">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
+               </div>
+               <div class="card__wrap">
+                  <div class="card__text">
+                     <p class="card__price">150 грн</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
+                  </div>
+                  <button class="card__cart">
+                     <svg class="card__svg" viewBox="0 0 28 25">
+                        <use xlink:href="img/icons/icons.svg#CartBlue" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="card__circle card__circle_dn">
+                  mini
+               </div>
+               <div class="card__imgs">
+                  <a href="" class="card__link">
+                     <img src="img/HandPomp.png" alt="" class="card__img">
+                  </a>
+               </div>
+               <div class="card__wrap">
+                  <div class="card__text">
+                     <p class="card__price">150 грн</p>
+                     <a href="" class="card__link">
+                        <p class="card__name">Помпа BlueRain</p>
+                     </a>
+                  </div>
+                  <button class="card__cart">
+                     <svg class="card__svg" viewBox="0 0 28 25">
+                        <use xlink:href="img/icons/icons.svg#CartBlue" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+
 
          </div>
       </div>
@@ -262,6 +361,7 @@
 </footer>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script src="js/script.min.js"></script>
 </body>
 
