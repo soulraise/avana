@@ -28,21 +28,91 @@ function headerHidden() {
    })
 }
 headerHidden();;
+new Vue({
+	el: '#app',
+	data: {
+		pomps: [
+			{
+				title: 'Помпа BlueRain',
+				price: 130,
+				img: 'img/HandPomp.png',
+				label: 'mini'
+			},
+			{
+				title: 'Помпа BlueRain2',
+				price: 131,
+				img: 'img/HandPomp.png',
+
+			},
+			{
+				title: 'Помпа BlueRain3',
+				price: 132,
+				img: 'img/HandPomp.png',
+				label: 'new'
+			},
+			{
+				title: 'Помпа BlueRain4',
+				price: 133,
+				img: 'img/PompBox.jpg',
+
+			}
+		],
+		culers: [
+			{
+				title: 'Ecotronic H1-T (настольный)',
+				price: 130,
+				img: 'img/Cooler.png',
+				label: 'mini'
+			},
+			{
+				title: 'HotFrost D1150R',
+				price: 131,
+				img: 'img/cooler1.jpg',
+
+			},
+			{
+				title: 'Помпа Ecotronic PICNIC',
+				price: 132,
+				img: 'img/cooler2.jpg',
+				label: 'new'
+			},
+			{
+				title: 'Ecotronic H1-LN',
+				price: 133,
+				img: 'img/cooler3.jpg',
+
+			},
+			{
+				title: 'Ecotronic H1-LNF',
+				price: 133,
+				img: 'img/cooler4.jpg',
+
+			}
+		],
+		title: "hello"
+
+	},
+	methods: {
+		transition(e) {
+			console.log(e)
+		}
+	}
+});
 
 function testWebP(callback) {
 
-    var webP = new Image();
-    webP.onload = webP.onerror = function () {
-        callback(webP.height == 2);
-    };
-    webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+	var webP = new Image();
+	webP.onload = webP.onerror = function () {
+		callback(webP.height == 2);
+	};
+	webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
 
 testWebP(function (support) {
 
-    if (support == true) {
-        document.querySelector('body').classList.add('webp');
-    } else {
-        document.querySelector('body').classList.add('no-webp');
-    }
+	if (support == true) {
+		document.querySelector('body').classList.add('webp');
+	} else {
+		document.querySelector('body').classList.add('no-webp');
+	}
 });
