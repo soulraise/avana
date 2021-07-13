@@ -1044,31 +1044,3 @@ body {
         object-position: center;
     }
 }
-.related {
-    padding: 100px 0;
-    &__items {
-        margin: 80px auto 0;
-        width: 95%;
-    }
-}
-#related__slider .slick-prev:before,
-.slick-next:before {
-    width: 24px;
-    height: 24px;
-    opacity: 1;
-    color: #fff;
-    background: $SecondColor;
-    border-radius: 50%;
-    font-size: 35px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#related__slider .card {
-    margin: 0 50px;
-    &:hover {
-        box-shadow: none;
-        transform: unset;
-    }
-}
