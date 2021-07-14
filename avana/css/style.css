@@ -423,6 +423,15 @@ template {
   margin: 0;
 }
 
+.title__h2 {
+  font-family: "BebasNeueBold", "Sans-serif";
+  font-size: 1.71em;
+  line-height: 1.4;
+  color: #444;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -715,27 +724,27 @@ body {
   background: #fff;
 }
 
-#main__slider .slick-dots {
+.slick-dots {
   bottom: -35px;
 }
 
-#main__slider .slick-dots li {
+.slick-dots li {
   border-radius: 50%;
   border: 2px solid #70c4f1;
   width: 13px;
   height: 13px;
 }
 
-#main__slider .slick-dots li button {
+.slick-dots li button {
   width: 13px;
   height: 13px;
 }
 
-#main__slider .slick-dots li button:before {
+.slick-dots li button:before {
   display: none;
 }
 
-#main__slider .slick-active {
+.slick-active {
   background: #70c4f1;
 }
 
@@ -1774,8 +1783,8 @@ body {
 }
 
 .card__cart:hover {
-  -webkit-animation: generalAnchor 1.5s linear infinite;
-          animation: generalAnchor 1.5s linear infinite;
+  -webkit-animation: cardCart 0.5s linear infinite;
+          animation: cardCart 0.5s linear infinite;
 }
 
 .card:hover {
@@ -1792,6 +1801,34 @@ body {
   cursor: pointer;
 }
 
+@-webkit-keyframes cardCart {
+  0% {
+    margin-right: 0;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+
+  100% {
+    margin-right: 0;
+  }
+}
+
+@keyframes cardCart {
+  0% {
+    margin-right: 0;
+  }
+
+  50% {
+    margin-right: -10px;
+  }
+
+  100% {
+    margin-right: 0;
+  }
+}
+
 .coolers {
   padding-bottom: 70px;
 }
@@ -1803,7 +1840,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(102, 102, 102, 0.7);
+  background: rgba(102, 102, 102, 0.9);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1824,6 +1861,7 @@ body {
   max-width: 1000px;
   max-height: 90vh;
   overflow-y: auto;
+  position: relative;
 }
 
 .product__container {
@@ -1960,4 +1998,247 @@ body {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+
+.cart__order_grey {
+  color: #e0dddd;
+}
+
+.cart__wrap_left {
+  width: 60%;
+}
+
+.userData__container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.userData__container_jcs {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.userData__wrap {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.userData__input {
+  padding: 14px;
+  width: 100%;
+  border-radius: 21px;
+  outline: none;
+  border: 1px solid #70c4f1;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.userData__input::-webkit-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__input::-moz-placeholder {
+  color: #70c4f1;
+}
+
+.userData__input:-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__input::-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__input::placeholder {
+  color: #70c4f1;
+}
+
+.userData__input:hover {
+  border: 2px solid #1ea2e8;
+  padding: 13px;
+}
+
+.userData__input:focus {
+  border: 2px solid #febc38;
+  padding: 13px;
+}
+
+.userData__input_m15 {
+  margin: 30px 0;
+}
+
+.userData__input_m10 {
+  margin: 0 10px;
+}
+
+.userData__input_filled {
+  background: #ecf8ff;
+}
+
+.userData__input_error {
+  border: 2px solid #ff8787;
+  padding: 13px;
+}
+
+.userData__input_disabled {
+  background: #ecf8ff;
+  border: 1px solid #ecf8ff;
+}
+
+.userData__input_disabled::-webkit-input-placeholder {
+  color: #a9a9a9;
+}
+
+.userData__input_disabled::-moz-placeholder {
+  color: #a9a9a9;
+}
+
+.userData__input_disabled:-ms-input-placeholder {
+  color: #a9a9a9;
+}
+
+.userData__input_disabled::-ms-input-placeholder {
+  color: #a9a9a9;
+}
+
+.userData__input_disabled::placeholder {
+  color: #a9a9a9;
+}
+
+.userData__input_disabled:hover {
+  border: 1px solid #ecf8ff;
+  padding: 14px;
+}
+
+.userData__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.userData__label:hover .userData__check {
+  border: 2px solid #1ea2e8;
+}
+
+.userData__push {
+  display: none;
+}
+
+.userData__push:checked + .userData__label::before {
+  border: 2px solid #febc38;
+  background-image: url(../img/Union.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.userData__push:checked:hover + .userData__label::before {
+  border: 2px solid #febc38;
+}
+
+.userData__push:hover + .userData__label::before {
+  border: 2px solid #1ea2e8;
+}
+
+.userData__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.userData__label::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  border: 2px solid #70c4f1;
+}
+
+.userData__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  cursor: pointer;
+}
+
+.userData__triangle {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid #70c4f1;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  margin-left: 10px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.userData__triangle_rotate {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.userData__textarea {
+  width: 100%;
+  height: 7em;
+  resize: none;
+  outline: none;
+  border: 1px solid #70c4f1;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.userData__textarea::-webkit-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__textarea::-moz-placeholder {
+  color: #70c4f1;
+}
+
+.userData__textarea:-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__textarea::-ms-input-placeholder {
+  color: #70c4f1;
+}
+
+.userData__textarea::placeholder {
+  color: #70c4f1;
+}
+
+.userData__textarea:hover {
+  border: 2px solid #1ea2e8;
+  padding: 13px;
+}
+
+.userData__textarea:focus {
+  border: 2px solid #febc38;
+  padding: 13px;
 }

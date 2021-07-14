@@ -26,6 +26,14 @@ $BNB: "BebasNeueBold", "Sans-serif";
     text-transform: uppercase;
     margin: 0;
 }
+%h2 {
+    font-family: $BNB;
+    font-size: 1.71em;
+    line-height: 1.4;
+    color: $FirstColor;
+    text-transform: uppercase;
+    margin: 0;
+}
 * {
     box-sizing: border-box;
 }
@@ -46,6 +54,9 @@ body {
 }
 .title__h3 {
     @extend %h3;
+}
+.title__h2 {
+    @extend %h2;
 }
 .btns {
     font-family: $BNB;
@@ -228,23 +239,23 @@ body {
         }
     }
 }
-#main__slider .slick-dots {
+.slick-dots {
     bottom: -35px;
 }
-#main__slider .slick-dots li {
+.slick-dots li {
     border-radius: 50%;
     border: 2px solid $SecondColor;
     width: 13px;
     height: 13px;
 }
-#main__slider .slick-dots li button {
+.slick-dots li button {
     width: 13px;
     height: 13px;
 }
-#main__slider .slick-dots li button:before {
+.slick-dots li button:before {
     display: none;
 }
-#main__slider .slick-active {
+.slick-active {
     background: $SecondColor;
 }
 .languages,
@@ -836,6 +847,7 @@ body {
         margin-right: 0;
     }
 }
+
 .way {
     margin: 20px 0;
     &__link {
@@ -866,7 +878,6 @@ body {
     position: relative;
     border-radius: 20px;
     transition: 0.3s;
-    // max-width: 300px;
     &__circle {
         position: absolute;
         top: 10px;
@@ -925,7 +936,7 @@ body {
         background: #fff;
         flex-shrink: 0;
         &:hover {
-            animation: generalAnchor 1.5s linear infinite;
+            animation: cardCart 0.5s linear infinite;
         }
     }
     &:hover {
@@ -938,6 +949,17 @@ body {
         cursor: pointer;
     }
 }
+@keyframes cardCart {
+    0% {
+        margin-right: 0;
+    }
+    50% {
+        margin-right: -10px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
 .coolers {
     padding-bottom: 70px;
 }
@@ -948,7 +970,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(102, 102, 102, 0.7);
+    background: rgba(102, 102, 102, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -962,6 +984,7 @@ body {
         max-width: 1000px;
         max-height: 90vh;
         overflow-y: auto;
+        position: relative;
     }
     &__container {
         display: flex;
@@ -1057,5 +1080,146 @@ body {
         max-height: 500px;
         object-fit: contain;
         object-position: center;
+    }
+}
+.cart {
+    &__order {
+        &_grey {
+            color: #e0dddd;
+        }
+    }
+    &__wrap {
+        &_left {
+            width: 60%;
+        }
+    }
+}
+.userData {
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &_jcs {
+            justify-content: start;
+        }
+    }
+    &__wrap {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__input {
+        padding: 14px;
+        width: 100%;
+        border-radius: 21px;
+        outline: none;
+        border: 1px solid $SecondColor;
+        transition: 0.2s;
+        &::placeholder {
+            color: $SecondColor;
+        }
+        &:hover {
+            border: 2px solid #1ea2e8;
+            padding: 13px;
+        }
+        &:focus {
+            border: 2px solid $ThirdColor;
+            padding: 13px;
+        }
+        &_m15 {
+            margin: 30px 0;
+        }
+        &_m10 {
+            margin: 0 10px;
+        }
+        &_filled {
+            background: #ecf8ff;
+        }
+        &_error {
+            border: 2px solid #ff8787;
+            padding: 13px;
+        }
+        &_disabled {
+            background: #ecf8ff;
+            border: 1px solid #ecf8ff;
+            &::placeholder {
+                color: #a9a9a9;
+            }
+            &:hover {
+                border: 1px solid #ecf8ff;
+                padding: 14px;
+            }
+        }
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        &:hover .userData__check {
+            border: 2px solid #1ea2e8;
+        }
+    }
+    &__push {
+        display: none;
+        &:checked + .userData__label::before {
+            border: 2px solid $ThirdColor;
+            background-image: url(../img/Union.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &:checked:hover + .userData__label::before {
+            border: 2px solid $ThirdColor;
+        }
+        &:hover + .userData__label::before {
+            border: 2px solid #1ea2e8;
+        }
+    }
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        &::before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            border: 2px solid $SecondColor;
+        }
+    }
+    &__btn {
+        display: flex;
+        align-items: flex-end;
+        cursor: pointer;
+    }
+    &__triangle {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 10px solid $SecondColor;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        margin-left: 10px;
+        transition: 0.4s;
+        &_rotate {
+            transform: rotate(180deg);
+        }
+    }
+    &__textarea {
+        width: 100%;
+        height: 7em;
+        resize: none;
+        outline: none;
+        border: 1px solid $SecondColor;
+        transition: 0.2s;
+        &::placeholder {
+            color: $SecondColor;
+        }
+        &:hover {
+            border: 2px solid #1ea2e8;
+            padding: 13px;
+        }
+        &:focus {
+            border: 2px solid $ThirdColor;
+            padding: 13px;
+        }
     }
 }
