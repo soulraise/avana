@@ -26,46 +26,51 @@
 <body>
    <div id="app">
       <div class="modal__product" v-if="showProduct" @click="closeProduct">
-         <div class="product__container" @click.stop>
-            <div class="product__imgs">
-               <img :src="modal.img" :alt="modal.title" class="product__img">
-            </div>
-            <div class="product__content">
-               <h3 class="product__h3 title__h3">{{modal.title}}</h3>
-               <p class="product__description">
-                  {{modal.discription}}
-               </p>
-               <div class="product__wrap">
-                  <div class="product__sale" v-if="modal.rent">
-                     <p class="product__method">
-                        Аренда
-                     </p>
-                     <p class="product__text">
-                        на 1 месяц - {{modal.rent}} грн
-                     </p>
-                     <p class="product__text">
-                        на 6 месяцев - {{(modal.rent * 5)}} грн
-                     </p>
-                  </div>
-                  <div class="product__delimiter" v-if="modal.rent"></div>
-                  <div class="product__sale">
-                     <p class="product__method">
-                        Продажа
-                     </p>
-                     <p class="product__text">
-                        1 кулер - {{modal.price}} грн.
-                     </p>
-                     <p class="product__text">
+         <div class="product__window">
 
-                     </p>
+            <div class="product__container" @click.stop>
+               <div class="product__imgs">
+                  <img :src="modal.img" :alt="modal.title" class="product__img">
+               </div>
+               <div class="product__content">
+                  <h3 class="product__h3 title__h3">{{modal.title}}</h3>
+                  <p class="product__description">
+                     {{modal.discription}}
+                  </p>
+                  <div class="product__wrap">
+                     <div class="product__sale" v-if="modal.rent">
+                        <p class="product__method">
+                           Аренда
+                        </p>
+                        <p class="product__text">
+                           на 1 месяц - {{modal.rent}} грн
+                        </p>
+                        <p class="product__text">
+                           на 6 месяцев - {{(modal.rent * 5)}} грн
+                        </p>
+                     </div>
+                     <div class="product__delimiter" v-if="modal.rent"></div>
+                     <div class="product__sale">
+                        <p class="product__method">
+                           Продажа
+                        </p>
+                        <p class="product__text">
+                           1 кулер - {{modal.price}} грн.
+                        </p>
+                        <p class="product__text">
+
+                        </p>
+                     </div>
+                  </div>
+                  <div class="product__wrap">
+                     <button class="product__btn btns product__btn_orange">купить</button>
+                     <button class="product__btn btns product__btn_blue">в 1 клик</button>
                   </div>
                </div>
-               <div class="product__wrap product__wrap_mt20">
-                  <button class="product__btn btns product__btn_orange">купить</button>
-                  <button class="product__btn btns product__btn_blue">в 1 клик</button>
-               </div>
+
+               <button class="product__close" @click="closeProduct">Close</button>
             </div>
-            <button class="product__close" @click="closeProduct">X</button>
+
          </div>
       </div>
 

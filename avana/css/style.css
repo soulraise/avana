@@ -475,7 +475,7 @@ body {
   background: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 0 0 20px 1px rgba(112, 196, 241, 0.493);
           box-shadow: 0 0 20px 1px rgba(112, 196, 241, 0.493);
-  z-index: 1000;
+  z-index: 999;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -1797,7 +1797,7 @@ body {
 }
 
 .modal__product {
-  z-index: 2;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -1819,40 +1819,52 @@ body {
   display: none;
 }
 
+.product__window {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
 .product__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 1000px;
   width: 100%;
   background: #fff;
   position: relative;
+  overflow-y: auto;
 }
 
 .product__close {
   position: absolute;
   right: 0;
   top: 0;
+  background: transparent;
+  border: none;
+  margin: 10px;
+  text-transform: uppercase;
+  color: #70c4f1;
+  font-family: "BebasNeueBold", "Sans-serif";
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .product__content {
   width: 50%;
   background: #ecf8ff;
-  padding: 30px;
+  padding: 40px 20px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .product__h3 {
   text-align: center;
-}
-
-.product__description {
-  margin: 80px 0 43px;
 }
 
 .product__wrap {
@@ -1861,16 +1873,17 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 20px 0;
 }
 
-.product__wrap_mt20 {
-  margin-top: 20px;
+.product__description {
+  padding: 20px 0;
+  margin: 0;
 }
 
 .product__sale {
   width: 100%;
   text-align: center;
-  padding-bottom: 34px;
 }
 
 .product__delimiter {
@@ -1881,6 +1894,7 @@ body {
 .product__method {
   font-weight: 600;
   line-height: 1.4;
+  margin: 0 0 2%;
 }
 
 .product__text {
@@ -1929,9 +1943,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1941,6 +1955,7 @@ body {
 .product__img {
   width: 100%;
   height: 100%;
+  max-height: 500px;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: center;
