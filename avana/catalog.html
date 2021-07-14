@@ -27,7 +27,6 @@
    <div id="app">
       <div class="modal__product" v-if="showProduct" @click="closeProduct">
          <div class="product__window">
-
             <div class="product__container" @click.stop>
                <div class="product__imgs">
                   <img :src="modal.img" :alt="modal.title" class="product__img">
@@ -67,17 +66,10 @@
                      <button class="product__btn btns product__btn_blue">в 1 клик</button>
                   </div>
                </div>
-
                <button class="product__close" @click="closeProduct">Close</button>
             </div>
-
          </div>
       </div>
-
-
-
-
-
       <header class="header">
     <div class="container">
         <div class="header__wrap">
