@@ -2252,9 +2252,14 @@ body {
   background: #fff;
   margin-right: 20px;
   margin-bottom: 20px;
+  outline: none;
 }
 
 .userData__date:hover {
   color: #fff;
   background: #70c4f1;
+}
+
+.userData__date:focus {
+  border: 1px solid #febc38;
 }

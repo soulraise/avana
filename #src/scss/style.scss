@@ -1230,9 +1230,13 @@ body {
         background: #fff;
         margin-right: 20px;
         margin-bottom: 20px;
+        outline: none;
         &:hover {
             color: #fff;
             background: $SecondColor;
+        }
+        &:focus {
+            border: 1px solid $ThirdColor;
         }
     }
 }
