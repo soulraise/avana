@@ -89,8 +89,9 @@ body {
         justify-content: space-between;
     }
     &__logo {
-        min-width: 145px;
-        min-height: 55px;
+        width: 145px;
+        height: 55px;
+        flex-shrink: 0;
     }
     &__text {
         width: 100%;
@@ -665,10 +666,6 @@ body {
         display: flex;
         align-items: center;
     }
-    &__logo {
-        max-width: 145px;
-        max-height: 55px;
-    }
     &__nav {
         padding: 0;
         margin: 0 auto;
@@ -1159,7 +1156,9 @@ body {
         }
     }
     &__push {
-        display: none;
+        position: absolute;
+        z-index: -100;
+        opacity: 0;
         &:checked + .userData__label::before {
             border: 2px solid $ThirdColor;
             background-image: url(../img/Union.svg);
@@ -1171,6 +1170,9 @@ body {
         }
         &:hover + .userData__label::before {
             border: 2px solid #1ea2e8;
+        }
+        &:focus + .userData__label::before {
+            border: 2px solid $ThirdColor;
         }
     }
     &__label {
@@ -1220,6 +1222,17 @@ body {
         &:focus {
             border: 2px solid $ThirdColor;
             padding: 13px;
+        }
+    }
+    &__date {
+        border: 1px solid $SecondColor;
+        color: $SecondColor;
+        background: #fff;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        &:hover {
+            color: #fff;
+            background: $SecondColor;
         }
     }
 }
