@@ -91,3 +91,20 @@ if (document.getElementById('app')) {
 		}
 	})
 }
+if (document.getElementById('app2')) {
+	Vue.component('v-select', VueSelect.VueSelect)
+
+	new Vue({
+		el: '#app2',
+		data: {
+			options: [
+				'07.00 - 09.00',
+				'09.00 - 12.00',
+				'12.00 - 14.00',
+				'14.00 - 18.00',
+				'18.00 - 20.00',
+
+			]
+		}
+	})
+}

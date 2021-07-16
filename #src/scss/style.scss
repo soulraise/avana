@@ -1089,6 +1089,13 @@ body {
         &_left {
             width: 60%;
         }
+        &_right {
+            width: 40%;
+            background: #ecf8ff;
+        }
+    }
+    &__content {
+        display: flex;
     }
 }
 .userData {
@@ -1148,13 +1155,6 @@ body {
             }
         }
     }
-    &__label {
-        display: flex;
-        align-items: center;
-        &:hover .userData__check {
-            border: 2px solid #1ea2e8;
-        }
-    }
     &__push {
         position: absolute;
         z-index: -100;
@@ -1164,6 +1164,9 @@ body {
             background-image: url(../img/Union.svg);
             background-repeat: no-repeat;
             background-position: center;
+        }
+        &:checked + .userData__label_round::before {
+            background-image: url(../img/SelectCircle.svg);
         }
         &:checked:hover + .userData__label::before {
             border: 2px solid $ThirdColor;
@@ -1183,8 +1186,13 @@ body {
             content: "";
             width: 20px;
             height: 20px;
-            margin-right: 20px;
+            margin-right: 12px;
             border: 2px solid $SecondColor;
+        }
+        &_round::before {
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
         }
     }
     &__btn {
@@ -1239,4 +1247,32 @@ body {
             border: 1px solid $ThirdColor;
         }
     }
+    &__time {
+        display: flex;
+    }
+    &__pay {
+        flex-direction: column;
+    }
+    &__select {
+        margin-right: 30px;
+    }
+}
+.vs {
+    &__search {
+        color: $SecondColor;
+    }
+    &__dropdown-toggle {
+        border: 1px solid $SecondColor;
+        &-menu {
+            border: 1px solid $SecondColor;
+            text-align: center;
+        }
+    }
+}
+.vs__search::placeholder,
+.vs__dropdown-toggle,
+.vs__dropdown-menu {
+    background: #fff;
+
+    color: $SecondColor;
 }

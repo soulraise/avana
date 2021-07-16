@@ -2005,6 +2005,17 @@ body {
   width: 60%;
 }
 
+.cart__wrap_right {
+  width: 40%;
+  background: #ecf8ff;
+}
+
+.cart__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .userData__container {
   width: 100%;
   display: -webkit-box;
@@ -2120,19 +2131,6 @@ body {
   padding: 14px;
 }
 
-.userData__label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.userData__label:hover .userData__check {
-  border: 2px solid #1ea2e8;
-}
-
 .userData__push {
   position: absolute;
   z-index: -100;
@@ -2144,6 +2142,10 @@ body {
   background-image: url(../img/Union.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.userData__push:checked + .userData__label_round::before {
+  background-image: url(../img/SelectCircle.svg);
 }
 
 .userData__push:checked:hover + .userData__label::before {
@@ -2172,8 +2174,14 @@ body {
   content: "";
   width: 20px;
   height: 20px;
-  margin-right: 20px;
+  margin-right: 12px;
   border: 2px solid #70c4f1;
+}
+
+.userData__label_round::before {
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
 }
 
 .userData__btn {
@@ -2262,4 +2270,61 @@ body {
 
 .userData__date:focus {
   border: 1px solid #febc38;
+}
+
+.userData__time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.userData__pay {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.userData__select {
+  margin-right: 30px;
+}
+
+.vs__search {
+  color: #70c4f1;
+}
+
+.vs__dropdown-toggle {
+  border: 1px solid #70c4f1;
+}
+
+.vs__dropdown-toggle-menu {
+  border: 1px solid #70c4f1;
+  text-align: center;
+}
+
+.vs__search::-webkit-input-placeholder {
+  background: #fff;
+  color: #70c4f1;
+}
+
+.vs__search::-moz-placeholder {
+  background: #fff;
+  color: #70c4f1;
+}
+
+.vs__search:-ms-input-placeholder {
+  background: #fff;
+  color: #70c4f1;
+}
+
+.vs__search::-ms-input-placeholder {
+  background: #fff;
+  color: #70c4f1;
+}
+
+.vs__search::placeholder,
+.vs__dropdown-toggle,
+.vs__dropdown-menu {
+  background: #fff;
+  color: #70c4f1;
 }
