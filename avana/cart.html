@@ -85,7 +85,7 @@
     </div>
 </header>
 	<div id="anchor" class="anchor"></div>
-	<section class="cart">
+	<section class="cart" id="app2">
 		<div class="container">
 			<div class="cart__content">
 				<div class="cart__wrap cart__wrap_left">
@@ -94,42 +94,54 @@
 					<form class="userData">
 						<div class="userData__container">
 							<div class="userData__wrap">
-								<input class="userData__input userData__input_error" type="text" placeholder="Имя">
-								<input class="userData__input userData__input_m15" type="tel" placeholder="+38(0__) ___-__-__">
-								<input class="userData__input userData__input_filled" type="email" placeholder="E-mail">
+								<input class="userData__input userData__input_error" type="text" placeholder="Имя"
+									v-model="name">
+								<input class="userData__input userData__input_m15" type="tel"
+									placeholder="+38(0__) ___-__-__" v-model="tel">
+								<input class="userData__input userData__input_filled" type="email" placeholder="E-mail"
+									v-model="eMail">
 							</div>
 							<div class="userData__wrap">
-								<input class="userData__input userData__input_disabled" type="text" disabled placeholder="Киев">
-								<input class="userData__input  userData__input_m15" type="text" placeholder="Улица">
+								<input class="userData__input userData__input_disabled" type="text" disabled
+									placeholder="Киев">
+								<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
+									v-model="street">
 								<div class="userData__container">
-									<input class="userData__input" type="text" placeholder="Дом">
-									<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд">
-									<input class="userData__input" type="text" placeholder="Квартира">
+									<input class="userData__input" type="text" placeholder="Дом" v-model="home">
+									<input class="userData__input  userData__input_m10" type="text"
+										placeholder="Подъезд" v-model="entrance">
+									<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
 								</div>
 							</div>
 						</div>
 						<div class="userData__save userData__time">
-							<input id="userData__push" class="userData__push" type="checkbox">
+							<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
 							<label for="userData__push" class="userData__label">
 								Сохранить данные
 							</label>
 						</div>
-						<div class="userData__btn">
+
+						<div class="userData__btn" @click="addComentText">
 							Нажать и добавить комментарий
 							<div class="userData__triangle"></div>
 						</div>
-						<textarea class="userData__textarea" name="comment" id=""></textarea>
+						<textarea class="userData__textarea" name="comment" id="" v-if="addComent"></textarea>
 
 						<h2 class="cart__delivery title__h2">доставка</h2>
 						<p class="userData__p">Дата доставки</p>
-						<button class="userData__date btns">dd.mm.yyyy</button>
-						<button class="userData__date btns">dd.mm.yyyy</button>
-						<button class="userData__date btns">dd.mm.yyyy</button>
+						<input name="day" type="radio" value="currentDay" class="userData__date btns">{{
+						currentDateTime() }}</input>
+						<input name="day" type="radio" value="tomorrow" class="userData__date btns">{{
+						currentDateTime(1)
+						}}</input>
+						<input name="day" type="radio" value="dayAfterTomorrow" class="userData__date btns">{{
+						currentDateTime(2)
+						}}</input>
 
 						<p class="userData__p">Время доставки</p>
 
 						<div class="userData__time">
-							<div id="app2" class="userData__select">
+							<div class="userData__select">
 								<v-select :options="options"></v-select>
 							</div>
 							<input id="userData__call" class="userData__call userData__push" type="checkbox">
@@ -161,90 +173,40 @@
 					<h2 class="cart__user title__h2">ваш заказ</h2>
 
 
-					<div class="cart__orders">
+					<div class="cart__orders" v-for="(product, n) in products">
 						<div class="order">
 							<div class="order__imgs">
-								<img src="img/CartImg1.png" alt="" class="order__img">
+								<img :src="product.img" alt="" class="order__img">
 							</div>
 							<div class="order__text">
 								<p class="order__title">
-									Вода Avana, 19,9 л, бут.
+									{{product.title}}
 								</p>
 								<p class="order__price">
-									240 грн.
+									{{(product.price * product.count)}} грн.
 								</p>
 							</div>
 							<div class="order__counter">
-								<button class="order__btn">&ndash;</button>
+								<button class="order__btn" @click="ndashCount(n)">&ndash;</button>
 								<div class="order__circle">
-									<p class="order__count">2</p>
+									<p class="order__count">{{product.count}}</p>
 								</div>
-								<button class="order__btn">&plus;</button>
+								<button class="order__btn" @click="plusCount(n)">&plus;</button>
 							</div>
-							<button class="order__btn">
+							<button class="order__btn" @click="removeProduct(n)">
 								<svg class="order__svg" viewBox="0 0 9 10">
 									<use xlink:href="img/icons/icons.svg#Trash" />
 								</svg>
 							</button>
 						</div>
 
-						<div class="order">
-							<div class="order__imgs">
-								<img src="img/CartImg1.png" alt="" class="order__img">
-							</div>
-							<div class="order__text">
-								<p class="order__title">
-									Вода Avana, 19,9 л, бут.
-								</p>
-								<p class="order__price">
-									240 грн.
-								</p>
-							</div>
-							<div class="order__counter">
-								<button class="order__btn">&ndash;</button>
-								<div class="order__circle">
-									<p class="order__count">2</p>
-								</div>
-								<button class="order__btn">&plus;</button>
-							</div>
-							<button class="order__btn">
-								<svg class="order__svg" viewBox="0 0 9 10">
-									<use xlink:href="img/icons/icons.svg#Trash" />
-								</svg>
-							</button>
-						</div>
 
-						<div class="order">
-							<div class="order__imgs">
-								<img src="img/CartImg1.png" alt="" class="order__img">
-							</div>
-							<div class="order__text">
-								<p class="order__title">
-									Вода Avana, 19,9 л, бут.
-								</p>
-								<p class="order__price">
-									240 грн.
-								</p>
-							</div>
-							<div class="order__counter">
-								<button class="order__btn">&ndash;</button>
-								<div class="order__circle">
-									<p class="order__count">2</p>
-								</div>
-								<button class="order__btn">&plus;</button>
-							</div>
-							<button class="order__btn">
-								<svg class="order__svg" viewBox="0 0 9 10">
-									<use xlink:href="img/icons/icons.svg#Trash" />
-								</svg>
-							</button>
-						</div>
 
 
 					</div>
 
 
-					<p class="cart__total">всего: <span class="cart__total_blue">480 грн.</span> </p>
+					<p class="cart__total">всего: <span class="cart__total_blue">{{totalProduct}} грн.</span> </p>
 					<button class="cart__submit btns">ПОДТВЕРДИТЬ ЗАКАЗ</button>
 					<p class="cart__accept">*нажимая “Заказать” вы соглашаетесь с правилами
 						<a href="#" class="cart__link">
