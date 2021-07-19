@@ -15,6 +15,12 @@ $(document).ready(function () {
 	}
 });
 
+let windowHeight = window.innerHeight;
+
+window.addEventListener('resize', function () {
+	windowHeight = window.innerHeight;
+})
+
 
 function headerHidden() {
 	let posWindow = 0;
@@ -46,3 +52,22 @@ function menuHidden() {
 	})
 }
 menuHidden();
+
+function getUp() {
+	let upBtn = document.getElementById('up');
+	window.addEventListener('scroll', function () {
+		if (windowHeight < window.scrollY) {
+			upBtn.classList.add('up__active')
+		}
+		else {
+			upBtn.classList.remove('up__active')
+		}
+	})
+	upBtn.addEventListener('click', function () {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		})
+	})
+}
+getUp();

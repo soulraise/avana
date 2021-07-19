@@ -15,6 +15,12 @@ $(document).ready(function () {
 	}
 });
 
+let windowHeight = window.innerHeight;
+
+window.addEventListener('resize', function () {
+	windowHeight = window.innerHeight;
+})
+
 
 function headerHidden() {
 	let posWindow = 0;
@@ -45,7 +51,26 @@ function menuHidden() {
 		document.getElementById('burgerline3').classList.toggle('burger__line_rotate45')
 	})
 }
-menuHidden();;
+menuHidden();
+
+function getUp() {
+	let upBtn = document.getElementById('up');
+	window.addEventListener('scroll', function () {
+		if (windowHeight < window.scrollY) {
+			upBtn.classList.add('up__active')
+		}
+		else {
+			upBtn.classList.remove('up__active')
+		}
+	})
+	upBtn.addEventListener('click', function () {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		})
+	})
+}
+getUp();;
 if (document.getElementById('app')) {
 	new Vue({
 		el: '#app',
