@@ -160,9 +160,11 @@ body {
         color: $FirstColor;
         text-decoration: none;
         transition: 0.4s;
-        &:hover {
-            color: $SecondColor;
-            transform: scale(1.1);
+        @media (hover) {
+            &:hover {
+                color: $SecondColor;
+                transform: scale(1.1);
+            }
         }
         @media (max-width: 540px) {
             display: none;
@@ -178,14 +180,16 @@ body {
         position: relative;
         transition: 0.4s;
         flex-shrink: 0;
-        &:hover {
-            transform: scale(1.3);
-        }
-        &:hover .header__svg {
-            opacity: 0;
-        }
-        &:hover .header__svg_blue {
-            opacity: 1;
+        @media (hover) {
+            &:hover {
+                transform: scale(1.3);
+            }
+            &:hover .header__svg {
+                opacity: 0;
+            }
+            &:hover .header__svg_blue {
+                opacity: 1;
+            }
         }
     }
     &__svg {
@@ -201,6 +205,7 @@ body {
         }
     }
 }
+
 .menu {
     z-index: 100;
     position: absolute;
@@ -215,9 +220,11 @@ body {
     border-bottom: 1px solid rgba(112, 196, 241, 0.2);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    opacity: 1;
     transform: translateY(0%);
     transition: 0.4s;
     &__hidden {
+        opacity: 0;
         transform: translateY(-200%);
     }
     &__link {
@@ -253,9 +260,11 @@ body {
     border: none;
     background: none;
     position: relative;
-    &:hover .burger__line {
-        background: $SecondColor;
-        transform: scale(1.1);
+    @media (hover) {
+        &:hover .burger__line {
+            background: $SecondColor;
+            transform: scale(1.1);
+        }
     }
     &__line {
         transition: 0.4s;
@@ -340,9 +349,11 @@ body {
         border: 1px solid $ThirdColor;
         color: #fff;
         background: $ThirdColor;
-        &:hover {
-            color: $ThirdColor;
-            background: #fff;
+        @media (hover) {
+            &:hover {
+                color: $ThirdColor;
+                background: #fff;
+            }
         }
     }
 }
@@ -383,14 +394,16 @@ body {
         height: 32px;
         position: relative;
         transition: 0.4s;
-        &:hover {
-            transform: scale(1.1);
-        }
-        &:hover .socials__svg {
-            opacity: 0;
-        }
-        &:hover .socials__svg_blue {
-            opacity: 1;
+        @media (hover) {
+            &:hover {
+                transform: scale(1.1);
+            }
+            &:hover .socials__svg {
+                opacity: 0;
+            }
+            &:hover .socials__svg_blue {
+                opacity: 1;
+            }
         }
     }
     &__svg {
@@ -418,10 +431,12 @@ body {
         font-weight: 600;
         line-height: 1.4;
         transition: 0.3s;
-        &:hover {
-            color: $SecondColor;
-            text-decoration: underline;
-            transform: scale(1.3);
+        @media (hover) {
+            &:hover {
+                color: $SecondColor;
+                text-decoration: underline;
+                transform: scale(1.3);
+            }
         }
         @media (max-width: 843px) {
             width: 30px;
@@ -480,9 +495,11 @@ body {
     padding: 10px;
     transition: 0.4s;
     min-width: 200px;
-    &:hover {
-        box-shadow: 0 0 15px 1px #6fc3f178;
-        transform: scale(1.1);
+    @media (hover) {
+        &:hover {
+            box-shadow: 0 0 15px 1px #6fc3f178;
+            transform: scale(1.1);
+        }
     }
     @media (max-width: 1000px) {
         margin-bottom: 20px;
@@ -512,19 +529,70 @@ body {
         margin: 25px 0 0;
     }
 }
+@keyframes scheduleCircle {
+    0% {
+        bottom: -45%;
+        opacity: 0;
+    }
+    40% {
+        bottom: 0;
+        opacity: 1;
+    }
+    80% {
+        bottom: 85%;
+        opacity: 0;
+    }
+    90% {
+        bottom: 100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: -45%;
+        opacity: 0;
+    }
+}
 .schedule {
-    position: relative;
-    overflow: hidden;
     width: 100%;
     padding-top: 50px;
     @media (max-width: 800px) {
         padding-top: 20px;
     }
     &__wrap {
+        position: relative;
+        // overflow: hidden;
         display: flex;
         justify-content: space-between;
         @media (max-width: 800px) {
             flex-wrap: wrap-reverse;
+        }
+    }
+    &__circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        &_big {
+            right: 50%;
+            bottom: -45%;
+            width: 165px;
+            height: 165px;
+            border: 5px solid rgba(112, 196, 241, 0.58);
+            animation: scheduleCircle 15s linear 0s infinite;
+        }
+        &_middle {
+            right: 10%;
+            bottom: -45%;
+            width: 98px;
+            height: 98px;
+            border: 5px solid $SecondColor;
+            animation: scheduleCircle 15s linear 5s infinite;
+        }
+        &_small {
+            right: 5%;
+            bottom: -45%;
+            width: 45px;
+            height: 45px;
+            border: 5px solid #fff;
+            animation: scheduleCircle 15s linear 15s infinite;
         }
     }
     &__bg {
@@ -641,8 +709,10 @@ body {
         @media (max-width: 560px) {
             padding: 10px;
         }
-        &:hover {
-            transform: scale(1.05);
+        @media (hover) {
+            &:hover {
+                transform: scale(1.05);
+            }
         }
         &_big {
             width: 100%;
@@ -686,13 +756,35 @@ body {
         background: #fff;
         padding-left: 60px;
         padding-right: 60px;
-        &:hover {
-            background: $SecondColor;
-            color: #fff;
+        @media (hover) {
+            &:hover {
+                background: $SecondColor;
+                color: #fff;
+            }
         }
         @media (max-width: 560px) {
             display: none;
         }
+    }
+}
+@keyframes aboutCircles {
+    0% {
+        opacity: 1;
+    }
+    1% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    3% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
     }
 }
 .about {
@@ -735,6 +827,7 @@ body {
         border-radius: 50%;
         border: 5px solid $SecondColor;
         display: block;
+        animation: aboutCircles 10s linear 0s infinite;
         @media (max-width: 500px) {
             display: none;
         }
@@ -744,17 +837,20 @@ body {
         width: 50%;
         display: flex;
         align-items: center;
+
         &_borderCyan {
             border: 5px solid #cdebfb;
             width: 236px;
             height: 236px;
             padding: 0 20px;
             margin-right: 50px;
+            animation: aboutCircles 10s linear 5s infinite;
             @media (max-width: 600px) {
                 margin-right: 0;
             }
         }
         &_borderBlue {
+            animation: aboutCircles 10s linear 1s infinite;
             border: 5px solid $SecondColor;
             width: 205px;
             height: 205px;
@@ -801,8 +897,10 @@ body {
         max-height: 480px;
         transition: 0.4s;
         overflow: hidden;
-        &:hover {
-            transform: scale(1.05);
+        @media (hover) {
+            &:hover {
+                transform: scale(1.05);
+            }
         }
     }
     &__img {
@@ -861,9 +959,11 @@ body {
         font-weight: 700;
         text-transform: uppercase;
         transition: 0.3s;
-        &:hover {
-            background: #fff;
-            color: $SecondColor;
+        @media (hover) {
+            &:hover {
+                background: #fff;
+                color: $SecondColor;
+            }
         }
     }
     &__p {
@@ -920,8 +1020,10 @@ body {
             background: #fff;
             transition: 0.4s;
         }
-        &:hover::after {
-            width: 100%;
+        @media (hover) {
+            &:hover::after {
+                width: 100%;
+            }
         }
     }
     &__phone {
@@ -931,8 +1033,10 @@ body {
         font-size: 1.7em;
         transition: 0.4s;
         white-space: nowrap;
-        &:hover {
-            transform: scale(1.3);
+        @media (hover) {
+            &:hover {
+                transform: scale(1.3);
+            }
         }
     }
     &__socials {
@@ -945,8 +1049,10 @@ body {
         height: 32px;
         margin: 0 15px;
         transition: 0.4s;
-        &:hover {
-            transform: scale(1.3);
+        @media (hover) {
+            &:hover {
+                transform: scale(1.3);
+            }
         }
     }
     &__svg {
@@ -1036,9 +1142,11 @@ body {
         color: #fff;
         background: $ThirdColor;
         border: 1px solid $ThirdColor;
-        &:hover {
-            background: #fff;
-            color: $ThirdColor;
+        @media (hover) {
+            &:hover {
+                background: #fff;
+                color: $ThirdColor;
+            }
         }
     }
     &__circle {
@@ -1095,9 +1203,12 @@ body {
     padding: 40px 0;
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 70px;
         margin-top: 30px;
+        @media (max-width: 675px) {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
     }
 }
 .card {
@@ -1162,13 +1273,17 @@ body {
         border: none;
         background: #fff;
         flex-shrink: 0;
-        &:hover {
-            animation: cardCart 0.5s linear infinite;
+        @media (hover) {
+            &:hover {
+                animation: cardCart 0.5s linear infinite;
+            }
         }
     }
-    &:hover {
-        box-shadow: 0 0 15px 1px $SecondColor;
-        transform: scale(1.05);
+    @media (hover) {
+        &:hover {
+            box-shadow: 0 0 15px 1px $SecondColor;
+            transform: scale(1.05);
+        }
     }
     &__link {
         text-decoration: none;
@@ -1279,18 +1394,22 @@ body {
             color: #fff;
             border: 1px solid $ThirdColor;
             background: $ThirdColor;
-            &:hover {
-                color: $ThirdColor;
-                background: #fff;
+            @media (hover) {
+                &:hover {
+                    color: $ThirdColor;
+                    background: #fff;
+                }
             }
         }
         &_blue {
             color: $SecondColor;
             border: 1px solid $SecondColor;
             background: #fff;
-            &:hover {
-                color: #fff;
-                background: $SecondColor;
+            @media (hover) {
+                &:hover {
+                    color: #fff;
+                    background: $SecondColor;
+                }
             }
         }
     }
@@ -1344,9 +1463,11 @@ body {
         background: $ThirdColor;
         border: 1px solid $ThirdColor;
         color: #fff;
-        &:hover {
-            background: #fff;
-            color: $ThirdColor;
+        @media (hover) {
+            &:hover {
+                background: #fff;
+                color: $ThirdColor;
+            }
         }
     }
     &__accept {
@@ -1382,9 +1503,11 @@ body {
         &::placeholder {
             color: $SecondColor;
         }
-        &:hover {
-            border: 2px solid #1ea2e8;
-            padding: 13px;
+        @media (hover) {
+            &:hover {
+                border: 2px solid #1ea2e8;
+                padding: 13px;
+            }
         }
         &:focus {
             border: 2px solid $ThirdColor;
@@ -1409,9 +1532,11 @@ body {
             &::placeholder {
                 color: #a9a9a9;
             }
-            &:hover {
-                border: 1px solid #ecf8ff;
-                padding: 14px;
+            @media (hover) {
+                &:hover {
+                    border: 1px solid #ecf8ff;
+                    padding: 14px;
+                }
             }
         }
     }
@@ -1428,11 +1553,13 @@ body {
         &:checked + .userData__label_round::before {
             background-image: url(../img/SelectCircle.svg);
         }
-        &:checked:hover + .userData__label::before {
-            border: 2px solid $ThirdColor;
-        }
-        &:hover + .userData__label::before {
-            border: 2px solid #1ea2e8;
+        @media (hover) {
+            &:checked:hover + .userData__label::before {
+                border: 2px solid $ThirdColor;
+            }
+            &:hover + .userData__label::before {
+                border: 2px solid #1ea2e8;
+            }
         }
         &:focus + .userData__label::before {
             border: 2px solid $ThirdColor;
@@ -1483,9 +1610,11 @@ body {
         &::placeholder {
             color: $SecondColor;
         }
-        &:hover {
-            border: 2px solid #1ea2e8;
-            padding: 13px;
+        @media (hover) {
+            &:hover {
+                border: 2px solid #1ea2e8;
+                padding: 13px;
+            }
         }
         &:focus {
             border: 2px solid $ThirdColor;
@@ -1499,9 +1628,11 @@ body {
         margin-right: 20px;
         margin-bottom: 20px;
         outline: none;
-        &:hover {
-            color: #fff;
-            background: $SecondColor;
+        @media (hover) {
+            &:hover {
+                color: #fff;
+                background: $SecondColor;
+            }
         }
         &:focus {
             border: 1px solid $ThirdColor;
@@ -1535,9 +1666,11 @@ body {
         &-option {
             text-align: center;
             padding: 7px 0;
-            &:hover {
-                color: $ThirdColor;
-                background: #fff;
+            @media (hover) {
+                &:hover {
+                    color: $ThirdColor;
+                    background: #fff;
+                }
             }
         }
     }
@@ -1605,8 +1738,10 @@ body {
         margin: 0 10px;
         line-height: 0;
         transition: 0.3s;
-        &:hover {
-            transform: scale(1.5);
+        @media (hover) {
+            &:hover {
+                transform: scale(1.5);
+            }
         }
     }
     &__title {
@@ -1622,6 +1757,7 @@ body {
 .up {
     display: none;
     position: fixed;
+    z-index: 1000;
     bottom: 3vh;
     right: 3vw;
     width: 50px;
