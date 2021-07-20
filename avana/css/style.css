@@ -2873,6 +2873,22 @@ body {
   }
 }
 
+@media (max-width: 850px) {
+  .product__wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .product__btn {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 843px) {
   .socials {
     display: none;
@@ -2998,6 +3014,30 @@ body {
   .coolers__items,
   .pomps__items {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .product__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .product__content {
+    width: 100%;
+  }
+
+  .product__imgs {
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .product__img {
+    max-height: 300px;
   }
 }
 
