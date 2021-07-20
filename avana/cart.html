@@ -60,6 +60,9 @@
                     <svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
                         <use xlink:href="img/icons/icons.svg#CartBlue" />
                     </svg>
+                    <p class="header__counter">
+                        4
+                    </p>
                 </a>
                 <div id="burger" class="burger" title="Меню">
                     <span id="burgerline1" class="burger__line"></span>
@@ -92,29 +95,28 @@
 					<h1 class="cart__order title__h2 cart__order_grey">оформление заказа</h1>
 					<h2 class="cart__user title__h2">личные данные</h2>
 					<form class="userData">
-						<div class="userData__container">
+						<div class="userData__container userData__container_flexwrap">
 							<div class="userData__wrap">
 								<input class="userData__input userData__input_error" type="text" placeholder="Имя"
 									v-model="name">
-								<input class="userData__input userData__input_m15" type="tel"
-									placeholder="+38(0__) ___-__-__" v-model="tel">
+								<input class="userData__input userData__input_m15" type="tel" placeholder="+38(0__) ___-__-__"
+									v-model="tel">
 								<input class="userData__input userData__input_filled" type="email" placeholder="E-mail"
 									v-model="eMail" v-mask="{mask: '99/99/9999', greedy: true}">
 							</div>
 							<div class="userData__wrap">
-								<input class="userData__input userData__input_disabled" type="text" disabled
-									placeholder="Киев">
+								<input class="userData__input userData__input_disabled" type="text" disabled placeholder="Киев">
 								<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
 									v-model="street">
-								<div class="userData__container">
+								<div class="userData__container userData__container_gap0">
 									<input class="userData__input" type="text" placeholder="Дом" v-model="home">
-									<input class="userData__input  userData__input_m10" type="text"
-										placeholder="Подъезд" v-model="entrance">
+									<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд"
+										v-model="entrance">
 									<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
 								</div>
 							</div>
 						</div>
-						<div class="userData__save userData__time">
+						<div class="userData__save">
 							<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
 							<label for="userData__push" class="userData__label">
 								Сохранить данные
@@ -129,15 +131,22 @@
 
 						<h2 class="cart__delivery title__h2">доставка</h2>
 						<p class="userData__p">Дата доставки</p>
-						<input name="day" type="radio" value="currentDay" class="userData__date btns">{{
-						currentDateTime(1) }}</input>
-						<input name="day" type="radio" value="tomorrow" class="userData__date btns">{{
-						currentDateTime(2)
-						}}</input>
-						<input name="day" type="radio" value="dayAfterTomorrow" class="userData__date btns">{{
-						currentDateTime(3)
-						}}</input>
+						<div class="userData__radiowrap">
+							<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
+							<label for="day1" class="userData__date btns">
+								{{ currentDateTime(1) }}
+							</label>
 
+							<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
+							<label for="day2" class="userData__date btns">
+								{{ currentDateTime(2) }}
+							</label>
+
+							<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
+							<label for="day3" class="userData__date btns">
+								{{ currentDateTime(3) }}
+							</label>
+						</div>
 						<p class="userData__p">Время доставки</p>
 
 						<div class="userData__time">
@@ -188,7 +197,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="order__wrap">
+							<div class="order__wrap order__wrap_jcsb">
 								<div class="order__counter">
 									<button class="order__btn" @click="ndashCount(n)">&ndash;</button>
 									<div class="order__circle">
