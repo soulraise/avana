@@ -34,6 +34,117 @@ $BNB: "BebasNeueBold", "Sans-serif";
     text-transform: uppercase;
     margin: 0;
 }
+
+@keyframes generalAnchor {
+    0% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -25px;
+    }
+    50% {
+        margin-right: 0;
+    }
+    75% {
+        margin-right: -25px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+@keyframes scheduleCircle {
+    0% {
+        bottom: -45%;
+        opacity: 0;
+    }
+    40% {
+        bottom: 0;
+        opacity: 1;
+    }
+    80% {
+        bottom: 85%;
+        opacity: 0;
+    }
+    90% {
+        bottom: 100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: -45%;
+        opacity: 0;
+    }
+}
+@keyframes aboutCircles {
+    0% {
+        opacity: 1;
+    }
+    1% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 1;
+    }
+    3% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes cardCart {
+    0% {
+        margin-right: 0;
+    }
+    50% {
+        margin-right: -10px;
+    }
+    100% {
+        margin-right: 0;
+    }
+}
+@keyframes upJump {
+    0% {
+        bottom: 3vh;
+    }
+    5% {
+        bottom: 5vh;
+    }
+    10% {
+        bottom: 3vh;
+    }
+    15% {
+        bottom: 5vh;
+    }
+    20% {
+        bottom: 3vh;
+    }
+    25% {
+        bottom: 5vh;
+    }
+    30% {
+        bottom: 3vh;
+    }
+    100% {
+        bottom: 3vh;
+    }
+}
+@keyframes purchaseCsale {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1.05);
+    }
+    10% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 * {
     box-sizing: border-box;
 }
@@ -529,28 +640,7 @@ body {
         margin: 25px 0 0;
     }
 }
-@keyframes scheduleCircle {
-    0% {
-        bottom: -45%;
-        opacity: 0;
-    }
-    40% {
-        bottom: 0;
-        opacity: 1;
-    }
-    80% {
-        bottom: 85%;
-        opacity: 0;
-    }
-    90% {
-        bottom: 100%;
-        opacity: 0;
-    }
-    100% {
-        bottom: -45%;
-        opacity: 0;
-    }
-}
+
 .schedule {
     width: 100%;
     padding-top: 50px;
@@ -676,13 +766,30 @@ body {
             flex-wrap: wrap;
         }
     }
-    &__bg {
-        width: 100%;
-        height: 100%;
+    &__rectangle {
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+        bottom: -45%;
+        background: #ecf8ff;
+        opacity: 0;
+        z-index: -100;
+        &_left {
+            left: 5%;
+            width: 15%;
+            height: 48px;
+            animation: scheduleCircle 10s linear 0s infinite;
+        }
+        &_center {
+            left: 40%;
+            width: 18%;
+            height: 68px;
+            animation: scheduleCircle 10s linear 3s infinite;
+        }
+        &_right {
+            right: 10%;
+            width: 13%;
+            height: 140px;
+            animation: scheduleCircle 10s linear 16s infinite;
+        }
     }
     &__items {
         width: 50%;
@@ -709,19 +816,16 @@ body {
         @media (max-width: 560px) {
             padding: 10px;
         }
-        @media (hover) {
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
         &_big {
             width: 100%;
             background: linear-gradient(transparent 11%, #1ea2e8 0%);
+            animation: purchaseCsale 7s linear 0s infinite;
         }
         &_middle {
             margin-top: 180px;
             padding-top: 65px;
             background: $SecondColor;
+            animation: purchaseCsale 7s linear 2s infinite;
             @media (max-width: 560px) {
                 margin-top: 0;
                 width: 100%;
@@ -732,6 +836,7 @@ body {
             padding-top: 65px;
             background: #a9a9a9;
             align-self: flex-start;
+            animation: purchaseCsale 7s linear 4s infinite;
             @media (max-width: 560px) {
                 margin-top: 0;
                 align-self: unset;
@@ -767,26 +872,7 @@ body {
         }
     }
 }
-@keyframes aboutCircles {
-    0% {
-        opacity: 1;
-    }
-    1% {
-        opacity: 0;
-    }
-    2% {
-        opacity: 1;
-    }
-    3% {
-        opacity: 0;
-    }
-    4% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+
 .about {
     text-align: center;
     padding-top: 160px;
@@ -1066,8 +1152,14 @@ body {
     max-width: 1440px;
     width: 100%;
     padding-bottom: 65px;
+    @media (max-width: 843px) {
+        padding-bottom: 0;
+    }
     &__container {
         display: flex;
+        @media (max-width: 843px) {
+            display: none;
+        }
     }
     &__anchor {
         width: 110px;
@@ -1162,23 +1254,9 @@ body {
         width: 100%;
         height: 100%;
         object-fit: contain;
-    }
-}
-@keyframes generalAnchor {
-    0% {
-        margin-left: 0;
-    }
-    25% {
-        margin-left: -25px;
-    }
-    50% {
-        margin-right: 0;
-    }
-    75% {
-        margin-right: -25px;
-    }
-    100% {
-        margin-right: 0;
+        @media (max-width: 945px) {
+            display: none;
+        }
     }
 }
 
@@ -1290,17 +1368,7 @@ body {
         cursor: pointer;
     }
 }
-@keyframes cardCart {
-    0% {
-        margin-right: 0;
-    }
-    50% {
-        margin-right: -10px;
-    }
-    100% {
-        margin-right: 0;
-    }
-}
+
 .coolers {
     padding-bottom: 70px;
 }
@@ -1705,6 +1773,7 @@ body {
     &__img {
         width: 100%;
         height: 100%;
+        max-height: 43px;
         object-fit: contain;
         object-position: center;
     }
@@ -1752,6 +1821,10 @@ body {
         color: $SecondColor;
         line-height: 1.6;
     }
+    &__wrap {
+        display: flex;
+        align-items: center;
+    }
 }
 .up {
     display: none;
@@ -1780,30 +1853,4 @@ body {
         height: 30px;
     }
     animation: upJump 3s linear infinite;
-}
-@keyframes upJump {
-    0% {
-        bottom: 3vh;
-    }
-    5% {
-        bottom: 5vh;
-    }
-    10% {
-        bottom: 3vh;
-    }
-    15% {
-        bottom: 5vh;
-    }
-    20% {
-        bottom: 3vh;
-    }
-    25% {
-        bottom: 5vh;
-    }
-    30% {
-        bottom: 3vh;
-    }
-    100% {
-        bottom: 3vh;
-    }
 }
