@@ -33,7 +33,7 @@
 					<h1 class="cart__order title__h2 cart__order_grey">оформление заказа</h1>
 					<h2 class="cart__user title__h2">личные данные</h2>
 					<form class="userData">
-						<div class="userData__container">
+						<div class="userData__container userData__container_flexwrap">
 							<div class="userData__wrap">
 								<input class="userData__input userData__input_error" type="text" placeholder="Имя"
 									v-model="name">
@@ -135,7 +135,7 @@
 									</p>
 								</div>
 							</div>
-							<div class="order__wrap">
+							<div class="order__wrap order__wrap_jcsb">
 								<div class="order__counter">
 									<button class="order__btn" @click="ndashCount(n)">&ndash;</button>
 									<div class="order__circle">
