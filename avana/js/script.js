@@ -165,6 +165,14 @@ if (document.getElementById('app')) {
 
 				}
 			],
+			water: {
+				id: 111,
+				title: 'ВОДА AVANA 18,9 Л',
+				price: 80,
+				img: 'img/Bottle.jpg',
+				discription: 'Сертификаты: ISO 22000/HACCP, соответствия УКРСЕПРО Источник: артезианская скважина Минирализация: 100-150 мг/дмз',
+				count: 1,
+			},
 			title: "hello",
 			showProduct: false,
 			modal: {},
@@ -182,14 +190,11 @@ if (document.getElementById('app')) {
 				this.showProduct = false
 			},
 			addProduct(product) {
-
 				let id
 				let oldProduct = this.products.find((el, i) => {
 					id = i
 					return el.id == product.id
 				})
-				// console.log(id)
-				// console.log(oldProduct)
 				if (!oldProduct) {
 					this.products.push(product);
 				} else {
@@ -222,7 +227,10 @@ if (document.getElementById('app')) {
 if (document.getElementById('app2')) {
 	Vue.component('v-select', VueSelect.VueSelect)
 
+
+
 	new Vue({
+
 		el: '#app2',
 		data: {
 			options: [
@@ -256,7 +264,15 @@ if (document.getElementById('app2')) {
 			currentDateTime(n = 0) {
 				let today = new Date();
 				let tomorrow = new Date(today.getTime() + ((24 * 60 * 60 * 1000) * n));
-				const date = tomorrow.getDate() + '.' + (tomorrow.getMonth() + 1) + '.' + tomorrow.getFullYear();
+				let day = tomorrow.getDate()
+				if (day < 10) {
+					day = "0" + tomorrow.getDate()
+				}
+				let month = tomorrow.getMonth() + 1
+				if (month < 10) {
+					month = "0" + (tomorrow.getMonth() + 1)
+				}
+				const date = day + '.' + month + '.' + tomorrow.getFullYear();
 				const dateTime = date;
 				return dateTime;
 			},
