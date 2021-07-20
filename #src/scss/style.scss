@@ -1716,14 +1716,18 @@ body {
         }
     }
     &__p {
-        margin-top: 35px;
+        margin: 35px 0 10px;
+        display: block;
+    }
+    &__radiowrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
     }
     &__date {
         border: 1px solid $SecondColor;
         color: $SecondColor;
-        // background: #fff;
-        margin-right: 20px;
-        margin-bottom: 20px;
+        background: #fff;
         outline: none;
         @media (hover) {
             &:hover {

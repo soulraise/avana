@@ -69,21 +69,22 @@
 
 						<h2 class="cart__delivery title__h2">доставка</h2>
 						<p class="userData__p">Дата доставки</p>
+						<div class="userData__radiowrap">
+							<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
+							<label for="day1" class="userData__date btns">
+								{{ currentDateTime(1) }}
+							</label>
 
-						<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
-						<label for="day1" class="userData__date btns">
-							{{ currentDateTime(1) }}
-						</label>
+							<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
+							<label for="day2" class="userData__date btns">
+								{{ currentDateTime(2) }}
+							</label>
 
-						<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
-						<label for="day2" class="userData__date btns">
-							{{ currentDateTime(2) }}
-						</label>
-
-						<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
-						<label for="day3" class="userData__date btns">
-							{{ currentDateTime(3) }}
-						</label>
+							<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
+							<label for="day3" class="userData__date btns">
+								{{ currentDateTime(3) }}
+							</label>
+						</div>
 						<p class="userData__p">Время доставки</p>
 
 						<div class="userData__time">

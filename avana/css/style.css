@@ -2540,14 +2540,23 @@ body {
 }
 
 .userData__p {
-  margin-top: 35px;
+  margin: 35px 0 10px;
+  display: block;
+}
+
+.userData__radiowrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
 }
 
 .userData__date {
   border: 1px solid #70c4f1;
   color: #70c4f1;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  background: #fff;
   outline: none;
 }
 
