@@ -60,19 +60,19 @@
                         <use xlink:href="img/icons/icons.svg#CartBlue" />
                     </svg>
                 </a>
-                <div class="burger" title="Меню">
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
+                <div id="burger" class="burger" title="Меню">
+                    <span id="burgerline1" class="burger__line"></span>
+                    <span id="burgerline2" class="burger__line "></span>
+                    <span id="burgerline3" class="burger__line "></span>
                 </div>
 
 
             </div>
 
-            <div class="menu">
+            <div id="menu" class="menu menu__hidden">
                 <a href="#" class="menu__link">Мой аккаунт</a>
-                <a href="#" class="menu__link">О воде</a>
-                <a href="#" class="menu__link">Каталог</a>
+                <a href="index.html#about" class="menu__link">О воде</a>
+                <a href="catalog.html" class="menu__link">Каталог</a>
                 <a href="#" class="menu__link">Бизнесу</a>
                 <a href="#" class="menu__link">Новым клиентам</a>
                 <a href="#" class="menu__link">Доставка и оплата</a>
@@ -267,8 +267,10 @@
 
 	<section class="schedule">
 		<div class="container">
-			<img src="img/bgSchedule.png" alt="" class="schedule__bg">
 			<div class="schedule__wrap">
+				<div class="schedule__circle schedule__circle_big"></div>
+				<div class="schedule__circle schedule__circle_middle"></div>
+				<div class="schedule__circle schedule__circle_small"></div>
 				<div class="schedule__content">
 					<h3 class="schedule__h3 title__h3">
 						График приема заказов
@@ -321,7 +323,9 @@
 	<section class="purchase">
 		<div class="container">
 			<div class="purchase__wrap">
-				<img src="img/bgPurchase.png" alt="" class="purchase__bg">
+				<div class="purchase__rectangle purchase__rectangle_left"></div>
+				<div class="purchase__rectangle purchase__rectangle_center"></div>
+				<div class="purchase__rectangle purchase__rectangle_right"></div>
 				<div class="purchase__items purchase__items_left">
 					<a href="catalog.html" class="purchase__item purchase__item_big">
 						<div class="purchase__imgs">
@@ -355,7 +359,7 @@
 				</div>
 			</div>
 		</div>
-	</section> -->
+	</section>
 
 	<section id="about" class="about">
 		<div class="container">
@@ -364,7 +368,7 @@
 				<div class="about__item">
 					<div class="about__content">
 						<div class="about__wrap about__wrap_alignCenter">
-							<div class="about__circle about__circle_mr25"></div>
+							<div class="about__circle"></div>
 							<p class="about__p">
 								Сбалансированный минеральный состав, можно пить без ограничений, в любом возрасте.
 							</p>
@@ -387,7 +391,7 @@
 						</p>
 					</div>
 					<div class="about__content about__content_flexEnd">
-						<div class="about__wrap about__wrap_justifyCenter">
+						<div class="about__wrap about__wrap_alignCenter">
 							<div class="about__circle"></div>
 							<p class="about__p ">
 								У AVANA правильная молекулярная формула, что делает ее аналогом талой.
@@ -489,7 +493,11 @@
 
 
 
-
+   <button id="up" class="up">
+      <svg class="up__svg" viewBox="0 0 50 50">
+         <use xlink:href="img/icons/icons.svg#upArrow" />
+      </svg>
+   </button>
 </footer>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

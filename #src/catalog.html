@@ -24,6 +24,7 @@
 </head>
 
 <body>
+	@@include('_header.html')
 	<div id="app">
 		<div class="modal__product" v-if="showProduct" @click="closeProduct">
 			<div class="product__window">
@@ -72,7 +73,7 @@
 				<button class="product__close" @click="closeProduct">Close &#10006;</button>
 			</div>
 		</div>
-		@@include('_header.html')
+
 		<div id="anchor" class="anchor"></div>
 		<section class="general">
 			<div class="socials">

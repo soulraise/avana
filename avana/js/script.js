@@ -15,6 +15,12 @@ $(document).ready(function () {
 	}
 });
 
+let windowHeight = window.innerHeight;
+
+window.addEventListener('resize', function () {
+	windowHeight = window.innerHeight;
+})
+
 
 function headerHidden() {
 	let posWindow = 0;
@@ -22,16 +28,49 @@ function headerHidden() {
 		let pos = document.getElementById('anchor').getBoundingClientRect();
 		let posWindow2 = pos.y;
 		if (posWindow < posWindow2) {
-			document.querySelector('.header').classList.remove('header__fixed')
+			document.querySelector('.header').classList.remove('header__fixed');
+
 		} else {
 			document.querySelector('.header').classList.add('header__fixed')
+			document.getElementById('menu').classList.add('menu__hidden')
+			document.getElementById('burgerline1').classList.remove('burger__line_reversrotate45')
+			document.getElementById('burgerline2').classList.remove('burger__line_hidden')
+			document.getElementById('burgerline3').classList.remove('burger__line_rotate45')
 		}
 		posWindow = posWindow2;
 	})
 }
 headerHidden();
 
-;
+function menuHidden() {
+
+	document.getElementById('burger').addEventListener('click', function () {
+		document.getElementById('menu').classList.toggle('menu__hidden')
+		document.getElementById('burgerline1').classList.toggle('burger__line_reversrotate45')
+		document.getElementById('burgerline2').classList.toggle('burger__line_hidden')
+		document.getElementById('burgerline3').classList.toggle('burger__line_rotate45')
+	})
+}
+menuHidden();
+
+function getUp() {
+	let upBtn = document.getElementById('up');
+	window.addEventListener('scroll', function () {
+		if (windowHeight < window.scrollY) {
+			upBtn.classList.add('up__active')
+		}
+		else {
+			upBtn.classList.remove('up__active')
+		}
+	})
+	upBtn.addEventListener('click', function () {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		})
+	})
+}
+getUp();;
 if (document.getElementById('app')) {
 	new Vue({
 		el: '#app',
