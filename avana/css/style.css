@@ -896,6 +896,28 @@ body {
   opacity: 0;
 }
 
+.header__counter {
+  margin: 0;
+  position: absolute;
+  top: -7px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #febc38;
+  color: #fff;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .menu {
   z-index: 100;
   position: absolute;
