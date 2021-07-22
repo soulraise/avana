@@ -177,10 +177,14 @@ if (document.getElementById('app')) {
 			showProduct: false,
 			modal: {},
 			products: [],
-			newCat: null
+			newCat: null,
+			burger: false,
 
 		},
 		methods: {
+			burgerMenu() {
+				this.burger ? this.burger = false : this.burger = true
+			},
 			transition(pomp) {
 				this.showProduct = true
 				console.log(pomp)
@@ -258,11 +262,13 @@ if (document.getElementById('app2')) {
 			products: [],
 			newCat: null,
 			burger: false,
+			creatUser: '',
 		},
 		filters: {
 
 		},
 		methods: {
+			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
 			},
@@ -302,7 +308,24 @@ if (document.getElementById('app2')) {
 					this.removeProduct(x)
 				}
 				this.saveProduct();
-			}
+			},
+			createUser() {
+				let needPassword = /[A-Z]/gm;
+				let needPassword2 = /[a-z]/gm;
+				let needPassword3 = /[0-9]/gm;
+				let needPassword4 = /[!@#$%^&*]/gm;
+				let needEmail = /@./gm;
+				let creatUser = true
+				if (this.name === '' || this.eMail === '' || this.tel === '' || this.street === '' || this.home === '') creatUser = false
+				if (testF(needPassword, this.name) == false || testF(needPassword2, this.name) == false) {
+					creatUser = false
+				}
+				if (testF(needEmail, this.eMail) == false) {
+					creatUser = false
+				} else {
+				}
+				console.log(creatUser)
+			},
 		},
 		computed: {
 			totalProduct() {

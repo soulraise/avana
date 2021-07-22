@@ -66,13 +66,16 @@
 								{{countProduct}}
 							</p>
 						</a>
-						<div id="burger" class="burger" title="Меню">
-							<span id="burgerline1" class="burger__line"></span>
-							<span id="burgerline2" class="burger__line "></span>
-							<span id="burgerline3" class="burger__line "></span>
+						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
+							<span id="burgerline1" class="burger__line"
+								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline3" class="burger__line "
+								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
 					</div>
-					<div id="menu" class="menu menu__hidden">
+					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
 						<a href="#" class="menu__link">Мой аккаунт</a>
 						<a href="index.html#about" class="menu__link">О воде</a>
 						<a href="catalog.html" class="menu__link">Каталог</a>
@@ -125,7 +128,8 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_orange"
+								@click="addProduct(modal)">купить</button>
 							<button class="product__btn btns product__btn_blue">в 1 клик</button>
 						</div>
 					</div>
