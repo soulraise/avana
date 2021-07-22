@@ -2311,9 +2311,9 @@ body {
 
 .cart__accept {
   width: 70%;
-  margin: 0 auto;
+  margin: 15px auto 0;
   line-height: 1.4;
-  text-align: justify;
+  text-align: center;
 }
 
 .cart__link {

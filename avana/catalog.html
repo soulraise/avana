@@ -6,6 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<meta property="og:image" content="/og-image.jpg">
+	<meta property="og:image:width" content="279">
+	<meta property="og:image:height" content="279">
+	<meta property="og:description" content="Everything you need to know about the topic you are looking for">
+	<meta property="og:url" content="http://example.com">
+	<meta property="og:title"
+		content="Питьевая вода &laquo;AVANA&raquo; - выбор серьезных современных людей, которым важна стабильность, престиж и безопасность во всех вопросах и, в первую очередь, в вопросах здоровья.">
+
+
+
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -69,8 +79,7 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -128,8 +137,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
 							<button class="product__btn btns product__btn_blue">в 1 клик</button>
 						</div>
 					</div>
