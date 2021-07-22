@@ -2762,6 +2762,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 10px 0;
 }
 
 .up {
@@ -2837,7 +2838,6 @@ body {
 
 @media (max-width: 1000px) {
   .header__text {
-    gap: 3px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2962,7 +2962,6 @@ body {
     position: fixed;
     right: 0;
     top: 20vh;
-    gap: 25px;
   }
 
   .general {
@@ -3196,7 +3195,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 20px;
   }
 
   .order__wrap_jcsb {
