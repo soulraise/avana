@@ -2358,6 +2358,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 30px;
 }
 
 .userData__input {
@@ -2396,21 +2397,12 @@ body {
   padding: 13px;
 }
 
-.userData__input_m15 {
+.userData__input_m30 {
   margin: 30px 0;
 }
 
 .userData__input_m10 {
   margin: 0 10px;
-}
-
-.userData__input_filled {
-  background: #ecf8ff;
-}
-
-.userData__input_error {
-  border: 2px solid #ff8787;
-  padding: 13px;
 }
 
 .userData__input_disabled {
@@ -2618,11 +2610,13 @@ body {
 }
 
 .vs__dropdown-toggle {
+  position: relative;
   border: 1px solid #70c4f1;
   border-radius: 20px;
   background: #fff;
   text-align: center;
   height: 45px;
+  padding: 0 10px;
 }
 
 .vs__dropdown-option {
@@ -2630,8 +2624,21 @@ body {
   padding: 7px 0;
 }
 
+.vs__actions {
+  position: absolute;
+  top: 27%;
+  right: 3%;
+}
+
+.vs__selected {
+  display: block;
+  width: 100%;
+  font-weight: 600;
+}
+
 .vs__selected-options {
   padding: 7px 0;
+  margin: 0 auto;
 }
 
 .vs__search {
@@ -2640,6 +2647,10 @@ body {
 
 .vs__clear {
   display: none;
+}
+
+.vs__open-indicator {
+  fill: #70c4f1;
 }
 
 .order {
@@ -2779,6 +2790,14 @@ body {
 .up__svg {
   width: 30px;
   height: 30px;
+}
+
+.error {
+  border: 2px solid #ff8787;
+}
+
+.filled {
+  background: #ecf8ff;
 }
 
 @media (max-width: 1195px) {
@@ -3390,9 +3409,13 @@ body {
     background: #70c4f1;
   }
 
+  .vs__dropdown-toggle:hover {
+    border: 1px solid #1ea2e8;
+  }
+
   .vs__dropdown-option:hover {
     color: #febc38;
-    background: #fff;
+    background: #ecf8ff;
   }
 
   .order__btn:hover {
