@@ -220,7 +220,7 @@ body {
         width: 100%;
         display: flex;
         justify-content: flex-start;
-        gap: 27px;
+
         padding-left: 2.21em;
         @media (max-width: 1000px) {
             gap: 3px;
@@ -238,6 +238,7 @@ body {
     &__schedule {
         display: flex;
         align-items: center;
+        margin: 0 13px;
         @media (max-width: 1000px) {
             margin: 0;
         }
@@ -255,7 +256,6 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 30px;
     }
     &__link {
         white-space: nowrap;
@@ -264,6 +264,7 @@ body {
         color: $FirstColor;
         text-decoration: none;
         transition: 0.4s;
+
         @media (hover) {
             &:hover {
                 color: $SecondColor;
@@ -278,6 +279,7 @@ body {
         width: 32px;
         height: 32px;
         padding: 0;
+        margin: 0 10px;
         border: none;
         background: none;
         cursor: pointer;
@@ -368,13 +370,13 @@ body {
 
 .burger {
     width: 40px;
-    height: 40px;
+    height: 24px;
     flex-shrink: 0;
     padding: 0;
+    margin-left: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 7px;
+    justify-content: space-between;
     cursor: pointer;
     border: none;
     background: none;
@@ -397,13 +399,13 @@ body {
         &_rotate45 {
             transform: rotate(45deg);
             position: absolute;
-            top: 20px;
+            top: 10px;
             left: 0;
         }
         &_reversrotate45 {
             transform: rotate(-45deg);
             position: absolute;
-            top: 20px;
+            top: 10px;
             left: 0;
         }
     }
@@ -507,12 +509,13 @@ body {
     align-items: center;
 }
 .socials {
-    gap: 30px;
+    // gap: 30px;
     &__link {
         width: 32px;
         height: 32px;
         position: relative;
         transition: 0.4s;
+        margin: 15px 0;
         @media (hover) {
             &:hover {
                 transform: scale(1.1);
@@ -541,7 +544,7 @@ body {
     }
 }
 .languages {
-    gap: 15px;
+    // gap: 15px;
     z-index: 1000;
     &__link {
         text-decoration: none;
@@ -550,6 +553,7 @@ body {
         font-weight: 600;
         line-height: 1.4;
         transition: 0.3s;
+        margin: 15px 0;
         @media (hover) {
             &:hover {
                 color: $SecondColor;
@@ -1104,15 +1108,18 @@ body {
     &__ul {
         padding: 0;
         display: flex;
-        gap: 30px;
+        // gap: 30px;
         list-style: none;
         @media (max-width: 1055px) {
             flex-direction: column;
-            gap: 5px;
+            // gap: 5px;
         }
-        @media (max-width: 480px) {
+        @media (max-width: 530px) {
             display: none;
         }
+    }
+    &__li {
+        margin-right: 20px;
     }
     &__a {
         text-decoration: none;
@@ -1554,7 +1561,10 @@ body {
         }
         &_left {
             width: 60%;
-            padding: 50px 28px;
+            padding: 50px 28px 50px 0;
+            @media (max-width: 820px) {
+                padding: 50px 0;
+            }
         }
         &_right {
             width: 40%;
@@ -1615,7 +1625,7 @@ body {
     &__container {
         width: 100%;
         display: flex;
-        gap: 30px;
+        // gap: 30px;
         justify-content: space-between;
         &_jcs {
             justify-content: start;
@@ -1636,12 +1646,16 @@ body {
         width: 90%;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        margin-right: 30px;
         @media (max-width: 1090px) {
             width: 100%;
         }
+        @media (max-width: 820px) {
+            margin-right: 0;
+        }
     }
     &__input {
+        margin-bottom: 30px;
         padding: 14px;
         width: 100%;
         border-radius: 21px;
@@ -1665,9 +1679,9 @@ body {
             margin: 30px 0;
         }
         &_m10 {
-            margin: 0 10px;
+            margin: 0 10px 30px;
             @media (max-width: 439px) {
-                margin: 30px 0;
+                margin: 0 0 30px;
             }
         }
         &_disabled {
@@ -1713,6 +1727,7 @@ body {
         display: flex;
         align-items: center;
         cursor: pointer;
+        white-space: nowrap;
         &::before {
             content: "";
             width: 20px;
@@ -1720,10 +1735,13 @@ body {
             margin-right: 12px;
             border: 2px solid $SecondColor;
         }
-        &_round::before {
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
+        &_round {
+            margin-bottom: 20px;
+            &::before {
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+            }
         }
     }
     &__btn {
@@ -1767,12 +1785,11 @@ body {
         }
     }
     &__p {
-        margin: 35px 0 10px;
+        margin: 15px 0 10px;
         display: block;
     }
     &__radiowrap {
         display: flex;
-        gap: 20px;
         @media (max-width: 969px) {
             flex-direction: column;
             align-items: center;
@@ -1783,6 +1800,7 @@ body {
         color: $SecondColor;
         background: #fff;
         outline: none;
+        margin: 0 20px 0 0;
         @media (hover) {
             &:hover {
                 color: #fff;
@@ -1797,6 +1815,7 @@ body {
         }
         @media (max-width: 969px) {
             padding: 0.5em 1.75em;
+            margin: 0 0 20px 0;
         }
     }
     &__save {
@@ -1807,19 +1826,23 @@ body {
         display: flex;
         @media (max-width: 989px) {
             flex-wrap: wrap;
-            gap: 15px;
+            // gap: 15px;
         }
     }
     &__pay {
         flex-direction: column;
-        gap: 15px;
+        // gap: 15px;
         align-items: start;
     }
     &__select {
         margin-right: 30px;
+        margin-bottom: 20px;
         min-width: 250px;
-        @media (max-width: 586px) {
+        @media (max-width: 989px) {
             width: 100%;
+        }
+        @media (max-width: 820px) {
+            margin-right: 0;
         }
     }
     &__radio {
@@ -1905,7 +1928,7 @@ body {
         gap: 20px;
     }
     &__imgs {
-        max-width: 52px;
+        width: 52px;
         max-height: 52px;
         flex-shrink: 0;
     }
