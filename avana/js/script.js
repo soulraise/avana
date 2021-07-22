@@ -240,10 +240,21 @@ if (document.getElementById('app')) {
 	})
 }
 if (document.getElementById('app2')) {
+
+	Vue.use('maska', Maska)
 	Vue.component('v-select', VueSelect.VueSelect)
 	new Vue({
 		el: '#app2',
 		data: {
+			directives: {
+				'#': { pattern: /[0-9]/ },
+				'X': { pattern: /[0-9a-zA-Z]/ },
+				'S': { pattern: /[a-zA-Z]/ },
+				'A': { pattern: /[a-zA-Z]/, uppercase: true },
+				'a': { pattern: /[a-zA-Z]/, lowercase: true },
+				'!': { escape: true },
+				'*': { repeat: true }
+			},
 			options: [
 				'07:00 - 09:00',
 				'09:00 - 12:00',
@@ -271,6 +282,7 @@ if (document.getElementById('app2')) {
 		},
 		methods: {
 			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
 			},
@@ -314,12 +326,16 @@ if (document.getElementById('app2')) {
 			createUser() {
 				let needPassword = /[A-Z]/gm;
 				let needPassword2 = /[a-z]/gm;
-				let needPassword3 = /[0-9]/gm;
-				let needPassword4 = /[!@#$%^&*]/gm;
+				let needPassword3 = /[0-9+]/gm;
+				let needPassword4 = /[+]/gm;
+				let needPassword5 = /[!@#$%^&*]/gm;
 				let needEmail = /@./gm;
 				let creatUser = true
 				if (this.name === '' || this.eMail === '' || this.tel === '' || this.street === '' || this.home === '') creatUser = false
-				if (testF(needPassword, this.name) == false || testF(needPassword2, this.name) == false) {
+				if (testF(needPassword2, this.name || this.name.length > 3 |) == false) {
+					creatUser = false
+				}
+				if (this.tel.length > 19 || this.tel.length < 19) {
 					creatUser = false
 				}
 				if (testF(needEmail, this.eMail) == false) {
@@ -327,6 +343,7 @@ if (document.getElementById('app2')) {
 				} else {
 				}
 				console.log(creatUser)
+				console.log(this.tel.length)
 			},
 		},
 		computed: {

@@ -107,7 +107,7 @@
 									<input class="userData__input userData__input_filled" type="text" placeholder="Имя"
 										v-model="name">
 									<input class="userData__input userData__input_m15 " type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel">
+										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input userData__input_filled" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -246,7 +246,7 @@
 	<script src="https://unpkg.com/vue-select@latest"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue-inputmask@0.2.1/dist/vue-inputmask.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-inputmask@0.2.1/dist/vue-inputmask-browser.min.js"></script> -->
-
+	<script src="https://cdn.jsdelivr.net/npm/maska@latest/dist/maska.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
