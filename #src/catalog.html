@@ -24,8 +24,70 @@
 </head>
 
 <body>
-	@@include('_header.html')
 	<div id="app">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrap">
+					<a href="index.html" class="header__logo" title="На главную">
+						<svg class="logo" viewBox="0 0 145 55">
+							<use xlink:href="img/icons/icons.svg#LogoBlue" />
+						</svg>
+					</a>
+					<div class="header__text">
+						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Только по Киеву
+						</p>
+					</div>
+					<div class="header__links">
+						<a href="tel:+380445029191" class="header__link" title="Позвонить сейчас">(044) 502-91-91</a>
+						<button class="header__button" title="Мой аккаунт">
+							<svg class="header__svg" viewBox="0 0 22 24">
+								<use xlink:href="img/icons/icons.svg#Reg" />
+							</svg>
+							<svg class="header__svg header__svg_blue" viewBox="0 0 22 24">
+								<use xlink:href="img/icons/icons.svg#RegBlue" />
+							</svg>
+						</button>
+
+						<a href="cart.html" class="header__button" title="Корзина">
+							<svg class="header__svg" viewBox="0 0 28 25">
+								<use xlink:href="img/icons/icons.svg#Cart" />
+							</svg>
+							<svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
+								<use xlink:href="img/icons/icons.svg#CartBlue" />
+							</svg>
+							<p class="header__counter" v-if="countProduct">
+								{{countProduct}}
+							</p>
+						</a>
+						<div id="burger" class="burger" title="Меню">
+							<span id="burgerline1" class="burger__line"></span>
+							<span id="burgerline2" class="burger__line "></span>
+							<span id="burgerline3" class="burger__line "></span>
+						</div>
+					</div>
+					<div id="menu" class="menu menu__hidden">
+						<a href="#" class="menu__link">Мой аккаунт</a>
+						<a href="index.html#about" class="menu__link">О воде</a>
+						<a href="catalog.html" class="menu__link">Каталог</a>
+						<a href="#" class="menu__link">Бизнесу</a>
+						<a href="#" class="menu__link">Новым клиентам</a>
+						<a href="#" class="menu__link">Доставка и оплата</a>
+						<a href="#" class="menu__link">Контакты</a>
+					</div>
+
+
+				</div>
+			</div>
+
+		</header>
+
 		<div class="modal__product" v-if="showProduct" @click="closeProduct">
 			<div class="product__window">
 				<div class="product__container" @click.stop>

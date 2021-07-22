@@ -221,16 +221,21 @@ if (document.getElementById('app')) {
 				}
 			}
 		},
+		computed: {
+			countProduct() {
+				let res = 0
+				this.products.forEach(el => {
+					res = res + el.count
+				})
+				return res
+			}
+		}
 
 	})
 }
 if (document.getElementById('app2')) {
 	Vue.component('v-select', VueSelect.VueSelect)
-
-
-
 	new Vue({
-
 		el: '#app2',
 		data: {
 			options: [
@@ -251,13 +256,16 @@ if (document.getElementById('app2')) {
 			addComent: false,
 			validData: '',
 			products: [],
-			newCat: null
-
+			newCat: null,
+			burger: false,
 		},
 		filters: {
 
 		},
 		methods: {
+			burgerMenu() {
+				this.burger ? this.burger = false : this.burger = true
+			},
 			addComentText() {
 				this.addComent ? this.addComent = false : this.addComent = true
 			},
@@ -290,6 +298,9 @@ if (document.getElementById('app2')) {
 			},
 			ndashCount(x) {
 				this.products[x].count--;
+				if (this.products[x].count == 0) {
+					this.removeProduct(x)
+				}
 				this.saveProduct();
 			}
 		},
@@ -297,14 +308,20 @@ if (document.getElementById('app2')) {
 			totalProduct() {
 				let res = 0
 				this.products.forEach(element => {
-
 					res = res + (element.price * element.count)
 				});
 				return res
 			},
+			countProduct() {
+				let res = 0
+				this.products.forEach(el => {
+					res = res + el.count
+
+				})
+				return res
+			}
 
 		},
-
 		mounted() {
 			if (localStorage.checked != 'false') this.checked = localStorage.checked;
 			if (localStorage.name && localStorage.checked != 'false') this.name = localStorage.name;
@@ -354,16 +371,44 @@ if (document.getElementById('app2')) {
 		}
 	})
 }
-// if (document.getElementById('app3')) {
+if (document.getElementById('app3')) {
+	new Vue({
+		el: '#app3',
+		data: {
+			totalProduct: 0,
+			products: [],
+		},
+		mounted() {
+			if (localStorage.getItem('products')) {
+				try {
+					this.products = JSON.parse(localStorage.getItem('products'));
+				} catch (e) {
+					localStorage.removeItem('products');
+				}
+			}
+		},
+		methods: {
+			// countProductM() {
+			// 	let res = 0
+			// 	this.products.forEach(el => {
+			// 		res = res + el.count
+			// 		console.log(res)
+			// 	})
+			// 	this.totalProduct = res
+			// }
+		},
+		computed: {
+			countProduct() {
+				let res = 0
+				this.products.forEach(el => {
+					res = res + el.count
 
-
-// 	new Vue({
-// 		el: '#app3',
-// 		data: {
-
-// 		}
-// 	})
-// };
+				})
+				return res
+			}
+		}
+	})
+};
 
 function testWebP(callback) {
 

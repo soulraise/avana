@@ -24,212 +24,222 @@
 </head>
 
 <body>
-	<header class="header">
-    <div class="container">
-        <div class="header__wrap">
-            <a href="index.html" class="header__logo" title="На главную">
-                <svg class="logo" viewBox="0 0 145 55">
-                    <use xlink:href="img/icons/icons.svg#LogoBlue" />
-                </svg>
-            </a>
-            <div class="header__text">
-                <p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
-                <p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
-                <p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
-                <p class="header__schedule header__schedule_ml">
-                    <svg class="header__scheduleSvg" viewBox="0 0 17 17">
-                        <use xlink:href="img/icons/icons.svg#LocationPin" />
-                    </svg>
-                    Только по Киеву
-                </p>
-            </div>
-            <div class="header__links">
-                <a href="tel:+380445029191" class="header__link" title="Позвонить сейчас">(044) 502-91-91</a>
-                <button class="header__button" title="Мой аккаунт">
-                    <svg class="header__svg" viewBox="0 0 22 24">
-                        <use xlink:href="img/icons/icons.svg#Reg" />
-                    </svg>
-                    <svg class="header__svg header__svg_blue" viewBox="0 0 22 24">
-                        <use xlink:href="img/icons/icons.svg#RegBlue" />
-                    </svg>
-                </button>
-                <a href="cart.html" class="header__button" title="Корзина">
-                    <svg class="header__svg" viewBox="0 0 28 25">
-                        <use xlink:href="img/icons/icons.svg#Cart" />
-                    </svg>
-                    <svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
-                        <use xlink:href="img/icons/icons.svg#CartBlue" />
-                    </svg>
-                    <p class="header__counter">
-                        4
-                    </p>
-                </a>
-                <div id="burger" class="burger" title="Меню">
-                    <span id="burgerline1" class="burger__line"></span>
-                    <span id="burgerline2" class="burger__line "></span>
-                    <span id="burgerline3" class="burger__line "></span>
-                </div>
+	<div id="app2">
+		<header class="header">
+			<div class="container">
+				<div class="header__wrap">
+					<a href="index.html" class="header__logo" title="На главную">
+						<svg class="logo" viewBox="0 0 145 55">
+							<use xlink:href="img/icons/icons.svg#LogoBlue" />
+						</svg>
+					</a>
+					<div class="header__text">
+						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Только по Киеву
+						</p>
+					</div>
+					<div class="header__links">
+						<a href="tel:+380445029191" class="header__link" title="Позвонить сейчас">(044) 502-91-91</a>
+						<button class="header__button" title="Мой аккаунт">
+							<svg class="header__svg" viewBox="0 0 22 24">
+								<use xlink:href="img/icons/icons.svg#Reg" />
+							</svg>
+							<svg class="header__svg header__svg_blue" viewBox="0 0 22 24">
+								<use xlink:href="img/icons/icons.svg#RegBlue" />
+							</svg>
+						</button>
+
+						<a href="cart.html" class="header__button" title="Корзина">
+							<svg class="header__svg" viewBox="0 0 28 25">
+								<use xlink:href="img/icons/icons.svg#Cart" />
+							</svg>
+							<svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
+								<use xlink:href="img/icons/icons.svg#CartBlue" />
+							</svg>
 
 
-            </div>
+							<p class="header__counter" v-if="countProduct">
+								{{countProduct}}
+							</p>
 
-            <div id="menu" class="menu menu__hidden">
-                <a href="#" class="menu__link">Мой аккаунт</a>
-                <a href="index.html#about" class="menu__link">О воде</a>
-                <a href="catalog.html" class="menu__link">Каталог</a>
-                <a href="#" class="menu__link">Бизнесу</a>
-                <a href="#" class="menu__link">Новым клиентам</a>
-                <a href="#" class="menu__link">Доставка и оплата</a>
-                <a href="#" class="menu__link">Контакты</a>
-            </div>
-
-
-        </div>
-    </div>
-</header>
-	<div id="anchor" class="anchor"></div>
-	<section class="cart" id="app2">
-		<div class="container">
-			<div class="cart__content">
-				<div class="cart__wrap cart__wrap_left">
-					<h1 class="cart__order title__h2 cart__order_grey">оформление заказа</h1>
-					<h2 class="cart__user title__h2">личные данные</h2>
-					<form class="userData">
-						<div class="userData__container userData__container_flexwrap">
-							<div class="userData__wrap">
-								<input class="userData__input userData__input_error" type="text" placeholder="Имя"
-									v-model="name">
-								<input class="userData__input userData__input_m15" type="tel" placeholder="+38(0__) ___-__-__"
-									v-model="tel">
-								<input class="userData__input userData__input_filled" type="email" placeholder="E-mail"
-									v-model="eMail" v-mask="{mask: '99/99/9999', greedy: true}">
-							</div>
-							<div class="userData__wrap">
-								<input class="userData__input userData__input_disabled" type="text" disabled placeholder="Киев">
-								<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
-									v-model="street">
-								<div class="userData__container userData__container_gap0">
-									<input class="userData__input" type="text" placeholder="Дом" v-model="home">
-									<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд"
-										v-model="entrance">
-									<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
-								</div>
-							</div>
+						</a>
+						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
+							<span id="burgerline1" class="burger__line"
+								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline3" class="burger__line "
+								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
-						<div class="userData__save">
-							<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
-							<label for="userData__push" class="userData__label">
-								Сохранить данные
-							</label>
-						</div>
-
-						<div class="userData__btn" @click="addComentText">
-							Нажать и добавить комментарий
-							<div class="userData__triangle"></div>
-						</div>
-						<textarea class="userData__textarea" name="comment" id="" v-if="addComent"></textarea>
-
-						<h2 class="cart__delivery title__h2">доставка</h2>
-						<p class="userData__p">Дата доставки</p>
-						<div class="userData__radiowrap">
-							<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
-							<label for="day1" class="userData__date btns">
-								{{ currentDateTime(1) }}
-							</label>
-
-							<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
-							<label for="day2" class="userData__date btns">
-								{{ currentDateTime(2) }}
-							</label>
-
-							<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
-							<label for="day3" class="userData__date btns">
-								{{ currentDateTime(3) }}
-							</label>
-						</div>
-						<p class="userData__p">Время доставки</p>
-
-						<div class="userData__time">
-							<div class="userData__select">
-								<v-select :options="options"></v-select>
-							</div>
-							<input id="userData__call" class="userData__call userData__push" type="checkbox">
-							<label for="userData__call" class="userData__label">
-								Не перезванивать
-							</label>
-						</div>
-						<h2 class="cart__pay title__h2">Способ оплаты</h2>
-						<div class="userData__pay userData__time">
-							<input id="userData__radio1" name="userData__radio" class="userData__radio userData__push"
-								type="radio" value="cash">
-							<label for="userData__radio1" class="userData__label userData__label_round">
-								Наличными курьеру
-							</label>
-							<input id="userData__radio2" name="userData__radio" class="userData__radio userData__push"
-								type="radio" value="paymentWeb">
-							<label for="userData__radio2" class="userData__label userData__label_round">
-								Оплата картой на сайте
-							</label>
-							<input id="userData__radio3" name="userData__radio" class="userData__radio userData__push"
-								type="radio" value="cahsless">
-							<label for="userData__radio3" class="userData__label userData__label_round">
-								Безналичный расчет (для юр. лиц)
-							</label>
-						</div>
-					</form>
-				</div>
-				<div class="cart__wrap cart__wrap_right">
-					<h2 class="cart__user title__h2">ваш заказ</h2>
-
-
-					<div class="cart__orders" v-for="(product, n) in products">
-						<div class="order">
-							<div class="order__wrap">
-								<div class="order__imgs">
-									<img :src="product.img" alt="" class="order__img">
-								</div>
-								<div class="order__text">
-									<p class="order__title">
-										{{product.title}}
-									</p>
-									<p class="order__price">
-										{{(product.price * product.count)}} грн.
-									</p>
-								</div>
-							</div>
-							<div class="order__wrap order__wrap_jcsb">
-								<div class="order__counter">
-									<button class="order__btn" @click="ndashCount(n)">&ndash;</button>
-									<div class="order__circle">
-										<p class="order__count">{{product.count}}</p>
-									</div>
-									<button class="order__btn" @click="plusCount(n)">&plus;</button>
-								</div>
-								<button class="order__btn" @click="removeProduct(n)">
-									<svg class="order__svg" viewBox="0 0 9 10">
-										<use xlink:href="img/icons/icons.svg#Trash" />
-									</svg>
-								</button>
-							</div>
-
-						</div>
-
-
-
-
+					</div>
+					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
+						<a href="#" class="menu__link">Мой аккаунт</a>
+						<a href="index.html#about" class="menu__link">О воде</a>
+						<a href="catalog.html" class="menu__link">Каталог</a>
+						<a href="#" class="menu__link">Бизнесу</a>
+						<a href="#" class="menu__link">Новым клиентам</a>
+						<a href="#" class="menu__link">Доставка и оплата</a>
+						<a href="#" class="menu__link">Контакты</a>
 					</div>
 
 
-					<p class="cart__total">всего: <span class="cart__total_blue">{{totalProduct}} грн.</span> </p>
-					<button class="cart__submit btns">ПОДТВЕРДИТЬ ЗАКАЗ</button>
-					<p class="cart__accept">*нажимая “Заказать” вы соглашаетесь с правилами
-						<a href="#" class="cart__link">
-							предоставления услуг</a>
-					</p>
 				</div>
 			</div>
-		</div>
-	</section>
+
+		</header>
+		<div id="anchor" class="anchor"></div>
+		<section class="cart">
+			<div class="container">
+				<div class="cart__content">
+					<div class="cart__wrap cart__wrap_left">
+						<h1 class="cart__order title__h2 cart__order_grey">оформление заказа</h1>
+						<h2 class="cart__user title__h2">личные данные</h2>
+						<form class="userData">
+							<div class="userData__container userData__container_flexwrap">
+								<div class="userData__wrap">
+									<input class="userData__input userData__input_error" type="text" placeholder="Имя"
+										v-model="name">
+									<input class="userData__input userData__input_m15" type="tel"
+										placeholder="+38(0__) ___-__-__" v-model="tel">
+									<input class="userData__input userData__input_filled" type="email"
+										placeholder="E-mail" v-model="eMail">
+								</div>
+								<div class="userData__wrap">
+									<input class="userData__input userData__input_disabled" type="text" disabled
+										placeholder="Киев">
+									<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
+										v-model="street">
+									<div class="userData__container userData__container_gap0">
+										<input class="userData__input" type="text" placeholder="Дом" v-model="home">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Подъезд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
+									</div>
+								</div>
+							</div>
+							<div class="userData__save">
+								<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
+								<label for="userData__push" class="userData__label">
+									Сохранить данные
+								</label>
+							</div>
+
+							<div class="userData__btn" @click="addComentText">
+								Нажать и добавить комментарий
+								<div class="userData__triangle"></div>
+							</div>
+							<textarea class="userData__textarea" name="comment" id="" v-if="addComent"></textarea>
+
+							<h2 class="cart__delivery title__h2">доставка</h2>
+							<p class="userData__p">Дата доставки</p>
+							<div class="userData__radiowrap">
+								<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
+								<label for="day1" class="userData__date btns">
+									{{ currentDateTime(1) }}
+								</label>
+
+								<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
+								<label for="day2" class="userData__date btns">
+									{{ currentDateTime(2) }}
+								</label>
+
+								<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
+								<label for="day3" class="userData__date btns">
+									{{ currentDateTime(3) }}
+								</label>
+							</div>
+							<p class="userData__p">Время доставки</p>
+
+							<div class="userData__time">
+								<div class="userData__select">
+									<v-select :options="options"></v-select>
+								</div>
+								<input id="userData__call" class="userData__call userData__push" type="checkbox">
+								<label for="userData__call" class="userData__label">
+									Не перезванивать
+								</label>
+							</div>
+							<h2 class="cart__pay title__h2">Способ оплаты</h2>
+							<div class="userData__pay userData__time">
+								<input id="userData__radio1" name="userData__radio"
+									class="userData__radio userData__push" type="radio" value="cash">
+								<label for="userData__radio1" class="userData__label userData__label_round">
+									Наличными курьеру
+								</label>
+								<input id="userData__radio2" name="userData__radio"
+									class="userData__radio userData__push" type="radio" value="paymentWeb">
+								<label for="userData__radio2" class="userData__label userData__label_round">
+									Оплата картой на сайте
+								</label>
+								<input id="userData__radio3" name="userData__radio"
+									class="userData__radio userData__push" type="radio" value="cahsless">
+								<label for="userData__radio3" class="userData__label userData__label_round">
+									Безналичный расчет (для юр. лиц)
+								</label>
+							</div>
+						</form>
+					</div>
+					<div class="cart__wrap cart__wrap_right">
+						<h2 class="cart__user title__h2">ваш заказ</h2>
+
+
+						<div class="cart__orders" v-for="(product, n) in products">
+							<div class="order">
+								<div class="order__wrap">
+									<div class="order__imgs">
+										<img :src="product.img" alt="" class="order__img">
+									</div>
+									<div class="order__text">
+										<p class="order__title">
+											{{product.title}}
+										</p>
+										<p class="order__price">
+											{{(product.price * product.count)}} грн.
+										</p>
+									</div>
+								</div>
+								<div class="order__wrap order__wrap_jcsb">
+									<div class="order__counter">
+										<button class="order__btn" @click="ndashCount(n)">&ndash;</button>
+										<div class="order__circle">
+											<p class="order__count">{{product.count}}</p>
+										</div>
+										<button class="order__btn" @click="plusCount(n)">&plus;</button>
+									</div>
+									<button class="order__btn" @click="removeProduct(n)">
+										<svg class="order__svg" viewBox="0 0 9 10">
+											<use xlink:href="img/icons/icons.svg#Trash" />
+										</svg>
+									</button>
+								</div>
+
+							</div>
+
+
+
+
+						</div>
+
+
+						<p class="cart__total">всего: <span class="cart__total_blue">{{totalProduct}} грн.</span> </p>
+						<button class="cart__submit btns">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+						<p class="cart__accept">*нажимая “Заказать” вы соглашаетесь с правилами
+							<a href="#" class="cart__link">
+								предоставления услуг</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
 	<footer class="footer">
    <div class="container">
       <div class="footer__wrap">
