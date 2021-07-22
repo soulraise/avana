@@ -206,9 +206,6 @@ body {
         position: relative;
         display: flex;
         justify-content: space-between;
-        @media (max-width: 370px) {
-            justify-content: start;
-        }
     }
     &__logo {
         width: 145px;
@@ -260,9 +257,6 @@ body {
         justify-content: space-between;
         align-items: center;
         gap: 30px;
-        @media (max-width: 370px) {
-            gap: 10%;
-        }
     }
     &__link {
         white-space: nowrap;
@@ -767,6 +761,12 @@ body {
         object-fit: cover;
         object-position: center;
     }
+    &__h3 {
+        @media (max-width: 800px) {
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
 }
 .purchase {
     padding-top: 150px;
@@ -1035,15 +1035,22 @@ body {
         display: flex;
         border: 1px solid $SecondColor;
         padding: 0;
+        @media (max-width: 589px) {
+            flex-direction: column;
+        }
     }
     &__input {
         width: 100%;
         padding: 10px 20px;
+        border-radius: 20px;
         border: none;
         outline: none;
         color: $SecondColor;
         &::placeholder {
             color: $SecondColor;
+        }
+        @media (max-width: 589px) {
+            padding: 10px 20px 20px;
         }
     }
     &__btn {
@@ -1059,6 +1066,8 @@ body {
         font-weight: 700;
         text-transform: uppercase;
         transition: 0.3s;
+        outline: none;
+        margin-right: -1px;
         @media (hover) {
             &:hover {
                 background: #fff;
@@ -1606,13 +1615,16 @@ body {
     &__container {
         width: 100%;
         display: flex;
-        gap: 20px;
+        gap: 30px;
         justify-content: space-between;
         &_jcs {
             justify-content: start;
         }
         &_gap0 {
             gap: 0;
+            @media (max-width: 439px) {
+                flex-direction: column;
+            }
         }
         &_flexwrap {
             @media (max-width: 1090px) {
@@ -1624,6 +1636,9 @@ body {
         width: 90%;
         display: flex;
         flex-direction: column;
+        @media (max-width: 1090px) {
+            width: 100%;
+        }
     }
     &__input {
         padding: 14px;
@@ -1650,6 +1665,9 @@ body {
         }
         &_m10 {
             margin: 0 10px;
+            @media (max-width: 439px) {
+                margin: 30px 0;
+            }
         }
         &_filled {
             background: #ecf8ff;
@@ -1761,9 +1779,9 @@ body {
     &__radiowrap {
         display: flex;
         gap: 20px;
-        @media (max-width: 1090px) {
+        @media (max-width: 969px) {
             flex-direction: column;
-            align-items: start;
+            align-items: center;
         }
     }
     &__date {
@@ -1780,6 +1798,12 @@ body {
         &:focus {
             border: 1px solid $ThirdColor;
         }
+        @media (max-width: 1090px) {
+            padding: 12px 20px;
+        }
+        @media (max-width: 969px) {
+            padding: 0.5em 1.75em;
+        }
     }
     &__save {
         display: flex;
@@ -1787,7 +1811,7 @@ body {
     }
     &__time {
         display: flex;
-        @media (max-width: 945px) {
+        @media (max-width: 989px) {
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -1800,6 +1824,9 @@ body {
     &__select {
         margin-right: 30px;
         min-width: 250px;
+        @media (max-width: 586px) {
+            width: 100%;
+        }
     }
     &__radio {
         position: absolute;
