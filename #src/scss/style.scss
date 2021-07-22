@@ -34,7 +34,6 @@ $BNB: "BebasNeueBold", "Sans-serif";
     text-transform: uppercase;
     margin: 0;
 }
-
 @keyframes generalAnchor {
     0% {
         margin-left: 0;
@@ -1637,6 +1636,7 @@ body {
         width: 90%;
         display: flex;
         flex-direction: column;
+        gap: 30px;
         @media (max-width: 1090px) {
             width: 100%;
         }
@@ -1840,11 +1840,18 @@ body {
             border-radius: 0 0 20px 20px;
         }
         &-toggle {
+            position: relative;
             border: 1px solid $SecondColor;
             border-radius: 20px;
             background: #fff;
             text-align: center;
             height: 45px;
+            padding: 0 10px;
+            @media (hover) {
+                &:hover {
+                    border: 1px solid #1ea2e8;
+                }
+            }
         }
         &-option {
             text-align: center;
@@ -1852,17 +1859,23 @@ body {
             @media (hover) {
                 &:hover {
                     color: $ThirdColor;
-                    background: #fff;
+                    background: #ecf8ff;
                 }
             }
         }
     }
+    &__actions {
+        position: absolute;
+        top: 27%;
+        right: 3%;
+    }
     &__selected {
-        // text-align: center;
-        // justify-content: center;
-        // width: 100%;
+        display: block;
+        width: 100%;
+        font-weight: 600;
         &-options {
             padding: 7px 0;
+            margin: 0 auto;
         }
     }
     &__search {
@@ -1872,6 +1885,11 @@ body {
     }
     &__clear {
         display: none;
+    }
+    &__open {
+        &-indicator {
+            fill: #70c4f1;
+        }
     }
 }
 
