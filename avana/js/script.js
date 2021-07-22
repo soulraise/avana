@@ -70,7 +70,9 @@ function getUp() {
 		})
 	})
 }
-getUp();;
+getUp();
+
+;
 if (document.getElementById('app')) {
 	new Vue({
 		el: '#app',

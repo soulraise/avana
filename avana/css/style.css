@@ -2313,6 +2313,7 @@ body {
   width: 70%;
   margin: 0 auto;
   line-height: 1.4;
+  text-align: justify;
 }
 
 .cart__link {
@@ -2395,21 +2396,12 @@ body {
   padding: 13px;
 }
 
-.userData__input_m15 {
+.userData__input_m30 {
   margin: 30px 0;
 }
 
 .userData__input_m10 {
   margin: 0 10px;
-}
-
-.userData__input_filled {
-  background: #ecf8ff;
-}
-
-.userData__input_error {
-  border: 2px solid #ff8787;
-  padding: 13px;
 }
 
 .userData__input_disabled {
@@ -2778,6 +2770,14 @@ body {
 .up__svg {
   width: 30px;
   height: 30px;
+}
+
+.error {
+  border: 2px solid #ff8787;
+}
+
+.filled {
+  background: #ecf8ff;
 }
 
 @media (max-width: 1195px) {

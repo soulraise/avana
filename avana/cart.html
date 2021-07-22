@@ -97,16 +97,14 @@
 					<form class="userData">
 						<div class="userData__container userData__container_flexwrap">
 							<div class="userData__wrap">
-								<input class="userData__input userData__input_error" type="text" placeholder="Имя"
-									v-model="name">
-								<input class="userData__input userData__input_m15" type="tel" placeholder="+38(0__) ___-__-__"
+								<input class="userData__input" type="text" placeholder="Имя" v-model="name">
+								<input class="userData__input userData__input_m30" type="tel" placeholder="+38(0__) ___-__-__"
 									v-model="tel">
-								<input class="userData__input userData__input_filled" type="email" placeholder="E-mail"
-									v-model="eMail">
+								<input class="userData__input" type="email" placeholder="E-mail" v-model="eMail">
 							</div>
 							<div class="userData__wrap">
 								<input class="userData__input userData__input_disabled" type="text" disabled placeholder="Киев">
-								<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
+								<input class="userData__input  userData__input_m30" type="text" placeholder="Улица"
 									v-model="street">
 								<div class="userData__container userData__container_gap0">
 									<input class="userData__input" type="text" placeholder="Дом" v-model="home">
