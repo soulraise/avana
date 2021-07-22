@@ -332,7 +332,7 @@ if (document.getElementById('app2')) {
 				let needEmail = /@./gm;
 				let creatUser = true
 				if (this.name === '' || this.eMail === '' || this.tel === '' || this.street === '' || this.home === '') creatUser = false
-				if (testF(needPassword2, this.name || this.name.length > 3 |) == false) {
+				if (testF(needPassword2, this.name || this.name.length > 3) == false) {
 					creatUser = false
 				}
 				if (this.tel.length > 19 || this.tel.length < 19) {
