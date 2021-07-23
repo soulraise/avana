@@ -1151,6 +1151,7 @@ body {
         line-height: 1.4;
     }
 }
+
 .footer {
     background: $SecondColor;
     padding: 70px 0;
@@ -2006,6 +2007,7 @@ body {
         width: 52px;
         max-height: 52px;
         flex-shrink: 0;
+        margin-right: 20px;
     }
     &__img {
         width: 100%;
@@ -2048,6 +2050,9 @@ body {
                 transform: scale(1.5);
             }
         }
+    }
+    &__text {
+        width: 60%;
     }
     &__title {
         margin: 0;

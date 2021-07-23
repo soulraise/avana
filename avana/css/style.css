@@ -2754,6 +2754,7 @@ body {
   max-height: 52px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  margin-right: 20px;
 }
 
 .order__img {
@@ -2818,6 +2819,10 @@ body {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
+}
+
+.order__text {
+  width: 60%;
 }
 
 .order__title {
