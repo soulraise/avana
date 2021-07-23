@@ -114,20 +114,22 @@
 							<div class="userData__container userData__container_flexwrap">
 								<div class="userData__wrap">
 
-									<input class="userData__input userData__input_filled" type="text" placeholder="Имя"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
-									<input class="userData__input userData__input_filled" type="email"
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Имя" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
 								<div class="userData__wrap">
 									<input class="userData__input userData__input_disabled" type="text" disabled
 										placeholder="Киев">
-									<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
-										v-model="street">
+									<input class="userData__input  userData__input_m15" :class="{'error': streetError }"
+										type="text" placeholder="Улица" v-model="street">
 									<div class="userData__container userData__container_gap0">
-										<input class="userData__input" type="text" placeholder="Дом" v-model="home">
+										<input class="userData__input" :class="{'error': homeError }" type="text"
+											placeholder="Дом" v-model="home">
 										<input class="userData__input  userData__input_m10" type="text"
 											placeholder="Подъезд" v-model="entrance">
 										<input class="userData__input" type="text" placeholder="Квартира"
@@ -153,50 +155,56 @@
 							<div class="userData__radiowrap">
 								<input id="day1" name="day" type="radio" value="currentDay" v-model='deliveryDate'
 									class="userData__radio" />
-								<label for="day1" class="userData__date btns">
+								<label for="day1" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(1) }}
 								</label>
 
 								<input id="day2" name="day" type="radio" value="tomorrow" v-model='deliveryDate'
 									class="userData__radio" />
-								<label for="day2" class="userData__date btns">
+								<label for="day2" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(2) }}
 								</label>
 
 								<input id="day3" name="day" type="radio" value="afteTomorrow" v-model='deliveryDate'
 									class="userData__radio" />
-								<label for="day3" class="userData__date btns">
+								<label for="day3" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(3) }}
 								</label>
 							</div>
-							<p class="userData__p">Время доставки</p>
+							<p class="userData__p">Время доставки {{$root.country}}</p>
 
 							<div class="userData__time">
 								<div class="userData__select">
 									<v-select :options="options" :reduce="country => country.code" label="country">
 									</v-select>
 								</div>
-								<p>{{country}}</p>
-								<input id="userData__call" class="userData__call userData__push" type="checkbox">
+
+								<input id="userData__call" class="userData__call userData__push" type="checkbox"
+									v-model="deliveryTime">
 								<label for="userData__call" class="userData__label">
 									Не перезванивать
 								</label>
 							</div>
-							<h2 class="cart__pay title__h2">Способ оплаты</h2>
+							<h2 class="cart__pay title__h2">Способ оплаты </h2>
 							<div class="userData__pay userData__time">
 								<input id="userData__radio1" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="cash">
-								<label for="userData__radio1" class="userData__label userData__label_round">
+									class="userData__radio userData__push" type="radio" value="cash" v-model='payment'>
+								<label for="userData__radio1" class="userData__label userData__label_round"
+									:class="{'error': paymentError }">
 									Наличными курьеру
 								</label>
 								<input id="userData__radio2" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="paymentWeb">
-								<label for="userData__radio2" class="userData__label userData__label_round">
+									class="userData__radio userData__push" type="radio" value="paymentWeb"
+									v-model='payment'>
+								<label for="userData__radio2" class="userData__label userData__label_round"
+									:class="{'error': paymentError }">
 									Оплата картой на сайте
 								</label>
 								<input id="userData__radio3" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="cahsless">
-								<label for="userData__radio3" class="userData__label userData__label_round">
+									class="userData__radio userData__push" type="radio" value="cahsless"
+									v-model='payment'>
+								<label for="userData__radio3" class="userData__label userData__label_round"
+									:class="{'error': paymentError }">
 									Безналичный расчет (для юр. лиц)
 								</label>
 							</div>

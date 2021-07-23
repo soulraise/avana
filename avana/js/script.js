@@ -182,6 +182,9 @@ if (document.getElementById('app')) {
 			newCat: null,
 			burger: false,
 
+
+
+
 		},
 		methods: {
 			burgerMenu() {
@@ -255,8 +258,13 @@ if (document.getElementById('app2')) {
 				'!': { escape: true },
 				'*': { repeat: true }
 			},
-			options: [{ code: 'CA', country: 'Canada' }, { code: 'MA', country: 'MAimi' },],
-
+			options: [
+				{ code: '1', country: '07:00 - 09:00' },
+				{ code: '2', country: '09:00 - 12:00' },
+				{ code: '3', country: '12:00 - 14:00' },
+				{ code: '4', country: '14:00 - 18:00' },
+				{ code: '5', country: '18:00 - 20:00' },
+			],
 			// options: [
 			// 	'07:00 - 09:00',
 			// 	'09:00 - 12:00',
@@ -279,6 +287,15 @@ if (document.getElementById('app2')) {
 			burger: false,
 			creatUser: '',
 			deliveryDate: '',
+			deliveryTime: false,
+			payment: '',
+			nameError: false,
+			telError: false,
+			mailError: false,
+			streetError: false,
+			homeError: false,
+			deliveryDateError: false,
+			paymentError: false,
 		},
 		filters: {
 
@@ -334,19 +351,50 @@ if (document.getElementById('app2')) {
 				let needPassword5 = /[!@#$%^&*]/gm;
 				let needEmail = /@./gm;
 				let creatUser = true
-				if (this.name === '' || this.eMail === '' || this.tel === '' || this.street === '' || this.home === '') creatUser = false
-				if (testF(needPassword2, this.name || this.name.length > 3) == false) {
+				if (this.home === '' || this.deliveryDate === '' || this.payment === '') creatUser = false
+				if (testF(needPassword2, this.name) == false || (this.name.length > 2) == false) {
 					creatUser = false
-				}
-				if (this.tel.length > 19 || this.tel.length < 19) {
-					creatUser = false
-				}
-				if (testF(needEmail, this.eMail) == false) {
-					creatUser = false
+					this.nameError = true
 				} else {
+					this.nameError = false
+				}
+				if (this.tel === '' || this.tel.length > 19 || this.tel.length < 19) {
+					creatUser = false
+					this.telError = true
+				} else {
+					this.telError = false
+				}
+				if (testF(needEmail, this.eMail) == false || this.eMail === '') {
+					creatUser = false
+					this.mailError = true
+				} else {
+					this.mailError = false
+				}
+				if (this.street === '' || (this.street.length > 2) == false) {
+					creatUser = false
+					this.streetError = true
+				} else {
+					this.streetError = false
+				}
+				if (this.home === '') {
+					creatUser = false
+					this.homeError = true
+				} else {
+					this.homeError = false
+				}
+				if (this.deliveryDate === '') {
+					creatUser = false
+					this.deliveryDateError = true
+				} else {
+					this.deliveryDateError = false
+				}
+				if (this.payment === '') {
+					creatUser = false
+					this.paymentError = true
+				} else {
+					this.paymentError = false
 				}
 				console.log(creatUser)
-				console.log(this.tel.length)
 			},
 		},
 		computed: {
