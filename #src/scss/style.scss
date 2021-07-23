@@ -53,7 +53,7 @@ $BNB: "BebasNeueBold", "Sans-serif";
 }
 @keyframes scheduleCircle {
     0% {
-        bottom: -45%;
+        bottom: -35%;
         opacity: 0;
     }
     40% {
@@ -69,7 +69,7 @@ $BNB: "BebasNeueBold", "Sans-serif";
         opacity: 0;
     }
     100% {
-        bottom: -45%;
+        bottom: -35%;
         opacity: 0;
     }
 }
@@ -674,7 +674,7 @@ body {
         opacity: 0;
         &_big {
             right: 50%;
-            bottom: -45%;
+            bottom: -35%;
             width: 165px;
             height: 165px;
             border: 5px solid rgba(112, 196, 241, 0.58);
@@ -682,7 +682,7 @@ body {
         }
         &_middle {
             right: 10%;
-            bottom: -45%;
+            bottom: -35%;
             width: 98px;
             height: 98px;
             border: 5px solid $SecondColor;
@@ -690,7 +690,7 @@ body {
         }
         &_small {
             right: 5%;
-            bottom: -45%;
+            bottom: -35%;
             width: 45px;
             height: 45px;
             border: 5px solid #fff;
@@ -786,7 +786,7 @@ body {
     }
     &__rectangle {
         position: absolute;
-        bottom: -45%;
+        bottom: -35%;
         background: #ecf8ff;
         opacity: 0;
         z-index: -100;
@@ -1013,6 +1013,7 @@ body {
     }
 }
 .subscribe {
+    position: relative;
     background: #ecf8ff;
     padding: 95px 0 110px;
     @media (max-width: 800px) {
@@ -1038,6 +1039,7 @@ body {
         display: flex;
         border: 1px solid $SecondColor;
         padding: 0;
+
         @media (max-width: 589px) {
             flex-direction: column;
         }
@@ -1049,6 +1051,7 @@ body {
         border: none;
         outline: none;
         color: $SecondColor;
+        z-index: 1;
         &::placeholder {
             color: $SecondColor;
         }
@@ -1071,6 +1074,7 @@ body {
         transition: 0.3s;
         outline: none;
         margin-right: -1px;
+        z-index: 1;
         @media (hover) {
             &:hover {
                 background: #fff;
@@ -1081,6 +1085,59 @@ body {
     &__p {
         text-align: center;
         font-size: 0.85em;
+        &_green {
+            color: green;
+        }
+        &_red {
+            color: indianred;
+        }
+    }
+    &__circle {
+        position: absolute;
+        bottom: -35%;
+        border: 5px solid #fff;
+        border-radius: 50%;
+        opacity: 0;
+        &_size1 {
+            width: 89px;
+            height: 89px;
+            left: 5%;
+            animation: scheduleCircle 10s linear 0s infinite;
+        }
+        &_size2 {
+            width: 58px;
+            height: 58px;
+            left: 15%;
+            border-color: #cdebfb;
+            animation: scheduleCircle 10s linear 5s infinite;
+        }
+        &_size3 {
+            width: 32px;
+            height: 32px;
+            left: 30%;
+            border-color: $SecondColor;
+            animation: scheduleCircle 10s linear 9s infinite;
+        }
+        &_size4 {
+            width: 28px;
+            height: 28px;
+            right: 30%;
+            animation: scheduleCircle 10s linear 2s infinite;
+        }
+        &_size5 {
+            width: 69px;
+            height: 69px;
+            right: 15%;
+            border-color: #cdebfb;
+            animation: scheduleCircle 10s linear 12s infinite;
+        }
+        &_size6 {
+            width: 40px;
+            height: 40px;
+            right: 5%;
+            border-color: $SecondColor;
+            animation: scheduleCircle 10s linear 15s infinite;
+        }
     }
 }
 .seo {
@@ -1311,7 +1368,8 @@ body {
     &__items {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 70px;
+        grid-column-gap: 70px;
+        grid-row-gap: 70px;
         margin-top: 30px;
         @media (max-width: 675px) {
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -1594,6 +1652,7 @@ body {
         text-align: right;
     }
     &__submit {
+        outline: none;
         margin: 0 auto;
         background: $ThirdColor;
         border: 1px solid $ThirdColor;
@@ -1702,24 +1761,24 @@ body {
         position: absolute;
         z-index: -100;
         opacity: 0;
-        &:checked + .userData__label::before {
+        &:checked + .userData__label_before,
+        &:checked + .userData__label_round {
             border: 2px solid $ThirdColor;
             background-image: url(../img/Union.svg);
             background-repeat: no-repeat;
             background-position: center;
         }
-        &:checked + .userData__label_round::before {
+        &:checked + .userData__label_round {
             background-image: url(../img/SelectCircle.svg);
         }
         @media (hover) {
-            &:checked:hover + .userData__label::before {
-                border: 2px solid $ThirdColor;
-            }
-            &:hover + .userData__label::before {
+            &:hover + .userData__label_before,
+            &:hover + .userData__label_round {
                 border: 2px solid #1ea2e8;
             }
         }
-        &:focus + .userData__label::before {
+        &:focus + .userData__label_before,
+        &:hover + .userData__label_round {
             border: 2px solid $ThirdColor;
         }
     }
@@ -1728,20 +1787,18 @@ body {
         align-items: center;
         cursor: pointer;
         white-space: nowrap;
-        &::before {
-            content: "";
+        &_before {
             width: 20px;
             height: 20px;
             margin-right: 12px;
             border: 2px solid $SecondColor;
         }
         &_round {
-            margin-bottom: 20px;
-            &::before {
-                border-radius: 50%;
-                width: 24px;
-                height: 24px;
-            }
+            border-radius: 50%;
+            border: 2px solid $SecondColor;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
     }
     &__btn {
@@ -1836,6 +1893,9 @@ body {
     &__save {
         display: flex;
         margin: 30px 0;
+        &_mb20 {
+            margin: 0 0 20px 0;
+        }
     }
     &__time {
         display: flex;
@@ -2002,11 +2062,9 @@ body {
         display: flex;
         align-items: center;
         margin: 10px 0;
-        &_jcsb {
-            @media (max-width: 459px) {
-                width: 100%;
-                justify-content: space-between;
-            }
+        @media (max-width: 459px) {
+            width: 100%;
+            justify-content: space-between;
         }
     }
 }
