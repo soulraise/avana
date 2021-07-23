@@ -151,17 +151,20 @@
 							<h2 class="cart__delivery title__h2">доставка</h2>
 							<p class="userData__p">Дата доставки</p>
 							<div class="userData__radiowrap">
-								<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
+								<input id="day1" name="day" type="radio" value="currentDay" v-model='deliveryDate'
+									class="userData__radio" />
 								<label for="day1" class="userData__date btns">
 									{{ currentDateTime(1) }}
 								</label>
 
-								<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
+								<input id="day2" name="day" type="radio" value="tomorrow" v-model='deliveryDate'
+									class="userData__radio" />
 								<label for="day2" class="userData__date btns">
 									{{ currentDateTime(2) }}
 								</label>
 
-								<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
+								<input id="day3" name="day" type="radio" value="afteTomorrow" v-model='deliveryDate'
+									class="userData__radio" />
 								<label for="day3" class="userData__date btns">
 									{{ currentDateTime(3) }}
 								</label>
@@ -170,8 +173,10 @@
 
 							<div class="userData__time">
 								<div class="userData__select">
-									<v-select :options="options"></v-select>
+									<v-select :options="options" :reduce="country => country.code" label="country">
+									</v-select>
 								</div>
+								<p>{{country}}</p>
 								<input id="userData__call" class="userData__call userData__push" type="checkbox">
 								<label for="userData__call" class="userData__label">
 									Не перезванивать

@@ -255,13 +255,15 @@ if (document.getElementById('app2')) {
 				'!': { escape: true },
 				'*': { repeat: true }
 			},
-			options: [
-				'07:00 - 09:00',
-				'09:00 - 12:00',
-				'12:00 - 14:00',
-				'14:00 - 18:00',
-				'18:00 - 20:00',
-			],
+			options: [{ code: 'CA', country: 'Canada' }, { code: 'MA', country: 'MAimi' },],
+
+			// options: [
+			// 	'07:00 - 09:00',
+			// 	'09:00 - 12:00',
+			// 	'12:00 - 14:00',
+			// 	'14:00 - 18:00',
+			// 	'18:00 - 20:00',
+			// ],
 			name: '',
 			tel: '',
 			eMail: '',
@@ -276,6 +278,7 @@ if (document.getElementById('app2')) {
 			newCat: null,
 			burger: false,
 			creatUser: '',
+			deliveryDate: '',
 		},
 		filters: {
 
