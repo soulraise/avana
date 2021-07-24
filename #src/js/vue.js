@@ -106,10 +106,6 @@ if (document.getElementById('app')) {
 			products: [],
 			newCat: null,
 			burger: false,
-
-
-
-
 		},
 		methods: {
 			burgerMenu() {
@@ -144,7 +140,6 @@ if (document.getElementById('app')) {
 				const parsed = JSON.stringify(this.products);
 				localStorage.setItem('products', parsed);
 			},
-
 		},
 		mounted() {
 			if (localStorage.getItem('products')) {
@@ -164,11 +159,10 @@ if (document.getElementById('app')) {
 				return res
 			}
 		}
-
 	})
 }
-if (document.getElementById('app2')) {
 
+if (document.getElementById('app2')) {
 	Vue.use('maska', Maska)
 	Vue.component('v-select', VueSelect.VueSelect)
 	new Vue({
@@ -183,20 +177,21 @@ if (document.getElementById('app2')) {
 				'!': { escape: true },
 				'*': { repeat: true }
 			},
-			options: [
-				{ code: '1', country: '07:00 - 09:00' },
-				{ code: '2', country: '09:00 - 12:00' },
-				{ code: '3', country: '12:00 - 14:00' },
-				{ code: '4', country: '14:00 - 18:00' },
-				{ code: '5', country: '18:00 - 20:00' },
-			],
 			// options: [
-			// 	'07:00 - 09:00',
-			// 	'09:00 - 12:00',
-			// 	'12:00 - 14:00',
-			// 	'14:00 - 18:00',
-			// 	'18:00 - 20:00',
+			// 	{ code: '1', country: '07:00 - 09:00' },
+			// 	{ code: '2', country: '09:00 - 12:00' },
+			// 	{ code: '3', country: '12:00 - 14:00' },
+			// 	{ code: '4', country: '14:00 - 18:00' },
+			// 	{ code: '5', country: '18:00 - 20:00' },
 			// ],
+			options: [
+				'07:00 - 09:00',
+				'09:00 - 12:00',
+				'12:00 - 14:00',
+				'14:00 - 18:00',
+				'18:00 - 20:00',
+			],
+			selected: '',
 			name: '',
 			tel: '',
 			eMail: '',
@@ -221,10 +216,9 @@ if (document.getElementById('app2')) {
 			homeError: false,
 			deliveryDateError: false,
 			paymentError: false,
+			selectedError: false,
 		},
-		filters: {
 
-		},
 		methods: {
 			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
 
@@ -313,6 +307,12 @@ if (document.getElementById('app2')) {
 				} else {
 					this.deliveryDateError = false
 				}
+				if (this.selected === '') {
+					creatUser = false
+					this.selectedError = true
+				} else {
+					this.selectedError = false
+				}
 				if (this.payment === '') {
 					creatUser = false
 					this.paymentError = true
@@ -393,6 +393,7 @@ if (document.getElementById('app2')) {
 		}
 	})
 }
+
 if (document.getElementById('app3')) {
 	new Vue({
 		el: '#app3',
@@ -425,6 +426,7 @@ if (document.getElementById('app3')) {
 		}
 	})
 }
+
 if (document.getElementById('app4')) {
 	new Vue({
 		el: '#app4',
