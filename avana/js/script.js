@@ -352,6 +352,7 @@ if (document.getElementById('app2')) {
 				} else {
 					this.nameError = false
 				}
+
 				if (this.tel === '' || this.tel.length > 19 || this.tel.length < 19) {
 					creatUser = false
 					this.telError = true
@@ -395,6 +396,7 @@ if (document.getElementById('app2')) {
 					this.paymentError = false
 				}
 				this.creatUser = creatUser
+
 				if (creatUser) {
 					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
 				}
