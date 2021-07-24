@@ -194,6 +194,10 @@ if (document.getElementById('app')) {
 			closeProduct() {
 				this.showProduct = false
 			},
+			buyOneClick(product) {
+				this.addProduct(product)
+				document.location.href = 'cart.html'
+			},
 			addProduct(product) {
 				let id
 				let oldProduct = this.products.find((el, i) => {
