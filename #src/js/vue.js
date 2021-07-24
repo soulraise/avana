@@ -399,6 +399,7 @@ if (document.getElementById('app3')) {
 		data: {
 			totalProduct: 0,
 			products: [],
+
 		},
 		mounted() {
 			if (localStorage.getItem('products')) {
@@ -410,14 +411,7 @@ if (document.getElementById('app3')) {
 			}
 		},
 		methods: {
-			// countProductM() {
-			// 	let res = 0
-			// 	this.products.forEach(el => {
-			// 		res = res + el.count
-			// 		console.log(res)
-			// 	})
-			// 	this.totalProduct = res
-			// }
+
 		},
 		computed: {
 			countProduct() {
@@ -429,5 +423,29 @@ if (document.getElementById('app3')) {
 				return res
 			}
 		}
+	})
+}
+if (document.getElementById('app4')) {
+	new Vue({
+		el: '#app4',
+		data: {
+			mail: '',
+			mailError: false,
+			mailSend: false,
+		},
+		methods: {
+			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+			createMail() {
+				let needEmail = /@./gm;
+				if (testF(needEmail, this.mail) == false || this.mail === '') {
+					creatUser = false
+					this.mailError = true
+					this.mailSend = false
+				} else {
+					this.mailError = false
+					this.mailSend = true
+				}
+			},
+		},
 	})
 }
