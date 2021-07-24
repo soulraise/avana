@@ -320,6 +320,11 @@ if (document.getElementById('app2')) {
 				} else {
 					this.paymentError = false
 				}
+				console.log(this.products.length)
+				if (this.products.length === 0) {
+					creatUser = false
+					alert('Добавте что-то к заказу')
+				}
 				this.creatUser = creatUser
 
 				if (creatUser) {
