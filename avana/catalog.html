@@ -79,7 +79,8 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -137,8 +138,10 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
-							<button class="product__btn btns product__btn_blue">в 1 клик</button>
+							<button class="product__btn btns product__btn_orange"
+								@click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
+								клик</button>
 						</div>
 					</div>
 
@@ -296,28 +299,29 @@
 
 
 	<section class="subscribe">
-   <div class="container">
-      <h4 class="subscribe__h4">Хочешь узнавать первым о наших акциях и новостях?</h4>
-      <div class="subscribe__wrap">
-         <input class="subscribe__input" type="email" placeholder="E-mail">
-         <button class="subscribe__btn">подписаться</button>
-      </div>
-      <p class="subscribe__p">
-         Подпишись на рассылку по нашим акциям и предложениям
-      </p>
-      <p class="subscribe__p subscribe__p_green">
-         Вы подписались, информация будет приходить на {{}}
-      </p>
-      <p class="subscribe__p subscribe__p_red">
-         Вы ввели не корректный E-mail
-      </p>
-   </div>
-   <div class="subscribe__circle subscribe__circle_size1"></div>
-   <div class="subscribe__circle subscribe__circle_size2"></div>
-   <div class="subscribe__circle subscribe__circle_size3"></div>
-   <div class="subscribe__circle subscribe__circle_size4"></div>
-   <div class="subscribe__circle subscribe__circle_size5"></div>
-   <div class="subscribe__circle subscribe__circle_size6"></div>
+	<div class="container" id="app4">
+		<h4 class="subscribe__h4">Хочешь узнавать первым о наших акциях и новостях?</h4>
+		<div class="subscribe__wrap">
+			<input class="subscribe__input" type="email" placeholder="E-mail" v-model="mail">
+			<button class="subscribe__btn" @click="createMail">подписаться</button>
+		</div>
+		<p class="subscribe__p">
+			Подпишись на рассылку по нашим акциям и предложениям
+		</p>
+		<p class="subscribe__p subscribe__p_green" v-if="mailSend">
+			Вы подписались, информация будет приходить на {{mail}}
+		</p>
+		<p class="subscribe__p subscribe__p_red" v-if="mailError">
+			Вы ввели не корректный E-mail
+		</p>
+	</div>
+	<div class="subscribe__circle subscribe__circle_size1"></div>
+	<div class="subscribe__circle subscribe__circle_size2"></div>
+	<div class="subscribe__circle subscribe__circle_size3"></div>
+	<div class="subscribe__circle subscribe__circle_size4"></div>
+	<div class="subscribe__circle subscribe__circle_size5"></div>
+	<div class="subscribe__circle subscribe__circle_size6"></div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </section>
 
 	<section class="seo">

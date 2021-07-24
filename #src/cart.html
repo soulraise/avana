@@ -113,20 +113,21 @@
 							<div class="userData__container userData__container_flexwrap">
 								<div class="userData__wrap">
 
-									<input class="userData__input userData__input_filled" type="text" placeholder="Имя"
+									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Имя"
 										v-model="name">
-									<input class="userData__input userData__input_m15 " type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel">
-									<input class="userData__input userData__input_filled" type="email" placeholder="E-mail"
-										v-model="eMail">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
+										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': mailError }" type="email"
+										placeholder="E-mail" v-model="eMail">
 								</div>
 								<div class="userData__wrap">
 									<input class="userData__input userData__input_disabled" type="text" disabled
 										placeholder="Киев">
-									<input class="userData__input  userData__input_m15" type="text" placeholder="Улица"
-										v-model="street">
+									<input class="userData__input  userData__input_m15" :class="{'error': streetError }"
+										type="text" placeholder="Улица" v-model="street">
 									<div class="userData__container userData__container_gap0">
-										<input class="userData__input" type="text" placeholder="Дом" v-model="home">
+										<input class="userData__input" :class="{'error': homeError }" type="text"
+											placeholder="Дом" v-model="home">
 										<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд"
 											v-model="entrance">
 										<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
@@ -150,58 +151,63 @@
 							<h2 class="cart__delivery title__h2">доставка</h2>
 							<p class="userData__p">Дата доставки</p>
 							<div class="userData__radiowrap">
-								<input id="day1" name="day" type="radio" value="currentDay" class="userData__radio" />
-								<label for="day1" class="userData__date btns">
+								<input id="day1" name="day" type="radio" value="currentDay" v-model='deliveryDate'
+									class="userData__radio" />
+								<label for="day1" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(1) }}
 								</label>
 
-								<input id="day2" name="day" type="radio" value="tomorrow" class="userData__radio" />
-								<label for="day2" class="userData__date btns">
+								<input id="day2" name="day" type="radio" value="tomorrow" v-model='deliveryDate'
+									class="userData__radio" />
+								<label for="day2" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(2) }}
 								</label>
 
-								<input id="day3" name="day" type="radio" value="tomorrow" class="userData__radio" />
-								<label for="day3" class="userData__date btns">
+								<input id="day3" name="day" type="radio" value="afteTomorrow" v-model='deliveryDate'
+									class="userData__radio" />
+								<label for="day3" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(3) }}
 								</label>
 							</div>
-							<p class="userData__p">Время доставки</p>
+							<p class="userData__p">Время доставки </p>
 
 							<div class="userData__time">
-								<div class="userData__select">
-									<v-select :options="options"></v-select>
+								<div class="userData__select" :class="{'error': selectedError }">
+									<v-select :options="options" v-model="selected">
+									</v-select>
 								</div>
-								<div class="userData__save userData__save_mb20">
 
-									<input id="userData__call" class="userData__call userData__push" type="checkbox">
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__call" class="userData__call userData__push" type="checkbox"
+										v-model="deliveryTime">
 									<div class="userData__label_before"></div>
 									<label for="userData__call" class="userData__label">
 										Не перезванивать
 									</label>
 								</div>
 							</div>
-							<h2 class="cart__pay title__h2">Способ оплаты</h2>
+							<h2 class="cart__pay title__h2">Способ оплаты </h2>
 							<div class="userData__pay userData__time">
 								<div class="userData__save userData__save_mb20">
 									<input id="userData__radio1" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cash">
-									<div class="userData__label_round"></div>
+										type="radio" value="cash" v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio1" class="userData__label ">
 										Наличными курьеру
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
 									<input id="userData__radio2" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="paymentWeb">
-									<div class="userData__label_round"></div>
+										type="radio" value="paymentWeb" v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio2" class="userData__label ">
 										Оплата картой на сайте
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
 									<input id="userData__radio3" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cahsless">
-									<div class="userData__label_round"></div>
+										type="radio" value="cahsless" v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio3" class="userData__label ">
 										Безналичный расчет (для юр. лиц)
 									</label>
@@ -268,7 +274,7 @@
 	<script src="https://unpkg.com/vue-select@latest"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue-inputmask@0.2.1/dist/vue-inputmask.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue-inputmask@0.2.1/dist/vue-inputmask-browser.min.js"></script> -->
-
+	<script src="https://cdn.jsdelivr.net/npm/maska@latest/dist/maska.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
