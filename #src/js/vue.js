@@ -271,7 +271,7 @@ if (document.getElementById('app2')) {
 				let needEmail = /@./gm;
 				let creatUser = true
 
-				if (testF(needPassword2, this.name) == false || (this.name.length > 2) == false) {
+				if ((this.name.length > 2) == false) {
 					creatUser = false
 					this.nameError = true
 				} else {
