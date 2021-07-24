@@ -139,6 +139,7 @@
 							</div>
 							<div class="userData__save">
 								<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
+								<div class="userData__label_before"></div>
 								<label for="userData__push" class="userData__label">
 									Сохранить данные
 								</label>
@@ -187,26 +188,33 @@
 							</div>
 							<h2 class="cart__pay title__h2">Способ оплаты </h2>
 							<div class="userData__pay userData__time">
-								<input id="userData__radio1" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="cash" v-model='payment'>
-								<label for="userData__radio1" class="userData__label userData__label_round"
-									:class="{'error': paymentError }">
-									Наличными курьеру
-								</label>
-								<input id="userData__radio2" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="paymentWeb"
-									v-model='payment'>
-								<label for="userData__radio2" class="userData__label userData__label_round"
-									:class="{'error': paymentError }">
-									Оплата картой на сайте
-								</label>
-								<input id="userData__radio3" name="userData__radio"
-									class="userData__radio userData__push" type="radio" value="cahsless"
-									v-model='payment'>
-								<label for="userData__radio3" class="userData__label userData__label_round"
-									:class="{'error': paymentError }">
-									Безналичный расчет (для юр. лиц)
-								</label>
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__radio1" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cash"
+										v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
+									<label for="userData__radio1" class="userData__label ">
+										Наличными курьеру
+									</label>
+								</div>
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__radio2" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="paymentWeb"
+										v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
+									<label for="userData__radio2" class="userData__label ">
+										Оплата картой на сайте
+									</label>
+								</div>
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__radio3" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cahsless"
+										v-model='payment'>
+									<div class="userData__label_round" :class="{'error': paymentError }"></div>
+									<label for="userData__radio3" class="userData__label ">
+										Безналичный расчет (для юр. лиц)
+									</label>
+								</div>
 							</div>
 						</form>
 					</div>

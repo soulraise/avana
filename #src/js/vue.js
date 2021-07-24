@@ -210,7 +210,7 @@ if (document.getElementById('app2')) {
 			products: [],
 			newCat: null,
 			burger: false,
-			creatUser: '',
+			creatUser: false,
 			deliveryDate: '',
 			deliveryTime: false,
 			payment: '',
@@ -276,7 +276,7 @@ if (document.getElementById('app2')) {
 				let needPassword5 = /[!@#$%^&*]/gm;
 				let needEmail = /@./gm;
 				let creatUser = true
-				if (this.home === '' || this.deliveryDate === '' || this.payment === '') creatUser = false
+
 				if (testF(needPassword2, this.name) == false || (this.name.length > 2) == false) {
 					creatUser = false
 					this.nameError = true
@@ -319,7 +319,11 @@ if (document.getElementById('app2')) {
 				} else {
 					this.paymentError = false
 				}
-				console.log(creatUser)
+				this.creatUser = creatUser
+				if (creatUser) {
+					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
+				}
+
 			},
 		},
 		computed: {
