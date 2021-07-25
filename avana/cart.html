@@ -43,8 +43,10 @@
 							<use xlink:href="img/icons/icons.svg#LogoBlue" />
 						</svg>
 					</a>
+
+					<!-- русский -->
 					<div class="header__text" v-if="rus">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
 						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
 						<p class="header__schedule header__schedule_ml">
@@ -54,10 +56,12 @@
 							Только по Киеву
 						</p>
 					</div>
+
+					<!-- українська -->
 					<div class="header__text" v-if="ukr">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
-						<p class="header__schedule">Нд:&nbsp;<span class="header__span">выхідний</span></p>
+						<p class="header__schedule">Нд:&nbsp;<span class="header__span">Вихідний</span></p>
 						<p class="header__schedule header__schedule_ml">
 							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
@@ -65,10 +69,13 @@
 							Тільки по Київу
 						</p>
 					</div>
+
+					<!-- english -->
 					<div class="header__text" v-if="usa">
-						<p class="header__schedule">Mn-fr:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
-						<p class="header__schedule">St:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
-						<p class="header__schedule">Su:&nbsp;<span class="header__span">day off</span></p>
+						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span>
+						</p>
+						<p class="header__schedule">Sat:&nbsp;<span class="header__span">08:00 AM - 4:00 PM</span></p>
+						<p class="header__schedule">Sun:&nbsp;<span class="header__span">day off</span></p>
 						<p class="header__schedule header__schedule_ml">
 							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
@@ -108,13 +115,35 @@
 						</div>
 					</div>
 					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
-						<a href="#" class="menu__link">Мой аккаунт</a>
-						<a href="index.html#about" class="menu__link">О воде</a>
-						<a href="catalog.html" class="menu__link">Каталог</a>
-						<a href="#" class="menu__link">Бизнесу</a>
-						<a href="#" class="menu__link">Новым клиентам</a>
-						<a href="#" class="menu__link">Доставка и оплата</a>
-						<a href="#" class="menu__link">Контакты</a>
+						<!-- русское меню -->
+
+						<a href="#" class="menu__link" v-if="rus">Мой аккаунт</a>
+						<a href="index.html#about" class="menu__link" v-if="rus">О воде</a>
+						<a href="catalog.html" class="menu__link" v-if="rus">Каталог</a>
+						<a href="#" class="menu__link" v-if="rus">Бизнесу</a>
+						<a href="#" class="menu__link" v-if="rus">Новым клиентам</a>
+						<a href="#" class="menu__link" v-if="rus">Доставка и оплата</a>
+						<a href="#" class="menu__link" v-if="rus">Контакты</a>
+
+						<!-- українське меню -->
+
+						<a href="#" class="menu__link" v-if="ukr">Мій аккаунт</a>
+						<a href="index.html#about" class="menu__link" v-if="ukr">Про воду</a>
+						<a href="catalog.html" class="menu__link" v-if="ukr">Каталог</a>
+						<a href="#" class="menu__link" v-if="ukr">Бізнесу</a>
+						<a href="#" class="menu__link" v-if="ukr">Новим клієнтам</a>
+						<a href="#" class="menu__link" v-if="ukr">Доставка та оплата</a>
+						<a href="#" class="menu__link" v-if="ukr">Контакти</a>
+
+						<!-- english menu -->
+
+						<a href="#" class="menu__link" v-if="usa">Account</a>
+						<a href="index.html#about" class="menu__link" v-if="usa">About water</a>
+						<a href="catalog.html" class="menu__link" v-if="usa">Catalog</a>
+						<a href="#" class="menu__link" v-if="usa">For bussines</a>
+						<a href="#" class="menu__link" v-if="usa">For new clients</a>
+						<a href="#" class="menu__link" v-if="usa">Delivery & Pay</a>
+						<a href="#" class="menu__link" v-if="usa">Contacts</a>
 					</div>
 
 				</div>
@@ -125,10 +154,14 @@
 			<div class="container">
 				<div class="cart__content">
 					<div class="cart__wrap cart__wrap_left">
-						<h1 class="cart__order title__h2 cart__order_grey">оформление заказа</h1>
-						<h2 class="cart__user title__h2">личные данные</h2>
+						<h1 class="cart__order title__h2 cart__order_grey" v-if="rus">оформление заказа</h1>
+						<h1 class="cart__order title__h2 cart__order_grey" v-if="ukr">оформлення замовлення</h1>
+						<h1 class="cart__order title__h2 cart__order_grey" v-if="usa">ordering</h1>
+						<h2 class="cart__user title__h2" v-if="rus">личные данные</h2>
+						<h2 class="cart__user title__h2" v-if="ukr">особисті дані</h2>
+						<h2 class="cart__user title__h2" v-if="usa">personal data</h2>
 						<form class="userData">
-							<div class="userData__container userData__container_flexwrap">
+							<div class="userData__container userData__container_flexwrap" v-if="rus">
 								<div class="userData__wrap">
 
 									<input class="userData__input" :class="{'error': nameError }" type=" text"
@@ -154,22 +187,91 @@
 									</div>
 								</div>
 							</div>
+							<div class="userData__container userData__container_flexwrap" v-if="ukr">
+								<div class="userData__wrap">
+
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Ім'я" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': mailError }" type="email"
+										placeholder="E-mail" v-model="eMail">
+								</div>
+								<div class="userData__wrap">
+									<input class="userData__input userData__input_disabled" type="text" disabled
+										placeholder="Київ">
+									<input class="userData__input  userData__input_m15" :class="{'error': streetError }"
+										type="text" placeholder="Вулиця" v-model="street">
+									<div class="userData__container userData__container_gap0">
+										<input class="userData__input" :class="{'error': homeError }" type="text"
+											placeholder="Дім" v-model="home">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Під'їзд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
+									</div>
+								</div>
+							</div>
+							<div class="userData__container userData__container_flexwrap" v-if="usa">
+								<div class="userData__wrap">
+
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Name" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': mailError }" type="email"
+										placeholder="E-mail" v-model="eMail">
+								</div>
+								<div class="userData__wrap">
+									<input class="userData__input userData__input_disabled" type="text" disabled
+										placeholder="Kiev">
+									<input class="userData__input  userData__input_m15" :class="{'error': streetError }"
+										type="text" placeholder="Street" v-model="street">
+									<div class="userData__container userData__container_gap0">
+										<input class="userData__input" :class="{'error': homeError }" type="text"
+											placeholder="Home" v-model="home">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Entrance" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Flat" v-model="flat">
+									</div>
+								</div>
+							</div>
 							<div class="userData__save">
 								<input id="userData__push" class="userData__push" type="checkbox" v-model="checked">
 								<div class="userData__label_before"></div>
-								<label for="userData__push" class="userData__label">
+								<label for="userData__push" class="userData__label" v-if="rus">
 									Сохранить данные
+								</label>
+								<label for="userData__push" class="userData__label" v-if="ukr">
+									Зберегти дані
+								</label>
+								<label for="userData__push" class="userData__label" v-if="usa">
+									Save data
 								</label>
 							</div>
 
-							<div class="userData__btn" @click="addComentText">
+							<div class="userData__btn" @click="addComentText" v-if="rus">
 								Нажать и добавить комментарий
+								<div class="userData__triangle"></div>
+							</div>
+							<div class="userData__btn" @click="addComentText" v-if="ukr">
+								Натиснути і додати коментар
+								<div class="userData__triangle"></div>
+							</div>
+							<div class="userData__btn" @click="addComentText" v-if="usa">
+								Click and add a comment
 								<div class="userData__triangle"></div>
 							</div>
 							<textarea class="userData__textarea" name="comment" id="" v-if="addComent"></textarea>
 
-							<h2 class="cart__delivery title__h2">доставка</h2>
-							<p class="userData__p">Дата доставки</p>
+							<h2 class="cart__delivery title__h2" v-if="rus">доставка</h2>
+							<h2 class="cart__delivery title__h2" v-if="ukr">доставка</h2>
+							<h2 class="cart__delivery title__h2" v-if="usa">delivery</h2>
+							<p class="userData__p" v-if="rus">Дата доставки</p>
+							<p class="userData__p" v-if="ukr">Дата доставки</p>
+							<p class="userData__p" v-if="usa">Delivery date</p>
 							<div class="userData__radiowrap">
 								<input id="day1" name="day" type="radio" value="currentDay" v-model='deliveryDate'
 									class="userData__radio" />
