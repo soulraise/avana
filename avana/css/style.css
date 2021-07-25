@@ -2890,6 +2890,28 @@ body {
   background: #ecf8ff;
 }
 
+.invoice {
+  position: absolute;
+  z-index: 100000;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(112, 196, 241, 0.9);
+}
+
+.invoice__modal {
+  background: #fff;
+  padding: 20px 30px;
+}
+
 @media (max-width: 1195px) {
   .header__schedule_ml {
     display: none;

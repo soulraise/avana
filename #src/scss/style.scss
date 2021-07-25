@@ -2109,3 +2109,17 @@ body {
 .filled {
     background: #ecf8ff;
 }
+.invoice {
+    position: absolute;
+    z-index: 100000;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(112, 196, 241, 0.9);
+    &__modal {
+        background: #fff;
+        padding: 20px 30px;
+    }
+}
