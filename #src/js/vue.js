@@ -288,6 +288,7 @@ if (document.getElementById('app2')) {
 			home: '',
 			flat: '',
 			entrance: '',
+			coment: '',
 			checked: false,
 			addComent: false,
 			validData: '',
@@ -298,6 +299,7 @@ if (document.getElementById('app2')) {
 			deliveryDate: '',
 			deliveryTime: false,
 			payment: '',
+			paymentTitle: '',
 			nameError: false,
 			telError: false,
 			mailError: false,
@@ -417,9 +419,14 @@ if (document.getElementById('app2')) {
 				if (creatUser) {
 					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
 				}
+
+				if (this.payment == "cash") {
+					this.paymentTitle = 'Наличными курьеру'
+				}
 			},
 		},
 		computed: {
+
 			totalProduct() {
 				let res = 0
 				this.products.forEach(element => {

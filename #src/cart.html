@@ -35,72 +35,108 @@
 
 <body>
 	<div id="app2">
-		<div class="invoice">
+
+		<div class="invoice" v-if="creatUser">
 			<!-- русский -->
-			<div class="invoice__modal">
-				<p class="invoice__customer">Покупатель: {{}}</p>
-				<p class="invoice__tel">Тел.: {{}}</p>
-				<p class="invoice__street">Улица: {{}}</p>
-				<p class="invoice__home">Дом: {{}}</p>
-				<p class="invoice__entrance">Подъезд: {{}}</p>
-				<p class="invoice__apartment">Квартира: {{}}</p>
-				<p class="invoice__mail">E-mail: {{}}</p>
-				<p class="invoice__comment">Комментарий: {{}}</p>
-				<p class="invoice__date">Дата доставки: {{}}</p>
-				<p class="invoice__time">Время доставки: {{}}</p>
-				<p class="invoice__payment">Способ оплаты: {{}}</p>
-				<div class="invoice__order">
-					<p class="invoice__item">{{}}</p>
-					<p class="invoice__count">{{}} шт.</p>
-					<p class="invoice__price">Цена: {{}} грн.</p>
-					<p class="invoice__total">Сумма: {{}} грн.</p>
+			<div class="invoice__modal" v-if="rus">
+				<p class="invoice__p">Покупатель: {{name}}</p>
+				<p class="invoice__p">Тел.: {{tel}}</p>
+				<p class="invoice__p">Улица: {{street}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Дом: {{home}}</p>
+					<p class="invoice__p">Подъезд: {{entrance}}</p>
+					<p class="invoice__p">Квартира: {{flat}}</p>
 				</div>
-				<p class="invoice__totalCount">Итого к оплате: {{}} грн.</p>
+				<p class="invoice__p">E-mail: {{eMail}}</p>
+				<p class="invoice__p">Комментарий: {{coment}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Дата доставки: {{currentDateTime(deliveryDate)}}</p>
+					<p class="invoice__p">Время доставки: {{selected}}</p>
+				</div>
+				<p class="invoice__p">Способ оплаты: {{paymentTitle}}</p>
+				<table class="invoice__table">
+					<tr class="invoice__order">
+						<th class="invoice__item">Наименование</th>
+						<th class="invoice__item">Кол-во, шт.</th>
+						<th class="invoice__item">Цена, грн.</th>
+						<th class="invoice__item">Сумма, грн.</th>
+					</tr>
+					<tr class="invoice__order" v-for="(product, n) in products" :key="n">
+						<td class="invoice__item">{{product.title}}</td>
+						<td class="invoice__item">{{product.count}}</td>
+						<td class="invoice__item">{{product.price}}</td>
+						<td class="invoice__item">{{(product.price * product.count)}}</td>
+					</tr>
+				</table>
+				<p class="invoice__totalCount">Итого к оплате: {{totalProduct}} грн.</p>
 			</div>
 			<!-- українська -->
-			<!-- <div class="invoice__modal">
-				<p class="invoice__customer">Покупець: {{}}</p>
-				<p class="invoice__tel">Тел.: {{}}</p>
-				<p class="invoice__street">Вулиця: {{}}</p>
-				<p class="invoice__home">Будинок: {{}}</p>
-				<p class="invoice__entrance">Підїзд: {{}}</p>
-				<p class="invoice__apartment">Квартира: {{}}</p>
-				<p class="invoice__mail">E-mail: {{}}</p>
-				<p class="invoice__comment">Коментарій: {{}}</p>
-				<p class="invoice__date">Дата доставки: {{}}</p>
-				<p class="invoice__time">Час доставки: {{}}</p>
-				<p class="invoice__payment">Спосіб оплати: {{}}</p>
-				<div class="invoice__order">
-					<p class="invoice__item">{{}}</p>
-					<p class="invoice__count">{{}} од.</p>
-					<p class="invoice__price">Ціна: {{}} грн.</p>
-					<p class="invoice__total">Сума: {{}} грн.</p>
+			<div class="invoice__modal" v-if="ukr">
+				<p class="invoice__p">Покупець: {{}}</p>
+				<p class="invoice__p">Тел.: {{}}</p>
+				<p class="invoice__p">Вулиця: {{}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Будинок: {{}}</p>
+					<p class="invoice__p">Підїзд: {{}}</p>
+					<p class="invoice__p">Квартира: {{}}</p>
 				</div>
+				<p class="invoice__p">E-mail: {{}}</p>
+				<p class="invoice__p">Коментарій: {{}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Дата доставки: {{}}</p>
+					<p class="invoice__p">Час доставки: {{}}</p>
+				</div>
+				<p class="invoice__p">Спосіб оплати: {{}}</p>
+				<table class="invoice__table">
+					<tr class="invoice__order">
+						<th class="invoice__item">Найменування</th>
+						<th class="invoice__item">Кіл-ть, од.</th>
+						<th class="invoice__item">Ціна, грн.</th>
+						<th class="invoice__item">Сума, грн.</th>
+					</tr>
+					<tr class="invoice__order">
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+					</tr>
+				</table>
 				<p class="invoice__totalCount">Разом: {{}} грн.</p>
-			</div> -->
+			</div>
 			<!-- english -->
-			<!-- <div class="invoice__modal">
-				<p class="invoice__customer">Customer: {{}}</p>
-				<p class="invoice__tel">Tel.: {{}}</p>
-				<p class="invoice__street">Street: {{}}</p>
-				<p class="invoice__home">Home: {{}}</p>
-				<p class="invoice__entrance">Entrance: {{}}</p>
-				<p class="invoice__apartment">Apartment: {{}}</p>
-				<p class="invoice__mail">E-mail: {{}}</p>
-				<p class="invoice__comment">Comment: {{}}</p>
-				<p class="invoice__date">Delivery date: {{}}</p>
-				<p class="invoice__time">Delivery time: {{}}</p>
-				<p class="invoice__payment">Payment method: {{}}</p>
-				<div class="invoice__order">
-					<p class="invoice__item">{{}}</p>
-					<p class="invoice__count">{{}}</p>
-					<p class="invoice__price">Price: {{}} UAH</p>
-					<p class="invoice__total">Total: {{}} UAH</p>
+			<div class="invoice__modal" v-if="usa">
+				<p class="invoice__p">Customer: {{}}</p>
+				<p class="invoice__p">Tel.: {{}}</p>
+				<p class="invoice__p">Street: {{}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Home: {{}}</p>
+					<p class="invoice__p">Entrance: {{}}</p>
+					<p class="invoice__p">Apartment: {{}}</p>
 				</div>
+				<p class="invoice__p">E-mail: {{}}</p>
+				<p class="invoice__p">Comment: {{}}</p>
+				<div class="invoice__wrap">
+					<p class="invoice__p">Delivery date: {{}}</p>
+					<p class="invoice__p">Delivery time: {{}}</p>
+				</div>
+				<p class="invoice__p">Payment method: {{}}</p>
+				<table class="invoice__table">
+					<tr class="invoice__order">
+						<th class="invoice__item">Name</th>
+						<th class="invoice__item">Count</th>
+						<th class="invoice__item">Price, UAH.</th>
+						<th class="invoice__item">Total, UAH.</th>
+					</tr>
+					<tr class="invoice__order">
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+						<td class="invoice__item">{{}}</td>
+					</tr>
+				</table>
 				<p class="invoice__totalCount">Total price: {{}} UAH</p>
-			</div> -->
+			</div>
 		</div>
-
 		<header class="header">
 			<div class="container">
 				<div class="header__wrap">
@@ -174,7 +210,8 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -229,10 +266,11 @@
 							<div class="userData__container userData__container_flexwrap" v-if="rus">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Имя"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Имя" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -244,19 +282,21 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Дом" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд"
-											v-model="entrance">
-										<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Подъезд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
 									</div>
 								</div>
 							</div>
 							<div class="userData__container userData__container_flexwrap" v-if="ukr">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Ім'я"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Ім'я" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -268,19 +308,21 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Дім" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Під'їзд"
-											v-model="entrance">
-										<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Під'їзд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
 									</div>
 								</div>
 							</div>
 							<div class="userData__container userData__container_flexwrap" v-if="usa">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Name"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Name" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -292,8 +334,8 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Home" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Entrance"
-											v-model="entrance">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Entrance" v-model="entrance">
 										<input class="userData__input" type="text" placeholder="Flat" v-model="flat">
 									</div>
 								</div>
@@ -324,7 +366,8 @@
 								Click and add a comment
 								<div class="userData__triangle"></div>
 							</div>
-							<textarea class="userData__textarea" name="comment" id="" v-if="addComent"></textarea>
+							<textarea class="userData__textarea" name="comment" id="" v-if="addComent"
+								v-model='coment'></textarea>
 
 							<h2 class="cart__delivery title__h2" v-if="rus">доставка</h2>
 							<h2 class="cart__delivery title__h2" v-if="ukr">доставка</h2>
@@ -333,19 +376,19 @@
 							<p class="userData__p" v-if="ukr">Дата доставки</p>
 							<p class="userData__p" v-if="usa">Delivery date</p>
 							<div class="userData__radiowrap">
-								<input id="day1" name="day" type="radio" value="currentDay" v-model='deliveryDate'
+								<input id="day1" name="day" type="radio" value="1" v-model='deliveryDate'
 									class="userData__radio" />
 								<label for="day1" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(1) }}
 								</label>
 
-								<input id="day2" name="day" type="radio" value="tomorrow" v-model='deliveryDate'
+								<input id="day2" name="day" type="radio" value="2" v-model='deliveryDate'
 									class="userData__radio" />
 								<label for="day2" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(2) }}
 								</label>
 
-								<input id="day3" name="day" type="radio" value="afteTomorrow" v-model='deliveryDate'
+								<input id="day3" name="day" type="radio" value="3" v-model='deliveryDate'
 									class="userData__radio" />
 								<label for="day3" class="userData__date btns" :class="{'error': deliveryDateError }">
 									{{ currentDateTime(3) }}
@@ -381,8 +424,9 @@
 							<h2 class="cart__pay title__h2" v-if="usa">Payment method</h2>
 							<div class="userData__pay userData__time">
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio1" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cash" v-model='payment'>
+									<input id="userData__radio1" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cash"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio1" class="userData__label " v-if="rus">
 										Наличными курьеру
@@ -395,8 +439,9 @@
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio2" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="paymentWeb" v-model='payment'>
+									<input id="userData__radio2" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="paymentWeb"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio2" class="userData__label " v-if="rus">
 										Оплата картой на сайте
@@ -409,8 +454,9 @@
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio3" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cahsless" v-model='payment'>
+									<input id="userData__radio3" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cahsless"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio3" class="userData__label " v-if="rus">
 										Безналичный расчет (для юр. лиц)
@@ -429,9 +475,7 @@
 						<h2 class="cart__user title__h2" v-if="rus">Ваш заказ</h2>
 						<h2 class="cart__user title__h2" v-if="ukr">Ваше замовлення</h2>
 						<h2 class="cart__user title__h2" v-if="usa">Your order</h2>
-
-
-						<div class="cart__orders" v-for="(product, n) in products">
+						<div class="cart__orders" v-for="(product, n) in products" :key="n">
 							<div class="order">
 								<div class="order__wrap">
 									<div class="order__imgs">
@@ -472,14 +516,8 @@
 										</svg>
 									</button>
 								</div>
-
 							</div>
-
-
-
-
 						</div>
-
 
 						<p class="cart__total" v-if="rus">Bсего: <span class="cart__total_blue">{{totalProduct}}
 								грн.</span> </p>
