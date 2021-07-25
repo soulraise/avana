@@ -364,6 +364,8 @@ if (document.getElementById('app2')) {
 			deliveryTime: false,
 			payment: '',
 			paymentTitle: '',
+			paymentTitleUkr: '',
+			paymentTitleUsa: '',
 			nameError: false,
 			telError: false,
 			mailError: false,
@@ -377,6 +379,9 @@ if (document.getElementById('app2')) {
 
 		methods: {
 			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+			CloseInvoice() {
+				this.creatUser = false
+			},
 
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
@@ -480,13 +485,24 @@ if (document.getElementById('app2')) {
 					alert('Добавте что-то к заказу')
 				}
 				this.creatUser = creatUser
-				if (creatUser) {
-					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
-				}
+
 
 				if (this.payment == "cash") {
 					this.paymentTitle = 'Наличными курьеру'
+					this.paymentTitleUkr = "Готівкою кур'єру"
+					this.paymentTitleUsa = 'Сash courier'
 				}
+				if (this.payment == "paymentWeb") {
+					this.paymentTitle = 'Оплата картой на сайте'
+					this.paymentTitleUkr = "Оплата карткою на сайті"
+					this.paymentTitleUsa = 'Payment by card on the site'
+				}
+				if (this.payment == "cahsless") {
+					this.paymentTitle = 'Безналичный расчет (для юр. лиц)'
+					this.paymentTitleUkr = "Безготівковий розрахунок (для юр. Осіб)"
+					this.paymentTitleUsa = 'Cashless payment (for legal entities)'
+				}
+
 			},
 		},
 		computed: {

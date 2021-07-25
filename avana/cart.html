@@ -36,7 +36,7 @@
 <body>
 	<div id="app2">
 
-		<div class="invoice" v-if="creatUser">
+		<div class="invoice" v-if="creatUser" @click="CloseInvoice">
 			<!-- русский -->
 			<div class="invoice__modal" v-if="rus">
 				<p class="invoice__p">Покупатель: {{name}}</p>
@@ -63,30 +63,30 @@
 					</tr>
 					<tr class="invoice__order" v-for="(product, n) in products" :key="n">
 						<td class="invoice__item">{{product.title}}</td>
-						<td class="invoice__item">{{product.count}}</td>
-						<td class="invoice__item">{{product.price}}</td>
-						<td class="invoice__item">{{(product.price * product.count)}}</td>
+						<td class="invoice__item invoice__item_center">{{product.count}}</td>
+						<td class="invoice__item invoice__item_right">{{product.price}}</td>
+						<td class="invoice__item invoice__item_right">{{(product.price * product.count)}}</td>
 					</tr>
 				</table>
 				<p class="invoice__totalCount">Итого к оплате: {{totalProduct}} грн.</p>
 			</div>
 			<!-- українська -->
 			<div class="invoice__modal" v-if="ukr">
-				<p class="invoice__p">Покупець: {{}}</p>
-				<p class="invoice__p">Тел.: {{}}</p>
-				<p class="invoice__p">Вулиця: {{}}</p>
+				<p class="invoice__p">Покупець: {{name}}</p>
+				<p class="invoice__p">Тел.: {{tel}}</p>
+				<p class="invoice__p">Вулиця: {{street}}</p>
 				<div class="invoice__wrap">
-					<p class="invoice__p">Будинок: {{}}</p>
-					<p class="invoice__p">Підїзд: {{}}</p>
-					<p class="invoice__p">Квартира: {{}}</p>
+					<p class="invoice__p">Будинок: {{home}}</p>
+					<p class="invoice__p">Підїзд: {{entrance}}</p>
+					<p class="invoice__p">Квартира: {{flat}}</p>
 				</div>
-				<p class="invoice__p">E-mail: {{}}</p>
-				<p class="invoice__p">Коментарій: {{}}</p>
+				<p class="invoice__p">E-mail: {{eMail}}</p>
+				<p class="invoice__p">Коментарій: {{coment}}</p>
 				<div class="invoice__wrap">
-					<p class="invoice__p">Дата доставки: {{}}</p>
-					<p class="invoice__p">Час доставки: {{}}</p>
+					<p class="invoice__p">Дата доставки: {{currentDateTime(deliveryDate)}}</p>
+					<p class="invoice__p">Час доставки: {{selected}}</p>
 				</div>
-				<p class="invoice__p">Спосіб оплати: {{}}</p>
+				<p class="invoice__p">Спосіб оплати: {{paymentTitleUkr}}</p>
 				<table class="invoice__table">
 					<tr class="invoice__order">
 						<th class="invoice__item">Найменування</th>
@@ -94,32 +94,32 @@
 						<th class="invoice__item">Ціна, грн.</th>
 						<th class="invoice__item">Сума, грн.</th>
 					</tr>
-					<tr class="invoice__order">
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
+					<tr class="invoice__order" v-for="(product, n) in products" :key="n">
+						<td class="invoice__item">{{product.titleUkr}}</td>
+						<td class="invoice__item invoice__item_center">{{product.count}}</td>
+						<td class="invoice__item invoice__item_right">{{product.price}}</td>
+						<td class="invoice__item invoice__item_right">{{(product.price * product.count)}}</td>
 					</tr>
 				</table>
-				<p class="invoice__totalCount">Разом: {{}} грн.</p>
+				<p class="invoice__totalCount">Разом: {{totalProduct}} грн.</p>
 			</div>
 			<!-- english -->
 			<div class="invoice__modal" v-if="usa">
-				<p class="invoice__p">Customer: {{}}</p>
-				<p class="invoice__p">Tel.: {{}}</p>
-				<p class="invoice__p">Street: {{}}</p>
+				<p class="invoice__p">Customer: {{name}}</p>
+				<p class="invoice__p">Tel.: {{tel}}</p>
+				<p class="invoice__p">Street: {{street}}</p>
 				<div class="invoice__wrap">
-					<p class="invoice__p">Home: {{}}</p>
-					<p class="invoice__p">Entrance: {{}}</p>
-					<p class="invoice__p">Apartment: {{}}</p>
+					<p class="invoice__p">Home: {{home}}</p>
+					<p class="invoice__p">Entrance: {{entrance}}</p>
+					<p class="invoice__p">Apartment: {{flat}}</p>
 				</div>
-				<p class="invoice__p">E-mail: {{}}</p>
-				<p class="invoice__p">Comment: {{}}</p>
+				<p class="invoice__p">E-mail: {{eMail}}</p>
+				<p class="invoice__p">Comment: {{coment}}</p>
 				<div class="invoice__wrap">
-					<p class="invoice__p">Delivery date: {{}}</p>
-					<p class="invoice__p">Delivery time: {{}}</p>
+					<p class="invoice__p">Delivery date: {{currentDateTime(deliveryDate)}}</p>
+					<p class="invoice__p">Delivery time: {{selected}}</p>
 				</div>
-				<p class="invoice__p">Payment method: {{}}</p>
+				<p class="invoice__p">Payment method: {{paymentTitleUsa}}</p>
 				<table class="invoice__table">
 					<tr class="invoice__order">
 						<th class="invoice__item">Name</th>
@@ -127,14 +127,14 @@
 						<th class="invoice__item">Price, UAH.</th>
 						<th class="invoice__item">Total, UAH.</th>
 					</tr>
-					<tr class="invoice__order">
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
-						<td class="invoice__item">{{}}</td>
+					<tr class="invoice__order" v-for="(product, n) in products" :key="n">
+						<td class="invoice__item">{{product.titleUsa}}</td>
+						<td class="invoice__item invoice__item_center">{{product.count}}</td>
+						<td class="invoice__item invoice__item_right">{{product.price}}</td>
+						<td class="invoice__item invoice__item_right">{{(product.price * product.count)}}</td>
 					</tr>
 				</table>
-				<p class="invoice__totalCount">Total price: {{}} UAH</p>
+				<p class="invoice__totalCount">Total price: {{totalProduct}} UAH</p>
 			</div>
 		</div>
 		<header class="header">
