@@ -34,6 +34,22 @@
 
 <body>
 	<div id="app3">
+		<!-- <div class="choise">
+			<div class="choise__modal">
+				<svg class="logo" viewBox="0 0 145 55">
+					<use xlink:href="img/icons/icons.svg#LogoBlue" />
+				</svg>
+				<button class="choise__btn btns">
+					Українська
+				</button>
+				<button class="choise__btn btns">
+					Русский
+				</button>
+				<button class="choise__btn btns">
+					English
+				</button>
+			</div>
+		</div> -->
 		<header class="header">
 			<div class="container">
 				<div class="header__wrap">
@@ -42,8 +58,10 @@
 							<use xlink:href="img/icons/icons.svg#LogoBlue" />
 						</svg>
 					</a>
+
+					<!-- русский -->
 					<div class="header__text" v-if="rus">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
 						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
 						<p class="header__schedule header__schedule_ml">
@@ -53,10 +71,12 @@
 							Только по Киеву
 						</p>
 					</div>
+
+					<!-- українська -->
 					<div class="header__text" v-if="ukr">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
-						<p class="header__schedule">Нд:&nbsp;<span class="header__span">выхідний</span></p>
+						<p class="header__schedule">Нд:&nbsp;<span class="header__span">Вихідний</span></p>
 						<p class="header__schedule header__schedule_ml">
 							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
@@ -64,10 +84,12 @@
 							Тільки по Київу
 						</p>
 					</div>
+
+					<!-- english -->
 					<div class="header__text" v-if="usa">
-						<p class="header__schedule">Mn-fr:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
-						<p class="header__schedule">St:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
-						<p class="header__schedule">Su:&nbsp;<span class="header__span">day off</span></p>
+						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span></p>
+						<p class="header__schedule">Sat:&nbsp;<span class="header__span">08:00 AM - 4:00 PM</span></p>
+						<p class="header__schedule">Sun:&nbsp;<span class="header__span">day off</span></p>
 						<p class="header__schedule header__schedule_ml">
 							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
@@ -100,13 +122,14 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
 					</div>
 					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
+						<!-- русское меню -->
+
 						<a href="#" class="menu__link">Мой аккаунт</a>
 						<a href="index.html#about" class="menu__link">О воде</a>
 						<a href="catalog.html" class="menu__link">Каталог</a>
@@ -114,6 +137,26 @@
 						<a href="#" class="menu__link">Новым клиентам</a>
 						<a href="#" class="menu__link">Доставка и оплата</a>
 						<a href="#" class="menu__link">Контакты</a>
+
+						<!-- українське меню -->
+
+						<a href="#" class="menu__link">Мій аккаунт</a>
+						<a href="index.html#about" class="menu__link">Про воду</a>
+						<a href="catalog.html" class="menu__link">Каталог</a>
+						<a href="#" class="menu__link">Бізнесу</a>
+						<a href="#" class="menu__link">Новим клієнтам</a>
+						<a href="#" class="menu__link">Доставка та оплата</a>
+						<a href="#" class="menu__link">Контакти</a>
+
+						<!-- english menu -->
+
+						<a href="#" class="menu__link">Account</a>
+						<a href="index.html#about" class="menu__link">About water</a>
+						<a href="catalog.html" class="menu__link">Catalog</a>
+						<a href="#" class="menu__link">For bussines</a>
+						<a href="#" class="menu__link">For new clients</a>
+						<a href="#" class="menu__link">Delivery & Pay</a>
+						<a href="#" class="menu__link">Contacts</a>
 					</div>
 
 				</div>
@@ -150,7 +193,7 @@
 			</div>
 			<div class="container">
 				<div id="main__slider" class="main__slider">
-
+					<!-- русский -->
 					<div class="main__item">
 						<img class="main__img" src="img/Slider1.jpg" alt="">
 						<div class="main__content">
@@ -165,7 +208,38 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- українська -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider1.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
+								</p>
+								<h1 class="main__h1">
+									замов 1 БУТиЛЬ НА ПРОБУ ЗА 1 ГРН
+								</h1>
+								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
+							</div>
+						</div>
+					</div>
+					<!-- english -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider1.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									Our promotions and special offers for new clients
+								</p>
+								<h1 class="main__h1">
+									ORDER 1 BOTTLE FOR A SAMPLE FOR 1 UAH
+								</h1>
+								<a href="catalog.html" class="main__btn btns">I want to try</a>
+							</div>
+						</div>
+					</div>
+					<!-- end of slider -->
+					<!-- русский -->
 					<div class="main__item">
 						<img class="main__img" src="img/Slider2.jpg" alt="">
 						<div class="main__content">
@@ -180,7 +254,38 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- українська -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider2.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
+								</p>
+								<h1 class="main__h1">
+									замов 1 БУТиЛЬ НА ПРОБУ ЗА 1 ГРН
+								</h1>
+								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
+							</div>
+						</div>
+					</div>
+					<!-- english -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider2.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									Our promotions and special offers for new clients
+								</p>
+								<h1 class="main__h1">
+									ORDER 1 BOTTLE FOR A SAMPLE FOR 1 UAH
+								</h1>
+								<a href="catalog.html" class="main__btn btns">I want to try</a>
+							</div>
+						</div>
+					</div>
+					<!-- end of slider -->
+					<!-- русский -->
 					<div class="main__item">
 						<img class="main__img" src="img/Slider3.jpg" alt="">
 						<div class="main__content">
@@ -195,7 +300,37 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- українська -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider3.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
+								</p>
+								<h1 class="main__h1">
+									замов 1 БУТиЛЬ НА ПРОБУ ЗА 1 ГРН
+								</h1>
+								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
+							</div>
+						</div>
+					</div>
+					<!-- english -->
+					<div class="main__item">
+						<img class="main__img" src="img/Slider3.jpg" alt="">
+						<div class="main__content">
+							<div class="main__wrap">
+								<p class="main__p">
+									Our promotions and special offers for new clients
+								</p>
+								<h1 class="main__h1">
+									ORDER 1 BOTTLE FOR A SAMPLE FOR 1 UAH
+								</h1>
+								<a href="catalog.html" class="main__btn btns">I want to try</a>
+							</div>
+						</div>
+					</div>
+					<!-- end of slider -->
 				</div>
 			</div>
 			<div class="languages">
@@ -205,6 +340,7 @@
 			</div>
 		</section>
 
+		<!-- русский -->
 		<section class="delivery">
 			<div class="container">
 				<div class="delivery__wrap">
@@ -303,7 +439,197 @@
 				</div>
 			</div>
 		</section>
+		<!-- українська -->
+		<section class="delivery">
+			<div class="container">
+				<div class="delivery__wrap">
+					<h3 class="delivery__h3 title__h3">
+						замовити доставку авана - це легко
+					</h3>
+					<p class="delivery__p">
+						Авана – це натуральна вода, котора вже 12 років доставляється до офісів та домівок Києва и Київської
+						області.
+					</p>
+					<div class="delivery__content">
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#pencil" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Оформлення замовлення
+								</h4>
+							</div>
+							<p class="item__text">
+								Оформіть замовлення на сайті в будь-який час або по телефону в робочі дня з 7 до 20, в суботу з
+								8 до 16.
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#phone" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Дзвінок
+									менеджера
+								</h4>
+							</div>
+							<p class="item__text">
+								Чекайте на дзвінок от менеджера для уточнення деталей. Або виберіть “не передзвонювати”.
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#check" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Підтвердження Замовлення
+								</h4>
+							</div>
+							<p class="item__text">
+								Отримайте повідомлення про підтвердження доставки та очікуйте дзвінка кур'єра.
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#truck" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Вода біля дверей
+								</h4>
+							</div>
+							<p class="item__text">
+								Кур'єр доставить воду до дверей квартири чи офису. Наступного разу просто натисніть “повторити
+								замовлення”.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- english -->
+		<section class="delivery">
+			<div class="container">
+				<div class="delivery__wrap">
+					<h3 class="delivery__h3 title__h3">
+						ordering avana delivery - it`s easy
+					</h3>
+					<p class="delivery__p">
+						Avana - it`s natural water that has been delivered to offices and homes in Kiev and Kiev region for 12
+						years.
+					</p>
+					<div class="delivery__content">
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#pencil" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Checkout
+								</h4>
+							</div>
+							<p class="item__text">
+								Place an order on the website at any time or by phone on weekdays from 7AM to 8PM, on Saturday
+								from 8 AM to 4 PM.
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#phone" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Managers call
+								</h4>
+							</div>
+							<p class="item__text">
+								Expect a call from the manager to clarify the details. Or choose "without callback".
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#check" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Confirmation Order
+								</h4>
+							</div>
+							<p class="item__text">
+								Receive notification of delivery confirmation and expect the courier to call.
+							</p>
+						</div>
+						<div class="delivery__arrow">
+							<svg class="delivery__svg" viewBox="0 0 83 29">
+								<use xlink:href="img/icons/icons.svg#Arrow" />
+							</svg>
+						</div>
+						<div class="delivery__item item">
+							<div class="item__wrap">
+								<div class="item__img">
+									<svg class="item__svg" viewBox="0 0 40 40">
+										<use xlink:href="img/icons/icons.svg#truck" />
+									</svg>
+								</div>
+								<h4 class="item__title">
+									Water at the door
+								</h4>
+							</div>
+							<p class="item__text">
+								The courier will deliver the water to the door of your apartment or office. Next time just click
+								"repeat order".
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of section delivery -->
 
+
+		<!-- русский -->
 		<section class="schedule">
 			<div class="container">
 				<div class="schedule__wrap">
@@ -359,7 +685,120 @@
 				</div>
 			</div>
 		</section>
+		<!-- українська -->
+		<section class="schedule">
+			<div class="container">
+				<div class="schedule__wrap">
+					<div class="schedule__circle schedule__circle_big"></div>
+					<div class="schedule__circle schedule__circle_middle"></div>
+					<div class="schedule__circle schedule__circle_small"></div>
+					<div class="schedule__content">
+						<h3 class="schedule__h3 title__h3">
+							Графік прийому замовлень
+						</h3>
+						<p class="schedule__article">
+							Компанія "Авана" гарантує своєчасну безкоштовну доставку в будь-який район міста, на будь-який
+							поверх до Ваших дверей, і при необхідності водій встановить бутель на кулер або підставку.
+						</p>
+						<div class="schedule__local">
+							<div class="schedule__img">
+								<svg class="schedule__svg" viewBox="0 0 46 46">
+									<use xlink:href="img/icons/icons.svg#World" />
+								</svg>
+							</div>
+							<div class="schedule__texts">
+								<p class="schedule__text schedule__text_bold">
+									Замовлення на сайті - цілодобово.
+								</p>
+							</div>
+						</div>
+						<div class="schedule__local">
+							<div class="schedule__img">
+								<svg class="schedule__svg" viewBox="0 0 46 46">
+									<use xlink:href="img/icons/icons.svg#Clock" />
+								</svg>
+							</div>
+							<div class="schedule__texts">
+								<p class="schedule__text">
+									Замовлення по телефону та доставка:
+								</p>
+								<p class="schedule__text">
+									Понеділок - п'ятниця: <span class="schedule__text_bold"> 7:00 - 20:00</span>
+								</p>
+								<p class="schedule__text">
+									Cубота:<span class="schedule__text_bold"> 8:00 - 16:00</span>
+								</p>
+								<p class="schedule__text">
+									Неділя:<span class="schedule__text_bold"> вихідний</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="schedule__imgs">
+						<img class="schedule__contentImg" src="img/ScheduleImg.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- english -->
+		<section class="schedule">
+			<div class="container">
+				<div class="schedule__wrap">
+					<div class="schedule__circle schedule__circle_big"></div>
+					<div class="schedule__circle schedule__circle_middle"></div>
+					<div class="schedule__circle schedule__circle_small"></div>
+					<div class="schedule__content">
+						<h3 class="schedule__h3 title__h3">
+							Schedule of orders
+						</h3>
+						<p class="schedule__article">
+							The Avana company guarantees timely free delivery to any area of the city, to any floor to your
+							door, and, if necessary, the driver will install the bottle on a cooler or stand.
+						</p>
+						<div class="schedule__local">
+							<div class="schedule__img">
+								<svg class="schedule__svg" viewBox="0 0 46 46">
+									<use xlink:href="img/icons/icons.svg#World" />
+								</svg>
+							</div>
+							<div class="schedule__texts">
+								<p class="schedule__text schedule__text_bold">
+									Ordering on the webpage - around the clock.
+								</p>
+							</div>
+						</div>
+						<div class="schedule__local">
+							<div class="schedule__img">
+								<svg class="schedule__svg" viewBox="0 0 46 46">
+									<use xlink:href="img/icons/icons.svg#Clock" />
+								</svg>
+							</div>
+							<div class="schedule__texts">
+								<p class="schedule__text">
+									Phone order and delivery:
+								</p>
+								<p class="schedule__text">
+									Monday - Friday: <span class="schedule__text_bold"> 7:00 AM - 8:00 PM</span>
+								</p>
+								<p class="schedule__text">
+									Saturday:<span class="schedule__text_bold"> 8:00 AM - 4:00 PM</span>
+								</p>
+								<p class="schedule__text">
+									Sunday:<span class="schedule__text_bold"> Day off</span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="schedule__imgs">
+						<img class="schedule__contentImg" src="img/ScheduleImg.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of section schedule -->
 
+
+		<!-- русский -->
 		<section class="purchase">
 			<div class="container">
 				<div class="purchase__wrap">
@@ -385,7 +824,6 @@
 							<h3 class="purchase__h3 title__h3">
 								Выбрать кулер
 							</h3>
-
 						</a>
 						<a href="catalog.html" class="purchase__item purchase__item_small">
 							<div class="purchase__imgs ">
@@ -394,13 +832,92 @@
 							<h3 class="purchase__h3 purchase__h3_justifyself title__h3">
 								выбрать Помпу
 							</h3>
-
 						</a>
 					</div>
 				</div>
 			</div>
 		</section>
+		<!-- українська -->
+		<section class="purchase">
+			<div class="container">
+				<div class="purchase__wrap">
+					<div class="purchase__rectangle purchase__rectangle_left"></div>
+					<div class="purchase__rectangle purchase__rectangle_center"></div>
+					<div class="purchase__rectangle purchase__rectangle_right"></div>
+					<div class="purchase__items purchase__items_left">
+						<a href="catalog.html" class="purchase__item purchase__item_big">
+							<div class="purchase__imgs">
+								<img class="purchase__img" src="img/Bottles.png" alt="">
+							</div>
+							<h3 class="purchase__h3 title__h3">
+								замовити воду
+							</h3>
+						</a>
+						<a href="catalog.html" class="purchase__btn btns">перейти до каталогу</a>
+					</div>
+					<div class="purchase__items purchase__items_right">
+						<a href="catalog.html" class="purchase__item purchase__item_middle">
+							<div class="purchase__imgs">
+								<img class="purchase__img" src="img/Cooler.png" alt="">
+							</div>
+							<h3 class="purchase__h3 title__h3">
+								обрати кулер
+							</h3>
+						</a>
+						<a href="catalog.html" class="purchase__item purchase__item_small">
+							<div class="purchase__imgs ">
+								<img class="purchase__img" src="img/Pomp.png" alt="">
+							</div>
+							<h3 class="purchase__h3 purchase__h3_justifyself title__h3">
+								обрати Помпу
+							</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- english -->
+		<section class="purchase">
+			<div class="container">
+				<div class="purchase__wrap">
+					<div class="purchase__rectangle purchase__rectangle_left"></div>
+					<div class="purchase__rectangle purchase__rectangle_center"></div>
+					<div class="purchase__rectangle purchase__rectangle_right"></div>
+					<div class="purchase__items purchase__items_left">
+						<a href="catalog.html" class="purchase__item purchase__item_big">
+							<div class="purchase__imgs">
+								<img class="purchase__img" src="img/Bottles.png" alt="">
+							</div>
+							<h3 class="purchase__h3 title__h3">
+								order water
+							</h3>
+						</a>
+						<a href="catalog.html" class="purchase__btn btns">go to catalog</a>
+					</div>
+					<div class="purchase__items purchase__items_right">
+						<a href="catalog.html" class="purchase__item purchase__item_middle">
+							<div class="purchase__imgs">
+								<img class="purchase__img" src="img/Cooler.png" alt="">
+							</div>
+							<h3 class="purchase__h3 title__h3">
+								Choose a cooler
+							</h3>
+						</a>
+						<a href="catalog.html" class="purchase__item purchase__item_small">
+							<div class="purchase__imgs ">
+								<img class="purchase__img" src="img/Pomp.png" alt="">
+							</div>
+							<h3 class="purchase__h3 purchase__h3_justifyself title__h3">
+								select Pump
+							</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of section purchase -->
 
+		<!-- русский -->
 		<section id="about" class="about">
 			<div class="container">
 				<h3 class="about__h3 title__h3">мы заботимся о составе нашей воды</h3>
@@ -416,7 +933,7 @@
 						</div>
 						<div class="about__content about__content_flexEnd about__content_borderCyan">
 							<p class="about__p">
-								Вода AVANA обогащенна озоном. Это идеально подходит для приготовления напитков и первых
+								Вода AVANA обогащена озоном. Это идеально подходит для приготовления напитков и первых
 								блюд.
 							</p>
 						</div>
@@ -435,7 +952,6 @@
 								<div class="about__circle"></div>
 								<p class="about__p ">
 									У AVANA правильная молекулярная формула, что делает ее аналогом талой.
-
 								</p>
 							</div>
 						</div>
@@ -443,10 +959,98 @@
 				</div>
 			</div>
 		</section>
+		<!-- українська -->
+		<section id="about" class="about">
+			<div class="container">
+				<h3 class="about__h3 title__h3">ми піклуємося про склад нашої води</h3>
+				<div class="about__wrap">
+					<div class="about__item">
+						<div class="about__content">
+							<div class="about__wrap about__wrap_alignCenter">
+								<div class="about__circle"></div>
+								<p class="about__p">
+									Збалансований мінеральний склад, можна пити без обмежень, в будь-якому віці.
+								</p>
+							</div>
+						</div>
+						<div class="about__content about__content_flexEnd about__content_borderCyan">
+							<p class="about__p">
+								Вода AVANA збагачена озоном. Це ідеально підходить для приготування напоїв та перших страв.
+							</p>
+						</div>
+					</div>
+					<div class="about__imgs">
+						<img src="img/Bottle.jpg" alt="" class="about__img">
+					</div>
+					<div class="about__item">
+						<div class="about__content about__content_borderBlue">
+							<p class="about__p">
+								Ми контролюємо кислотно-лужний баланс води PH - 7.3.
+							</p>
+						</div>
+						<div class="about__content about__content_flexEnd">
+							<div class="about__wrap about__wrap_alignCenter">
+								<div class="about__circle"></div>
+								<p class="about__p ">
+									У AVANA правильна молекулярна формула, що робить її аналогом талої.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- english -->
+		<section id="about" class="about">
+			<div class="container">
+				<h3 class="about__h3 title__h3">we care about the composition of our water</h3>
+				<div class="about__wrap">
+					<div class="about__item">
+						<div class="about__content">
+							<div class="about__wrap about__wrap_alignCenter">
+								<div class="about__circle"></div>
+								<p class="about__p">
+									Balanced mineral composition, you can drink without restrictions, at any age.
+								</p>
+							</div>
+						</div>
+						<div class="about__content about__content_flexEnd about__content_borderCyan">
+							<p class="about__p">
+								AVANA water enriched with ozone. This is ideal for preparing drinks and first courses.
+							</p>
+						</div>
+					</div>
+					<div class="about__imgs">
+						<img src="img/Bottle.jpg" alt="" class="about__img">
+					</div>
+					<div class="about__item">
+						<div class="about__content about__content_borderBlue">
+							<p class="about__p">
+								We control the acid-base balance of the water PH - 7.3.
+							</p>
+						</div>
+						<div class="about__content about__content_flexEnd">
+							<div class="about__wrap about__wrap_alignCenter">
+								<div class="about__circle"></div>
+								<p class="about__p ">
+									AVANA has the correct molecular formula, which makes it analogous to thawed water.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end of section about -->
 
 		<section class="certificates">
 			<div class="container">
+				<!-- русский -->
 				<h3 class="certificates__h3 title__h3">Сертификаты качества воды</h3>
+				<!-- українська -->
+				<h3 class="certificates__h3 title__h3">Сертифікати якості води</h3>
+				<!-- english -->
+				<h3 class="certificates__h3 title__h3">Water quality certificates</h3>
 				<div class="certificates__wrap">
 					<a href="img/certificate_1.jpg" data-fancybox="gallery" class="certificates__link">
 						<img src="img/certificate_1.jpg" alt="" class="certificates__img">
@@ -461,7 +1065,9 @@
 			</div>
 		</section>
 		@@include('_subscribe.html')
+		<!-- end of section certificates -->
 
+		<!-- русский -->
 		<section class="seo">
 			<div class="container">
 				<p class="seo__content">
@@ -479,6 +1085,43 @@
 				</p>
 			</div>
 		</section>
+		<!-- українська -->
+		<section class="seo">
+			<div class="container">
+				<p class="seo__content">
+					CEO текст
+				</p>
+				<p class="seo__content">
+					Бутильована питна вода «AVANA» - це щоденний внесок в Ваше здоров'я. Коли чиста питна вода завжди під
+					рукою, можна бути впевненим, що одна з найважливіших складових здорового способу життя повністю безпечна
+					і приносить тільки користь.
+				</p>
+				<p class="seo__content">
+					Питна вода «AVANA» - вибір серйозних сучасних людей, яким важлива стабільність, престиж і безпеку в усіх
+					питаннях і, в першу чергу, в питаннях здоров'я.
+				</p>
+			</div>
+		</section>
+		<!-- english -->
+		<section class="seo">
+			<div class="container">
+				<p class="seo__content">
+					SEO text
+				</p>
+				<p class="seo__content">
+					Bottled drinking water "AVANA" - it`s a daily contribution to your health. When clean drinking water is
+					always at hand, you can be sure that one of the most important components of a healthy lifestyle is
+					completely safe and brings only benefits.
+				</p>
+				<p class="seo__content">
+					Drinking water "AVANA" - it`s the choice of serious modern people who value stability, prestige and
+					safety in
+					all matters and, first of all, in matters of health.
+				</p>
+			</div>
+		</section>
+		<!-- end of section seo -->
+
 
 		@@include('_footer.html')
 	</div>

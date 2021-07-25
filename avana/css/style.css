@@ -1172,6 +1172,8 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s;
   margin: 15px 0;
+  background: transparent;
+  border: none;
 }
 
 .delivery {
