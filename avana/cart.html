@@ -43,7 +43,7 @@
 							<use xlink:href="img/icons/icons.svg#LogoBlue" />
 						</svg>
 					</a>
-					<div class="header__text">
+					<div class="header__text" v-if="rus">
 						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
 						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
@@ -52,6 +52,28 @@
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
 							</svg>
 							Только по Киеву
+						</p>
+					</div>
+					<div class="header__text" v-if="ukr">
+						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Нд:&nbsp;<span class="header__span">выхідний</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Тільки по Київу
+						</p>
+					</div>
+					<div class="header__text" v-if="usa">
+						<p class="header__schedule">Mn-fr:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">St:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Su:&nbsp;<span class="header__span">day off</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Only in Kiev
 						</p>
 					</div>
 					<div class="header__links">
@@ -72,12 +94,9 @@
 							<svg class="header__svg header__svg_blue" viewBox="0 0 28 25">
 								<use xlink:href="img/icons/icons.svg#CartBlue" />
 							</svg>
-
-
 							<p class="header__counter" v-if="countProduct">
 								{{countProduct}}
 							</p>
-
 						</a>
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
@@ -98,10 +117,8 @@
 						<a href="#" class="menu__link">Контакты</a>
 					</div>
 
-
 				</div>
 			</div>
-
 		</header>
 		<div id="anchor" class="anchor"></div>
 		<section class="cart">
@@ -219,7 +236,9 @@
 						</form>
 					</div>
 					<div class="cart__wrap cart__wrap_right">
-						<h2 class="cart__user title__h2">ваш заказ</h2>
+						<h2 class="cart__user title__h2" v-if="rus">Ваш заказ</h2>
+						<h2 class="cart__user title__h2" v-if="ukr">Ваше замовлення</h2>
+						<h2 class="cart__user title__h2" v-if="usa">Your order</h2>
 
 
 						<div class="cart__orders" v-for="(product, n) in products">
@@ -229,11 +248,23 @@
 										<img :src="product.img" alt="" class="order__img">
 									</div>
 									<div class="order__text">
-										<p class="order__title">
+										<p class="order__title" v-if="rus">
 											{{product.title}}
 										</p>
-										<p class="order__price">
+										<p class="order__title" v-if="ukr">
+											{{product.titleUkr}}
+										</p>
+										<p class="order__title" v-if="usa">
+											{{product.titleUsa}}
+										</p>
+										<p class="order__price" v-if="rus">
 											{{(product.price * product.count)}} грн.
+										</p>
+										<p class="order__price" v-if="ukr">
+											{{(product.price * product.count)}} грн.
+										</p>
+										<p class="order__price" v-if="usa">
+											{{(product.price * product.count)}} uah.
 										</p>
 									</div>
 								</div>
@@ -260,11 +291,27 @@
 						</div>
 
 
-						<p class="cart__total">всего: <span class="cart__total_blue">{{totalProduct}} грн.</span> </p>
-						<button class="cart__submit btns" @click="createUser">ПОДТВЕРДИТЬ ЗАКАЗ</button>
-						<p class="cart__accept">*нажимая “Заказать” вы соглашаетесь с правилами
+						<p class="cart__total" v-if="rus">Bсего: <span class="cart__total_blue">{{totalProduct}}
+								грн.</span> </p>
+						<p class="cart__total" v-if="ukr">Всього: <span class="cart__total_blue">{{totalProduct}}
+								грн.</span> </p>
+						<p class="cart__total" v-if="usa">Total: <span class="cart__total_blue">{{totalProduct}}
+								uah.</span> </p>
+						<button class="cart__submit btns" @click="createUser" v-if="rus">ПОДТВЕРДИТЬ ЗАКАЗ</button>
+						<button class="cart__submit btns" @click="createUser" v-if="ukr">
+							ПІДТВЕРДИТИ ЗАМОВЛЕННЯ</button>
+						<button class="cart__submit btns" @click="createUser" v-if="usa">CONFIRM THE ORDER</button>
+						<p class="cart__accept" v-if="rus">*нажимая “Заказать” вы соглашаетесь с правилами
 							<a href="#" class="cart__link">
 								предоставления услуг</a>
+						</p>
+						<p class="cart__accept" v-if="ukr">*натискаючи кнопку «Замовити», ви погоджуєтесь з правилами
+							<a href="#" class="cart__link">
+								надання послуг</a>
+						</p>
+						<p class="cart__accept" v-if="usa">*by clicking "Order" you agree to the rules
+							<a href="#" class="cart__link">
+								provision of services</a>
 						</p>
 					</div>
 				</div>
