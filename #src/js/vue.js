@@ -106,8 +106,23 @@ if (document.getElementById('app')) {
 			products: [],
 			newCat: null,
 			burger: false,
+			mail: '',
+			mailError: false,
+			mailSend: false,
 		},
 		methods: {
+			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+			createMail() {
+				let needEmail = /@./gm;
+				if (testF(needEmail, this.mail) == false || this.mail === '') {
+					creatUser = false
+					this.mailError = true
+					this.mailSend = false
+				} else {
+					this.mailError = false
+					this.mailSend = true
+				}
+			},
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
 			},
@@ -221,6 +236,7 @@ if (document.getElementById('app2')) {
 			deliveryDateError: false,
 			paymentError: false,
 			selectedError: false,
+
 		},
 
 		methods: {
@@ -281,7 +297,6 @@ if (document.getElementById('app2')) {
 				} else {
 					this.nameError = false
 				}
-
 				if (this.tel === '' || this.tel.length > 19 || this.tel.length < 19) {
 					creatUser = false
 					this.telError = true
@@ -324,17 +339,14 @@ if (document.getElementById('app2')) {
 				} else {
 					this.paymentError = false
 				}
-				console.log(this.products.length)
 				if (this.products.length === 0) {
 					creatUser = false
 					alert('Добавте что-то к заказу')
 				}
 				this.creatUser = creatUser
-
 				if (creatUser) {
 					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
 				}
-
 			},
 		},
 		computed: {
@@ -409,21 +421,95 @@ if (document.getElementById('app3')) {
 	new Vue({
 		el: '#app3',
 		data: {
+			rus: false,
+			ukr: false,
+			usa: false,
 			totalProduct: 0,
+			burger: false,
 			products: [],
+			mail: '',
+			mailError: false,
+			mailSend: false,
+
+		},
+		watch: {
+
 
 		},
 		mounted() {
+			if (localStorage.rus) {
+				if (localStorage.rus == 'false') {
+					this.rus = false
+				} else {
+					this.rus = true
+				}
+
+			};
+			if (localStorage.usa) {
+				if (localStorage.usa == 'false') {
+					this.usa = false
+				} else {
+					this.usa = true
+				}
+
+			};
+			if (localStorage.ukr) {
+				if (localStorage.ukr == 'false') {
+					this.ukr = false
+				} else {
+					this.ukr = true
+				}
+
+			};
+			// if (localStorage.rus != false) this.rus = localStorage.rus;
+			// if (localStorage.ukr != false) this.ukr = localStorage.ukr;
+			// if (localStorage.usa != false) this.usa = localStorage.usa;
+			// if (this.rus == false || this.ukr == false || this.usa == false) {
+			// 	this.rus = true
+			// };
 			if (localStorage.getItem('products')) {
 				try {
 					this.products = JSON.parse(localStorage.getItem('products'));
 				} catch (e) {
 					localStorage.removeItem('products');
 				}
-			}
+			};
 		},
 		methods: {
+			langRus() {
+				this.rus = localStorage.rus = true
+				this.ukr = localStorage.ukr = false
+				this.usa = localStorage.usa = false
 
+			},
+			langUkr() {
+				this.rus = localStorage.rus = false
+				this.ukr = localStorage.ukr = true
+				this.usa = localStorage.usa = false
+
+			},
+			langUsa() {
+				this.rus = localStorage.rus = false
+				this.ukr = localStorage.ukr = false
+				this.usa = localStorage.usa = true
+
+			},
+
+			testF = (argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+			createMail() {
+				let needEmail = /@./gm;
+				if (testF(needEmail, this.mail) == false || this.mail === '') {
+					creatUser = false
+					this.mailError = true
+					this.mailSend = false
+				} else {
+					this.mailError = false
+					this.mailSend = true
+				}
+			},
+			burgerMenu() {
+				this.burger ? this.burger = false : this.burger = true
+			},
 		},
 		computed: {
 			countProduct() {
@@ -438,27 +524,27 @@ if (document.getElementById('app3')) {
 	})
 }
 
-if (document.getElementById('app4')) {
-	new Vue({
-		el: '#app4',
-		data: {
-			mail: '',
-			mailError: false,
-			mailSend: false,
-		},
-		methods: {
-			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
-			createMail() {
-				let needEmail = /@./gm;
-				if (testF(needEmail, this.mail) == false || this.mail === '') {
-					creatUser = false
-					this.mailError = true
-					this.mailSend = false
-				} else {
-					this.mailError = false
-					this.mailSend = true
-				}
-			},
-		},
-	})
-}
+// if (document.getElementById('app4')) {
+// 	new Vue({
+// 		el: '#app4',
+// 		data: {
+// 			mail: '',
+// 			mailError: false,
+// 			mailSend: false,
+// 		},
+// 		methods: {
+// 			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
+// 			createMail() {
+// 				let needEmail = /@./gm;
+// 				if (testF(needEmail, this.mail) == false || this.mail === '') {
+// 					creatUser = false
+// 					this.mailError = true
+// 					this.mailSend = false
+// 				} else {
+// 					this.mailError = false
+// 					this.mailSend = true
+// 				}
+// 			},
+// 		},
+// 	})
+// }
