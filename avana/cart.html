@@ -291,29 +291,50 @@
 									{{ currentDateTime(3) }}
 								</label>
 							</div>
-							<p class="userData__p">Время доставки </p>
+							<p class="userData__p" v-if="rus">Время доставки </p>
+							<p class="userData__p" v-if="ukr">Час доставки </p>
+							<p class="userData__p" v-if="usa">Delivery time </p>
 
 							<div class="userData__time">
 								<div class="userData__select" :class="{'error': selectedError }">
 									<v-select :options="options" v-model="selected">
 									</v-select>
 								</div>
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__call" class="userData__call userData__push" type="checkbox"
+										v-model="deliveryTime">
+									<div class="userData__label_before"></div>
+									<label for="userData__call" class="userData__label" v-if="rus">
+										Не перезванивать
+									</label>
+									<label for="userData__call" class="userData__label" v-if="ukr">
+										Hе передзвонювати
+									</label>
+									<label for="userData__call" class="userData__label" v-if="usa">
+										Do not callback
+									</label>
+								</div>
 
-								<input id="userData__call" class="userData__call userData__push" type="checkbox"
-									v-model="deliveryTime">
-								<label for="userData__call" class="userData__label">
-									Не перезванивать {{deliveryTime}}
-								</label>
+
+
 							</div>
-							<h2 class="cart__pay title__h2">Способ оплаты </h2>
+							<h2 class="cart__pay title__h2" v-if="rus">Способ оплаты </h2>
+							<h2 class="cart__pay title__h2" v-if="ukr">Спосіб оплати </h2>
+							<h2 class="cart__pay title__h2" v-if="usa">Payment method</h2>
 							<div class="userData__pay userData__time">
 								<div class="userData__save userData__save_mb20">
 									<input id="userData__radio1" name="userData__radio"
 										class="userData__radio userData__push" type="radio" value="cash"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio1" class="userData__label ">
+									<label for="userData__radio1" class="userData__label " v-if="rus">
 										Наличными курьеру
+									</label>
+									<label for="userData__radio1" class="userData__label " v-if="ukr">
+										Готівкою кур'єру
+									</label>
+									<label for="userData__radio1" class="userData__label " v-if="usa">
+										Сash courier
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
@@ -321,8 +342,14 @@
 										class="userData__radio userData__push" type="radio" value="paymentWeb"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio2" class="userData__label ">
+									<label for="userData__radio2" class="userData__label " v-if="rus">
 										Оплата картой на сайте
+									</label>
+									<label for="userData__radio2" class="userData__label " v-if="ukr">
+										Оплата карткою на сайті
+									</label>
+									<label for="userData__radio2" class="userData__label " v-if="usa">
+										Payment by card on the site
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
@@ -330,8 +357,14 @@
 										class="userData__radio userData__push" type="radio" value="cahsless"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio3" class="userData__label ">
+									<label for="userData__radio3" class="userData__label " v-if="rus">
 										Безналичный расчет (для юр. лиц)
+									</label>
+									<label for="userData__radio3" class="userData__label " v-if="ukr">
+										Безготівковий розрахунок (для юр. Осіб)
+									</label>
+									<label for="userData__radio3" class="userData__label " v-if="usa">
+										Cashless payment (for legal entities)
 									</label>
 								</div>
 							</div>
@@ -420,71 +453,72 @@
 			</div>
 		</section>
 		<footer class="footer">
-   <div class="container">
-      <div class="footer__wrap">
-         <a href="index.html" class="footer__logo header__logo" title="На главную">
-            <svg class="logo" viewBox="0 0 145 55">
-               <use xlink:href="img/icons/icons.svg#LogoWhite" />
-            </svg>
-         </a>
-         <nav class="footer__nav">
-            <!-- русский -->
-            <ul class="footer__ul">
-               <li class="footer__li"> <a class="footer__a" href="index.html#about">О воде</a></li>
-               <li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Новым клиентам</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Бизнесу</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Доставка и оплата</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Контакты</a></li>
-            </ul>
-            <!-- українська -->
-            <ul class="footer__ul">
-               <li class="footer__li"> <a class="footer__a" href="index.html#about">Про воду</a></li>
-               <li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Новим клиєнтам</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Бізнесу</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Доставка та оплата</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Контакти</a></li>
-            </ul>
-            <!-- english -->
-            <ul class="footer__ul">
-               <li class="footer__li"> <a class="footer__a" href="index.html#about">About water</a></li>
-               <li class="footer__li"> <a class="footer__a" href="catalog.html">Catalog</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">For new clients</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">For bussines</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Delivery & Pay</a></li>
-               <li class="footer__li"> <a class="footer__a" href="">Contacts</a></li>
-            </ul>
-         </nav>
-         <a href="tel:+380445029191" class="footer__phone">(044) 502-91-91</a>
-      </div>
-      <div class="footer__socials">
-         <a href="https://www.facebook.com/tymofii.solomatin.545" target="_blank" class="footer__link" title="Facebook">
-            <svg class="footer__svg" viewBox="0 0 24 24">
-               <use xlink:href="img/icons/icons.svg#FacebookWhite" />
-            </svg>
-         </a>
-         <a href="viber://chat?number=%2B380961712071" target="_blank" class="footer__link" title="Viber">
-            <svg class="footer__svg" viewBox="0 0 26 25">
-               <use xlink:href="img/icons/icons.svg#ViberWhite" />
-            </svg>
-         </a>
-         <a href="https://t.me/TimSolo" target="_blank" class="footer__link" title="Telegram">
-            <svg class="footer__svg" viewBox="0 0 25 26">
-               <use xlink:href="img/icons/icons.svg#TelegramWhite" />
-            </svg>
-         </a>
-      </div>
-   </div>
+	<div class="container">
+		<div class="footer__wrap">
+			<a href="index.html" class="footer__logo header__logo" title="На главную">
+				<svg class="logo" viewBox="0 0 145 55">
+					<use xlink:href="img/icons/icons.svg#LogoWhite" />
+				</svg>
+			</a>
+			<nav class="footer__nav">
+				<!-- русский -->
+				<ul class="footer__ul" v-if="rus">
+					<li class="footer__li"> <a class="footer__a" href="index.html#about">О воде</a></li>
+					<li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Новым клиентам</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Бизнесу</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Доставка и оплата</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Контакты</a></li>
+				</ul>
+				<!-- українська -->
+				<ul class="footer__ul" v-if="ukr">
+					<li class="footer__li"> <a class="footer__a" href="index.html#about">Про воду</a></li>
+					<li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Новим клиєнтам</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Бізнесу</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Доставка та оплата</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Контакти</a></li>
+				</ul>
+				<!-- english -->
+				<ul class="footer__ul" v-if="usa">
+					<li class="footer__li"> <a class="footer__a" href="index.html#about">About water</a></li>
+					<li class="footer__li"> <a class="footer__a" href="catalog.html">Catalog</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">For new clients</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">For bussines</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Delivery & Pay</a></li>
+					<li class="footer__li"> <a class="footer__a" href="">Contacts</a></li>
+				</ul>
+			</nav>
+			<a href="tel:+380445029191" class="footer__phone">(044) 502-91-91</a>
+		</div>
+		<div class="footer__socials">
+			<a href="https://www.facebook.com/tymofii.solomatin.545" target="_blank" class="footer__link"
+				title="Facebook">
+				<svg class="footer__svg" viewBox="0 0 24 24">
+					<use xlink:href="img/icons/icons.svg#FacebookWhite" />
+				</svg>
+			</a>
+			<a href="viber://chat?number=%2B380961712071" target="_blank" class="footer__link" title="Viber">
+				<svg class="footer__svg" viewBox="0 0 26 25">
+					<use xlink:href="img/icons/icons.svg#ViberWhite" />
+				</svg>
+			</a>
+			<a href="https://t.me/TimSolo" target="_blank" class="footer__link" title="Telegram">
+				<svg class="footer__svg" viewBox="0 0 25 26">
+					<use xlink:href="img/icons/icons.svg#TelegramWhite" />
+				</svg>
+			</a>
+		</div>
+	</div>
 
 
 
 
-   <button id="up" class="up">
-      <svg class="up__svg" viewBox="0 0 50 50">
-         <use xlink:href="img/icons/icons.svg#upArrow" />
-      </svg>
-   </button>
+	<button id="up" class="up">
+		<svg class="up__svg" viewBox="0 0 50 50">
+			<use xlink:href="img/icons/icons.svg#upArrow" />
+		</svg>
+	</button>
 </footer>
 	</div>
 

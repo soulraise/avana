@@ -411,8 +411,8 @@ if (document.getElementById('app2')) {
 
 		},
 		mounted() {
-			if (this.ukr == false || this.usa == false) {
-				this.rus = true
+			if (this.rus == false || this.usa == false) {
+				this.ukr = true
 			}
 			if (localStorage.rus) {
 				if (localStorage.rus == 'false') {
@@ -501,8 +501,8 @@ if (document.getElementById('app3')) {
 		watch: {
 		},
 		mounted() {
-			if (this.ukr == false || this.usa == false) {
-				this.rus = true
+			if (this.rus == false || this.usa == false) {
+				this.ukr = true
 			}
 			if (localStorage.rus) {
 				if (localStorage.rus == 'false') {

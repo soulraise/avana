@@ -291,29 +291,50 @@
 									{{ currentDateTime(3) }}
 								</label>
 							</div>
-							<p class="userData__p">Время доставки </p>
+							<p class="userData__p" v-if="rus">Время доставки </p>
+							<p class="userData__p" v-if="ukr">Час доставки </p>
+							<p class="userData__p" v-if="usa">Delivery time </p>
 
 							<div class="userData__time">
 								<div class="userData__select" :class="{'error': selectedError }">
 									<v-select :options="options" v-model="selected">
 									</v-select>
 								</div>
+								<div class="userData__save userData__save_mb20">
+									<input id="userData__call" class="userData__call userData__push" type="checkbox"
+										v-model="deliveryTime">
+									<div class="userData__label_before"></div>
+									<label for="userData__call" class="userData__label" v-if="rus">
+										Не перезванивать
+									</label>
+									<label for="userData__call" class="userData__label" v-if="ukr">
+										Hе передзвонювати
+									</label>
+									<label for="userData__call" class="userData__label" v-if="usa">
+										Do not callback
+									</label>
+								</div>
 
-								<input id="userData__call" class="userData__call userData__push" type="checkbox"
-									v-model="deliveryTime">
-								<label for="userData__call" class="userData__label">
-									Не перезванивать {{deliveryTime}}
-								</label>
+
+
 							</div>
-							<h2 class="cart__pay title__h2">Способ оплаты </h2>
+							<h2 class="cart__pay title__h2" v-if="rus">Способ оплаты </h2>
+							<h2 class="cart__pay title__h2" v-if="ukr">Спосіб оплати </h2>
+							<h2 class="cart__pay title__h2" v-if="usa">Payment method</h2>
 							<div class="userData__pay userData__time">
 								<div class="userData__save userData__save_mb20">
 									<input id="userData__radio1" name="userData__radio"
 										class="userData__radio userData__push" type="radio" value="cash"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio1" class="userData__label ">
+									<label for="userData__radio1" class="userData__label " v-if="rus">
 										Наличными курьеру
+									</label>
+									<label for="userData__radio1" class="userData__label " v-if="ukr">
+										Готівкою кур'єру
+									</label>
+									<label for="userData__radio1" class="userData__label " v-if="usa">
+										Сash courier
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
@@ -321,8 +342,14 @@
 										class="userData__radio userData__push" type="radio" value="paymentWeb"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio2" class="userData__label ">
+									<label for="userData__radio2" class="userData__label " v-if="rus">
 										Оплата картой на сайте
+									</label>
+									<label for="userData__radio2" class="userData__label " v-if="ukr">
+										Оплата карткою на сайті
+									</label>
+									<label for="userData__radio2" class="userData__label " v-if="usa">
+										Payment by card on the site
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
@@ -330,8 +357,14 @@
 										class="userData__radio userData__push" type="radio" value="cahsless"
 										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
-									<label for="userData__radio3" class="userData__label ">
+									<label for="userData__radio3" class="userData__label " v-if="rus">
 										Безналичный расчет (для юр. лиц)
+									</label>
+									<label for="userData__radio3" class="userData__label " v-if="ukr">
+										Безготівковий розрахунок (для юр. Осіб)
+									</label>
+									<label for="userData__radio3" class="userData__label " v-if="usa">
+										Cashless payment (for legal entities)
 									</label>
 								</div>
 							</div>

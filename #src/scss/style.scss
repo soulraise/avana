@@ -554,9 +554,6 @@ body {
         line-height: 1.4;
         transition: 0.3s;
         margin: 15px 0;
-        background: transparent;
-        border: none;
-
         @media (hover) {
             &:hover {
                 color: $SecondColor;
@@ -1681,7 +1678,7 @@ body {
         margin-top: 60px;
     }
     &__pay {
-        margin: 70px 0 30px;
+        margin: 50px 0 30px;
     }
 }
 .userData {
@@ -1896,6 +1893,7 @@ body {
     }
     &__save {
         display: flex;
+        align-items: center;
         margin: 30px 0;
         &_mb20 {
             margin: 0 0 20px 0;
@@ -2111,33 +2109,3 @@ body {
 .filled {
     background: #ecf8ff;
 }
-
-// .choise {
-//     width: 100%;
-//     height: 100vh;
-//     position: absolute;
-//     background: rgba(112, 196, 241, 0.9);
-//     z-index: 10000;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     &__modal {
-//         background: $FirstColor;
-//         width: 20vw;
-//         padding: 30px;
-//         display: flex;
-//         flex-direction: column;
-//     }
-//     &__btn {
-//         margin: 20px 0;
-//         border: 2px solid $SecondColor;
-//         background: #fff;
-//         color: $SecondColor;
-//         outline: none;
-//         &:hover {
-//             border: 2px solid #fff;
-//             background: $SecondColor;
-//             color: #fff;
-//         }
-//     }
-// }
