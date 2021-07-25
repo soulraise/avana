@@ -42,17 +42,6 @@ function headerHidden() {
 }
 headerHidden();
 
-function menuHidden() {
-
-	document.getElementById('burger').addEventListener('click', function () {
-		document.getElementById('menu').classList.toggle('menu__hidden')
-		document.getElementById('burgerline1').classList.toggle('burger__line_reversrotate45')
-		document.getElementById('burgerline2').classList.toggle('burger__line_hidden')
-		document.getElementById('burgerline3').classList.toggle('burger__line_rotate45')
-	})
-}
-menuHidden();
-
 function getUp() {
 	let upBtn = document.getElementById('up');
 	window.addEventListener('scroll', function () {
