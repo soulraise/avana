@@ -43,8 +43,9 @@
 							<use xlink:href="img/icons/icons.svg#LogoBlue" />
 						</svg>
 					</a>
-					<div class="header__text">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+					<!-- русский -->
+					<div class="header__text" v-if="rus">
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
 						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
 						<p class="header__schedule header__schedule_ml">
@@ -52,6 +53,32 @@
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
 							</svg>
 							Только по Киеву
+						</p>
+					</div>
+
+					<!-- українська -->
+					<div class="header__text" v-if="ukr">
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Нд:&nbsp;<span class="header__span">Вихідний</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Тільки по Київу
+						</p>
+					</div>
+
+					<!-- english -->
+					<div class="header__text" v-if="usa">
+						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span></p>
+						<p class="header__schedule">Sat:&nbsp;<span class="header__span">08:00 AM - 4:00 PM</span></p>
+						<p class="header__schedule">Sun:&nbsp;<span class="header__span">day off</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Only in Kiev
 						</p>
 					</div>
 					<div class="header__links">
@@ -79,13 +106,14 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
 					</div>
 					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
+						<!-- русское меню -->
+
 						<a href="#" class="menu__link">Мой аккаунт</a>
 						<a href="index.html#about" class="menu__link">О воде</a>
 						<a href="catalog.html" class="menu__link">Каталог</a>
@@ -93,6 +121,26 @@
 						<a href="#" class="menu__link">Новым клиентам</a>
 						<a href="#" class="menu__link">Доставка и оплата</a>
 						<a href="#" class="menu__link">Контакты</a>
+
+						<!-- українське меню -->
+
+						<a href="#" class="menu__link">Мій аккаунт</a>
+						<a href="index.html#about" class="menu__link">Про воду</a>
+						<a href="catalog.html" class="menu__link">Каталог</a>
+						<a href="#" class="menu__link">Бізнесу</a>
+						<a href="#" class="menu__link">Новим клієнтам</a>
+						<a href="#" class="menu__link">Доставка та оплата</a>
+						<a href="#" class="menu__link">Контакти</a>
+
+						<!-- english menu -->
+
+						<a href="#" class="menu__link">Account</a>
+						<a href="index.html#about" class="menu__link">About water</a>
+						<a href="catalog.html" class="menu__link">Catalog</a>
+						<a href="#" class="menu__link">For bussines</a>
+						<a href="#" class="menu__link">For new clients</a>
+						<a href="#" class="menu__link">Delivery & Pay</a>
+						<a href="#" class="menu__link">Contacts</a>
 					</div>
 
 
@@ -138,8 +186,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
 							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
 								клик</button>
 						</div>
@@ -295,7 +342,8 @@
 				</div>
 			</div>
 		</section>
-		<section class="subscribe">
+		<!-- русский -->
+<section class="subscribe">
 	<div class="container">
 		<h4 class="subscribe__h4">Хочешь узнавать первым о наших акциях и новостях?</h4>
 		<div class="subscribe__wrap">
@@ -309,7 +357,61 @@
 			Вы подписались, информация будет приходить на {{mail}}
 		</p>
 		<p class="subscribe__p subscribe__p_red" v-if="mailError">
-			Вы ввели не корректный E-mail
+			Вы ввели некорректный E-mail
+		</p>
+	</div>
+	<div class="subscribe__circle subscribe__circle_size1"></div>
+	<div class="subscribe__circle subscribe__circle_size2"></div>
+	<div class="subscribe__circle subscribe__circle_size3"></div>
+	<div class="subscribe__circle subscribe__circle_size4"></div>
+	<div class="subscribe__circle subscribe__circle_size5"></div>
+	<div class="subscribe__circle subscribe__circle_size6"></div>
+
+</section>
+
+<!-- українська -->
+<section class="subscribe">
+	<div class="container">
+		<h4 class="subscribe__h4">Хочеш дізнаватися першим про наші акції та новини?</h4>
+		<div class="subscribe__wrap">
+			<input class="subscribe__input" type="email" placeholder="E-mail" v-model="mail">
+			<button class="subscribe__btn" @click="createMail">підписатися</button>
+		</div>
+		<p class="subscribe__p">
+			Підпишись на розсилку по нашим акціям і пропозиціям
+		</p>
+		<p class="subscribe__p subscribe__p_green" v-if="mailSend">
+			Ви підписалися, інформація буде приходити на {{mail}}
+		</p>
+		<p class="subscribe__p subscribe__p_red" v-if="mailError">
+			Ви ввели некоректний E-mail
+		</p>
+	</div>
+	<div class="subscribe__circle subscribe__circle_size1"></div>
+	<div class="subscribe__circle subscribe__circle_size2"></div>
+	<div class="subscribe__circle subscribe__circle_size3"></div>
+	<div class="subscribe__circle subscribe__circle_size4"></div>
+	<div class="subscribe__circle subscribe__circle_size5"></div>
+	<div class="subscribe__circle subscribe__circle_size6"></div>
+
+</section>
+
+<!-- english -->
+<section class="subscribe">
+	<div class="container">
+		<h4 class="subscribe__h4">Do you want to be the first to know about our promotions and news?</h4>
+		<div class="subscribe__wrap">
+			<input class="subscribe__input" type="email" placeholder="E-mail" v-model="mail">
+			<button class="subscribe__btn" @click="createMail">subscribe</button>
+		</div>
+		<p class="subscribe__p">
+			Subscribe to the newsletter for our promotions and offers
+		</p>
+		<p class="subscribe__p subscribe__p_green" v-if="mailSend">
+			You have subscribed, the information will be sent to {{mail}}
+		</p>
+		<p class="subscribe__p subscribe__p_red" v-if="mailError">
+			You entered incorrect E-mail
 		</p>
 	</div>
 	<div class="subscribe__circle subscribe__circle_size1"></div>
@@ -348,6 +450,7 @@
             </svg>
          </a>
          <nav class="footer__nav">
+            <!-- русский -->
             <ul class="footer__ul">
                <li class="footer__li"> <a class="footer__a" href="index.html#about">О воде</a></li>
                <li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
@@ -355,6 +458,24 @@
                <li class="footer__li"> <a class="footer__a" href="">Бизнесу</a></li>
                <li class="footer__li"> <a class="footer__a" href="">Доставка и оплата</a></li>
                <li class="footer__li"> <a class="footer__a" href="">Контакты</a></li>
+            </ul>
+            <!-- українська -->
+            <ul class="footer__ul">
+               <li class="footer__li"> <a class="footer__a" href="index.html#about">Про воду</a></li>
+               <li class="footer__li"> <a class="footer__a" href="catalog.html">Каталог</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Новим клиєнтам</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Бізнесу</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Доставка та оплата</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Контакти</a></li>
+            </ul>
+            <!-- english -->
+            <ul class="footer__ul">
+               <li class="footer__li"> <a class="footer__a" href="index.html#about">About water</a></li>
+               <li class="footer__li"> <a class="footer__a" href="catalog.html">Catalog</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">For new clients</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">For bussines</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Delivery & Pay</a></li>
+               <li class="footer__li"> <a class="footer__a" href="">Contacts</a></li>
             </ul>
          </nav>
          <a href="tel:+380445029191" class="footer__phone">(044) 502-91-91</a>

@@ -43,8 +43,9 @@
 							<use xlink:href="img/icons/icons.svg#LogoBlue" />
 						</svg>
 					</a>
-					<div class="header__text">
-						<p class="header__schedule">Пн-пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+					<!-- русский -->
+					<div class="header__text" v-if="rus">
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
 						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
 						<p class="header__schedule">Вс:&nbsp;<span class="header__span">выходной</span></p>
 						<p class="header__schedule header__schedule_ml">
@@ -52,6 +53,32 @@
 								<use xlink:href="img/icons/icons.svg#LocationPin" />
 							</svg>
 							Только по Киеву
+						</p>
+					</div>
+
+					<!-- українська -->
+					<div class="header__text" v-if="ukr">
+						<p class="header__schedule">Пн-Пт:&nbsp;<span class="header__span">07:00 - 20:00</span></p>
+						<p class="header__schedule">Сб:&nbsp;<span class="header__span">08:00 - 16:00</span></p>
+						<p class="header__schedule">Нд:&nbsp;<span class="header__span">Вихідний</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Тільки по Київу
+						</p>
+					</div>
+
+					<!-- english -->
+					<div class="header__text" v-if="usa">
+						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span></p>
+						<p class="header__schedule">Sat:&nbsp;<span class="header__span">08:00 AM - 4:00 PM</span></p>
+						<p class="header__schedule">Sun:&nbsp;<span class="header__span">day off</span></p>
+						<p class="header__schedule header__schedule_ml">
+							<svg class="header__scheduleSvg" viewBox="0 0 17 17">
+								<use xlink:href="img/icons/icons.svg#LocationPin" />
+							</svg>
+							Only in Kiev
 						</p>
 					</div>
 					<div class="header__links">
@@ -79,13 +106,14 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
 					</div>
 					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
+						<!-- русское меню -->
+
 						<a href="#" class="menu__link">Мой аккаунт</a>
 						<a href="index.html#about" class="menu__link">О воде</a>
 						<a href="catalog.html" class="menu__link">Каталог</a>
@@ -93,6 +121,26 @@
 						<a href="#" class="menu__link">Новым клиентам</a>
 						<a href="#" class="menu__link">Доставка и оплата</a>
 						<a href="#" class="menu__link">Контакты</a>
+
+						<!-- українське меню -->
+
+						<a href="#" class="menu__link">Мій аккаунт</a>
+						<a href="index.html#about" class="menu__link">Про воду</a>
+						<a href="catalog.html" class="menu__link">Каталог</a>
+						<a href="#" class="menu__link">Бізнесу</a>
+						<a href="#" class="menu__link">Новим клієнтам</a>
+						<a href="#" class="menu__link">Доставка та оплата</a>
+						<a href="#" class="menu__link">Контакти</a>
+
+						<!-- english menu -->
+
+						<a href="#" class="menu__link">Account</a>
+						<a href="index.html#about" class="menu__link">About water</a>
+						<a href="catalog.html" class="menu__link">Catalog</a>
+						<a href="#" class="menu__link">For bussines</a>
+						<a href="#" class="menu__link">For new clients</a>
+						<a href="#" class="menu__link">Delivery & Pay</a>
+						<a href="#" class="menu__link">Contacts</a>
 					</div>
 
 
@@ -138,8 +186,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
 							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
 								клик</button>
 						</div>
