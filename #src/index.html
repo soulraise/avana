@@ -87,7 +87,8 @@
 
 					<!-- english -->
 					<div class="header__text" v-if="usa">
-						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span></p>
+						<p class="header__schedule">Mon-Fri:&nbsp;<span class="header__span">07:00 AM - 8:00 PM</span>
+						</p>
 						<p class="header__schedule">Sat:&nbsp;<span class="header__span">08:00 AM - 4:00 PM</span></p>
 						<p class="header__schedule">Sun:&nbsp;<span class="header__span">day off</span></p>
 						<p class="header__schedule header__schedule_ml">
@@ -122,7 +123,8 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -130,33 +132,33 @@
 					<div id="menu" class="menu" :class="[burger ? '' : 'menu__hidden']">
 						<!-- русское меню -->
 
-						<a href="#" class="menu__link">Мой аккаунт</a>
-						<a href="index.html#about" class="menu__link">О воде</a>
-						<a href="catalog.html" class="menu__link">Каталог</a>
-						<a href="#" class="menu__link">Бизнесу</a>
-						<a href="#" class="menu__link">Новым клиентам</a>
-						<a href="#" class="menu__link">Доставка и оплата</a>
-						<a href="#" class="menu__link">Контакты</a>
+						<a href="#" class="menu__link" v-if="rus">Мой аккаунт</a>
+						<a href="index.html#about" class="menu__link" v-if="rus">О воде</a>
+						<a href="catalog.html" class="menu__link" v-if="rus">Каталог</a>
+						<a href="#" class="menu__link" v-if="rus">Бизнесу</a>
+						<a href="#" class="menu__link" v-if="rus">Новым клиентам</a>
+						<a href="#" class="menu__link" v-if="rus">Доставка и оплата</a>
+						<a href="#" class="menu__link" v-if="rus">Контакты</a>
 
 						<!-- українське меню -->
 
-						<a href="#" class="menu__link">Мій аккаунт</a>
-						<a href="index.html#about" class="menu__link">Про воду</a>
-						<a href="catalog.html" class="menu__link">Каталог</a>
-						<a href="#" class="menu__link">Бізнесу</a>
-						<a href="#" class="menu__link">Новим клієнтам</a>
-						<a href="#" class="menu__link">Доставка та оплата</a>
-						<a href="#" class="menu__link">Контакти</a>
+						<a href="#" class="menu__link" v-if="ukr">Мій аккаунт</a>
+						<a href="index.html#about" class="menu__link" v-if="ukr">Про воду</a>
+						<a href="catalog.html" class="menu__link" v-if="ukr">Каталог</a>
+						<a href="#" class="menu__link" v-if="ukr">Бізнесу</a>
+						<a href="#" class="menu__link" v-if="ukr">Новим клієнтам</a>
+						<a href="#" class="menu__link" v-if="ukr">Доставка та оплата</a>
+						<a href="#" class="menu__link" v-if="ukr">Контакти</a>
 
 						<!-- english menu -->
 
-						<a href="#" class="menu__link">Account</a>
-						<a href="index.html#about" class="menu__link">About water</a>
-						<a href="catalog.html" class="menu__link">Catalog</a>
-						<a href="#" class="menu__link">For bussines</a>
-						<a href="#" class="menu__link">For new clients</a>
-						<a href="#" class="menu__link">Delivery & Pay</a>
-						<a href="#" class="menu__link">Contacts</a>
+						<a href="#" class="menu__link" v-if="usa">Account</a>
+						<a href="index.html#about" class="menu__link" v-if="usa">About water</a>
+						<a href="catalog.html" class="menu__link" v-if="usa">Catalog</a>
+						<a href="#" class="menu__link" v-if="usa">For bussines</a>
+						<a href="#" class="menu__link" v-if="usa">For new clients</a>
+						<a href="#" class="menu__link" v-if="usa">Delivery & Pay</a>
+						<a href="#" class="menu__link" v-if="usa">Contacts</a>
 					</div>
 
 				</div>
@@ -197,22 +199,17 @@
 					<div class="main__item">
 						<img class="main__img" src="img/Slider1.jpg" alt="">
 						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="rus">
 								<p class="main__p">
 									НАШИ АКЦИИ И СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ ДЛЯ НОВЫХ КЛИЕНТОВ
 								</p>
+
 								<h1 class="main__h1">
 									ЗАКАЖИ 1 БУТЫЛЬ НА ПРОБУ ЗА 1 ГРН
 								</h1>
 								<a href="catalog.html" class="main__btn btns">Хочу попробовать</a>
 							</div>
-						</div>
-					</div>
-					<!-- українська -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider1.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="ukr">
 								<p class="main__p">
 									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
 								</p>
@@ -221,13 +218,7 @@
 								</h1>
 								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
 							</div>
-						</div>
-					</div>
-					<!-- english -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider1.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="usa">
 								<p class="main__p">
 									Our promotions and special offers for new clients
 								</p>
@@ -238,12 +229,12 @@
 							</div>
 						</div>
 					</div>
-					<!-- end of slider -->
+
 					<!-- русский -->
 					<div class="main__item">
 						<img class="main__img" src="img/Slider2.jpg" alt="">
 						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="rus">
 								<p class="main__p">
 									НАШИ АКЦИИ И СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ ДЛЯ НОВЫХ КЛИЕНТОВ
 								</p>
@@ -252,13 +243,7 @@
 								</h1>
 								<a href="catalog.html" class="main__btn btns">Хочу попробовать</a>
 							</div>
-						</div>
-					</div>
-					<!-- українська -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider2.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="ukr">
 								<p class="main__p">
 									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
 								</p>
@@ -267,13 +252,7 @@
 								</h1>
 								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
 							</div>
-						</div>
-					</div>
-					<!-- english -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider2.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="usa">
 								<p class="main__p">
 									Our promotions and special offers for new clients
 								</p>
@@ -284,12 +263,12 @@
 							</div>
 						</div>
 					</div>
-					<!-- end of slider -->
+
 					<!-- русский -->
 					<div class="main__item">
 						<img class="main__img" src="img/Slider3.jpg" alt="">
 						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="rus">
 								<p class="main__p">
 									НАШИ АКЦИИ И СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ ДЛЯ НОВЫХ КЛИЕНТОВ
 								</p>
@@ -298,13 +277,16 @@
 								</h1>
 								<a href="catalog.html" class="main__btn btns">Хочу попробовать</a>
 							</div>
-						</div>
-					</div>
-					<!-- українська -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider3.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
+							<div class="main__wrap" v-if="ukr">
+								<p class="main__p">
+									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
+								</p>
+								<h1 class="main__h1">
+									замов 1 БУТиЛЬ НА ПРОБУ ЗА 1 ГРН
+								</h1>
+								<a href="catalog.html" class="main__btn btns">Хочу спробувати</a>
+							</div>
+							<div class="main__wrap" v-if="usa">
 								<p class="main__p">
 									НАШі АКЦії та СПЕЦіАЛЬНі пропозиції ДЛЯ НОВиХ КЛієНТіВ
 								</p>
@@ -315,21 +297,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- english -->
-					<div class="main__item">
-						<img class="main__img" src="img/Slider3.jpg" alt="">
-						<div class="main__content">
-							<div class="main__wrap">
-								<p class="main__p">
-									Our promotions and special offers for new clients
-								</p>
-								<h1 class="main__h1">
-									ORDER 1 BOTTLE FOR A SAMPLE FOR 1 UAH
-								</h1>
-								<a href="catalog.html" class="main__btn btns">I want to try</a>
-							</div>
-						</div>
-					</div>
+
 					<!-- end of slider -->
 				</div>
 			</div>
@@ -341,7 +309,7 @@
 		</section>
 
 		<!-- русский -->
-		<section class="delivery">
+		<section class="delivery" v-if="rus">
 			<div class="container">
 				<div class="delivery__wrap">
 					<h3 class="delivery__h3 title__h3">
@@ -440,14 +408,15 @@
 			</div>
 		</section>
 		<!-- українська -->
-		<section class="delivery">
+		<section class="delivery" v-if="ukr">
 			<div class="container">
 				<div class="delivery__wrap">
 					<h3 class="delivery__h3 title__h3">
 						замовити доставку авана - це легко
 					</h3>
 					<p class="delivery__p">
-						Авана – це натуральна вода, котора вже 12 років доставляється до офісів та домівок Києва и Київської
+						Авана – це натуральна вода, котора вже 12 років доставляється до офісів та домівок Києва и
+						Київської
 						області.
 					</p>
 					<div class="delivery__content">
@@ -463,7 +432,8 @@
 								</h4>
 							</div>
 							<p class="item__text">
-								Оформіть замовлення на сайті в будь-який час або по телефону в робочі дня з 7 до 20, в суботу з
+								Оформіть замовлення на сайті в будь-який час або по телефону в робочі дня з 7 до 20, в
+								суботу з
 								8 до 16.
 							</p>
 						</div>
@@ -525,7 +495,8 @@
 								</h4>
 							</div>
 							<p class="item__text">
-								Кур'єр доставить воду до дверей квартири чи офису. Наступного разу просто натисніть “повторити
+								Кур'єр доставить воду до дверей квартири чи офису. Наступного разу просто натисніть
+								“повторити
 								замовлення”.
 							</p>
 						</div>
@@ -534,14 +505,15 @@
 			</div>
 		</section>
 		<!-- english -->
-		<section class="delivery">
+		<section class="delivery" v-if="usa">
 			<div class="container">
 				<div class="delivery__wrap">
 					<h3 class="delivery__h3 title__h3">
 						ordering avana delivery - it`s easy
 					</h3>
 					<p class="delivery__p">
-						Avana - it`s natural water that has been delivered to offices and homes in Kiev and Kiev region for 12
+						Avana - it`s natural water that has been delivered to offices and homes in Kiev and Kiev region
+						for 12
 						years.
 					</p>
 					<div class="delivery__content">
@@ -557,7 +529,8 @@
 								</h4>
 							</div>
 							<p class="item__text">
-								Place an order on the website at any time or by phone on weekdays from 7AM to 8PM, on Saturday
+								Place an order on the website at any time or by phone on weekdays from 7AM to 8PM, on
+								Saturday
 								from 8 AM to 4 PM.
 							</p>
 						</div>
@@ -618,7 +591,8 @@
 								</h4>
 							</div>
 							<p class="item__text">
-								The courier will deliver the water to the door of your apartment or office. Next time just click
+								The courier will deliver the water to the door of your apartment or office. Next time
+								just click
 								"repeat order".
 							</p>
 						</div>
@@ -630,7 +604,7 @@
 
 
 		<!-- русский -->
-		<section class="schedule">
+		<section class="schedule" v-if="rus">
 			<div class="container">
 				<div class="schedule__wrap">
 					<div class="schedule__circle schedule__circle_big"></div>
@@ -686,7 +660,7 @@
 			</div>
 		</section>
 		<!-- українська -->
-		<section class="schedule">
+		<section class="schedule" v-if="ukr">
 			<div class="container">
 				<div class="schedule__wrap">
 					<div class="schedule__circle schedule__circle_big"></div>
@@ -697,7 +671,8 @@
 							Графік прийому замовлень
 						</h3>
 						<p class="schedule__article">
-							Компанія "Авана" гарантує своєчасну безкоштовну доставку в будь-який район міста, на будь-який
+							Компанія "Авана" гарантує своєчасну безкоштовну доставку в будь-який район міста, на
+							будь-який
 							поверх до Ваших дверей, і при необхідності водій встановить бутель на кулер або підставку.
 						</p>
 						<div class="schedule__local">
@@ -741,7 +716,7 @@
 			</div>
 		</section>
 		<!-- english -->
-		<section class="schedule">
+		<section class="schedule" v-if="usa">
 			<div class="container">
 				<div class="schedule__wrap">
 					<div class="schedule__circle schedule__circle_big"></div>
@@ -752,7 +727,8 @@
 							Schedule of orders
 						</h3>
 						<p class="schedule__article">
-							The Avana company guarantees timely free delivery to any area of the city, to any floor to your
+							The Avana company guarantees timely free delivery to any area of the city, to any floor to
+							your
 							door, and, if necessary, the driver will install the bottle on a cooler or stand.
 						</p>
 						<div class="schedule__local">
@@ -799,7 +775,7 @@
 
 
 		<!-- русский -->
-		<section class="purchase">
+		<section class="purchase" v-if="rus">
 			<div class="container">
 				<div class="purchase__wrap">
 					<div class="purchase__rectangle purchase__rectangle_left"></div>
@@ -838,7 +814,7 @@
 			</div>
 		</section>
 		<!-- українська -->
-		<section class="purchase">
+		<section class="purchase" v-if="ukr">
 			<div class="container">
 				<div class="purchase__wrap">
 					<div class="purchase__rectangle purchase__rectangle_left"></div>
@@ -877,7 +853,7 @@
 			</div>
 		</section>
 		<!-- english -->
-		<section class="purchase">
+		<section class="purchase" v-if="usa">
 			<div class="container">
 				<div class="purchase__wrap">
 					<div class="purchase__rectangle purchase__rectangle_left"></div>
@@ -918,7 +894,7 @@
 		<!-- end of section purchase -->
 
 		<!-- русский -->
-		<section id="about" class="about">
+		<section id="about" class="about" v-if="rus">
 			<div class="container">
 				<h3 class="about__h3 title__h3">мы заботимся о составе нашей воды</h3>
 				<div class="about__wrap">
@@ -960,7 +936,7 @@
 			</div>
 		</section>
 		<!-- українська -->
-		<section id="about" class="about">
+		<section id="about" class="about" v-if="ukr">
 			<div class="container">
 				<h3 class="about__h3 title__h3">ми піклуємося про склад нашої води</h3>
 				<div class="about__wrap">
@@ -975,7 +951,8 @@
 						</div>
 						<div class="about__content about__content_flexEnd about__content_borderCyan">
 							<p class="about__p">
-								Вода AVANA збагачена озоном. Це ідеально підходить для приготування напоїв та перших страв.
+								Вода AVANA збагачена озоном. Це ідеально підходить для приготування напоїв та перших
+								страв.
 							</p>
 						</div>
 					</div>
@@ -1001,7 +978,7 @@
 			</div>
 		</section>
 		<!-- english -->
-		<section id="about" class="about">
+		<section id="about" class="about" v-if="usa">
 			<div class="container">
 				<h3 class="about__h3 title__h3">we care about the composition of our water</h3>
 				<div class="about__wrap">
@@ -1046,11 +1023,11 @@
 		<section class="certificates">
 			<div class="container">
 				<!-- русский -->
-				<h3 class="certificates__h3 title__h3">Сертификаты качества воды</h3>
+				<h3 class="certificates__h3 title__h3" v-if="rus">Сертификаты качества воды</h3>
 				<!-- українська -->
-				<h3 class="certificates__h3 title__h3">Сертифікати якості води</h3>
+				<h3 class="certificates__h3 title__h3" v-if="ukr">Сертифікати якості води</h3>
 				<!-- english -->
-				<h3 class="certificates__h3 title__h3">Water quality certificates</h3>
+				<h3 class="certificates__h3 title__h3" v-if="usa">Water quality certificates</h3>
 				<div class="certificates__wrap">
 					<a href="img/certificate_1.jpg" data-fancybox="gallery" class="certificates__link">
 						<img src="img/certificate_1.jpg" alt="" class="certificates__img">
@@ -1068,7 +1045,7 @@
 		<!-- end of section certificates -->
 
 		<!-- русский -->
-		<section class="seo">
+		<section class="seo" v-if="rus">
 			<div class="container">
 				<p class="seo__content">
 					CEO текст
@@ -1086,30 +1063,34 @@
 			</div>
 		</section>
 		<!-- українська -->
-		<section class="seo">
+		<section class="seo" v-if="ukr">
 			<div class="container">
 				<p class="seo__content">
 					CEO текст
 				</p>
 				<p class="seo__content">
-					Бутильована питна вода «AVANA» - це щоденний внесок в Ваше здоров'я. Коли чиста питна вода завжди під
-					рукою, можна бути впевненим, що одна з найважливіших складових здорового способу життя повністю безпечна
+					Бутильована питна вода «AVANA» - це щоденний внесок в Ваше здоров'я. Коли чиста питна вода завжди
+					під
+					рукою, можна бути впевненим, що одна з найважливіших складових здорового способу життя повністю
+					безпечна
 					і приносить тільки користь.
 				</p>
 				<p class="seo__content">
-					Питна вода «AVANA» - вибір серйозних сучасних людей, яким важлива стабільність, престиж і безпеку в усіх
+					Питна вода «AVANA» - вибір серйозних сучасних людей, яким важлива стабільність, престиж і безпеку в
+					усіх
 					питаннях і, в першу чергу, в питаннях здоров'я.
 				</p>
 			</div>
 		</section>
 		<!-- english -->
-		<section class="seo">
+		<section class="seo" v-if="usa">
 			<div class="container">
 				<p class="seo__content">
 					SEO text
 				</p>
 				<p class="seo__content">
-					Bottled drinking water "AVANA" - it`s a daily contribution to your health. When clean drinking water is
+					Bottled drinking water "AVANA" - it`s a daily contribution to your health. When clean drinking water
+					is
 					always at hand, you can be sure that one of the most important components of a healthy lifestyle is
 					completely safe and brings only benefits.
 				</p>
