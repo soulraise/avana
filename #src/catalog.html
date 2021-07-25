@@ -151,6 +151,7 @@
 
 		<div class="modal__product" v-if="showProduct" @click="closeProduct">
 			<div class="product__window">
+				<!-- русский -->
 				<div class="product__container" @click.stop>
 					<div class="product__imgs">
 						<img :src="modal.img" :alt="modal.title" class="product__img">
@@ -191,11 +192,100 @@
 								клик</button>
 						</div>
 					</div>
-
 				</div>
+
+				<!-- українська -->
+				<div class="product__container" @click.stop>
+					<div class="product__imgs">
+						<img :src="modal.img" :alt="modal.title" class="product__img">
+					</div>
+					<div class="product__content">
+						<h3 class="product__h3 title__h3">{{modal.title}}</h3>
+						<p class="product__description">
+							{{modal.discription}}
+						</p>
+						<div class="product__wrap">
+							<div class="product__sale" v-if="modal.rent">
+								<p class="product__method">
+									Оренда
+								</p>
+								<p class="product__text">
+									на 1 місяць - {{modal.rent}} грн
+								</p>
+								<p class="product__text">
+									на 6 місяців - {{(modal.rent * 5)}} грн
+								</p>
+							</div>
+							<div class="product__delimiter" v-if="modal.rent"></div>
+							<div class="product__sale">
+								<p class="product__method">
+									Продаж
+								</p>
+								<p class="product__text">
+									1 кулер - {{modal.price}} грн.
+								</p>
+								<p class="product__text">
+
+								</p>
+							</div>
+						</div>
+						<div class="product__wrap">
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">Придбати</button>
+							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
+								клік</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- english -->
+				<div class="product__container" @click.stop>
+					<div class="product__imgs">
+						<img :src="modal.img" :alt="modal.title" class="product__img">
+					</div>
+					<div class="product__content">
+						<h3 class="product__h3 title__h3">{{modal.title}}</h3>
+						<p class="product__description">
+							{{modal.discription}}
+						</p>
+						<div class="product__wrap">
+							<div class="product__sale" v-if="modal.rent">
+								<p class="product__method">
+									Rentals
+								</p>
+								<p class="product__text">
+									to 1 month - {{modal.rent}} UAH
+								</p>
+								<p class="product__text">
+									to 6 months - {{(modal.rent * 5)}} UAH
+								</p>
+							</div>
+							<div class="product__delimiter" v-if="modal.rent"></div>
+							<div class="product__sale">
+								<p class="product__method">
+									Selling
+								</p>
+								<p class="product__text">
+									1 cooler - {{modal.price}} UAH
+								</p>
+								<p class="product__text">
+
+								</p>
+							</div>
+						</div>
+						<div class="product__wrap">
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">BUY</button>
+							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">in 1
+								click</button>
+						</div>
+					</div>
+				</div>
+
 				<button class="product__close" @click="closeProduct">Close &#10006;</button>
 			</div>
 		</div>
+
+
+
 
 		<div id="anchor" class="anchor"></div>
 		<section class="general">
@@ -227,12 +317,32 @@
 				</a>
 			</div>
 			<div class="container">
+
+
+
+				<!-- русский -->
 				<div class="way">
 					<a href="index.html" class="way__link">Главная</a>
 					<a href="" class="way__link">Каталог</a>
 				</div>
+				<!-- українська -->
+				<div class="way">
+					<a href="index.html" class="way__link">Головна</a>
+					<a href="" class="way__link">Каталог</a>
+				</div>
+				<!-- english -->
+				<div class="way">
+					<a href="index.html" class="way__link">Main</a>
+					<a href="" class="way__link">Catalog</a>
+				</div>
+
+
+
 				<div class="general__container">
 					<a href="#pomps" class="general__anchor">
+
+
+						<!-- русский -->
 						<div class="general__wrap">
 							<p class="general__p">Помпы</p>
 							<p class="general__p">Кулеры</p>
@@ -240,8 +350,26 @@
 								<use xlink:href="img/icons/icons.svg#GeneralArrow" />
 							</svg>
 						</div>
+						<!-- українська -->
+						<div class="general__wrap">
+							<p class="general__p">Помпи</p>
+							<p class="general__p">Кулери</p>
+							<svg class="general__svg" viewBox="0 0 8 211">
+								<use xlink:href="img/icons/icons.svg#GeneralArrow" />
+							</svg>
+						</div>
+						<!-- english -->
+						<div class="general__wrap">
+							<p class="general__p">Pomps</p>
+							<p class="general__p">Coolers</p>
+							<svg class="general__svg" viewBox="0 0 8 211">
+								<use xlink:href="img/icons/icons.svg#GeneralArrow" />
+							</svg>
+						</div>
 					</a>
+					<!-- русский -->
 					<div class="general__content">
+						<!-- русский -->
 						<div class="general__shell general__shell_mb60">
 							<h2 class="general__h2">Вода Avana 18,9 л</h2>
 							<p class="general__text">
@@ -263,8 +391,52 @@
 								</p>
 							</div>
 						</div>
+						<!-- українська -->
+						<div class="general__shell general__shell_mb60">
+							<h2 class="general__h2">Вода Avana 18,9 л</h2>
+							<p class="general__text">
+								Сертифікати: ISO 22000/HACCP, відповідності УКРСЕПРО
+							</p>
+							<p class="general__text">
+								Джерело: артезіанська свердловина
+							</p>
+							<p class="general__text">
+								Мінералізація: 100-150 мг/дмз
+							</p>
+							<button class="general__button btns" @click="addProduct(water)">Додати до кошика</button>
+						</div>
+						<div class="general__shell general__shell_mr60">
+							<div class="general__circle">
+								<p class="general__text general__text_blue">
+									80 грн за пляшку
+								</p>
+							</div>
+						</div>
+						<!-- english -->
+						<div class="general__shell general__shell_mb60">
+							<h2 class="general__h2">Вода Avana 18,9 л</h2>
+							<p class="general__text">
+								Сертификаты: ISO 22000/HACCP, соответствия УКРСЕПРО
+							</p>
+							<p class="general__text">
+								Источник:
+								артезианская скважина
+							</p>
+							<p class="general__text">
+								Минирализация: 100-150 мг/дмз
+							</p>
+							<button class="general__button btns" @click="addProduct(water)">Добавить в корзину</button>
+						</div>
+						<div class="general__shell general__shell_mr60">
+							<div class="general__circle">
+								<p class="general__text general__text_blue">
+									80 грн за бутылку
+								</p>
+							</div>
+						</div>
+						<!--  -->
 						<div class="general__shell general__shell_center">
-							<img src="img/BottleRotate.png" alt="" class="general__img">
+							<img src="img/BottleRotate.png" alt="АВАНА - вода" class="general__img">
 						</div>
 					</div>
 				</div>
@@ -279,7 +451,12 @@
 
 		<section id="pomps" class="pomps">
 			<div class="container">
+				<!-- русский -->
 				<h3 class="pomps__h3 title__h3">Помпы</h3>
+				<!-- українська -->
+				<h3 class="pomps__h3 title__h3">Помпи</h3>
+				<!-- english -->
+				<h3 class="pomps__h3 title__h3">Pomps</h3>
 				<div class="pomps__items">
 					<div class="card" v-for="(pomp, i) in pomps" :key="i">
 						<div class="card__circle" v-if="pomp.label">
@@ -292,7 +469,12 @@
 						</div>
 						<div class="card__wrap">
 							<div class="card__text">
+								<!-- русский -->
 								<p class="card__price">{{pomp.price}} грн</p>
+								<!-- українська -->
+								<p class="card__price">{{pomp.price}} грн</p>
+								<!-- english -->
+								<p class="card__price">{{pomp.price}} UAH</p>
 								<a class="card__link" @click="transition(pomp)">
 									<p class="card__name">{{pomp.title}}</p>
 								</a>
@@ -310,7 +492,12 @@
 
 		<section class="coolers">
 			<div class="container">
+				<!-- русский -->
 				<h3 class="coolers__h3 title__h3">Кулеры</h3>
+				<!-- українська -->
+				<h3 class="coolers__h3 title__h3">Кулєри</h3>
+				<!-- english -->
+				<h3 class="coolers__h3 title__h3">Coolers</h3>
 				<div class="coolers__items">
 
 					<div class="card" v-for="(culer, i) in culers" :key="i">
@@ -324,7 +511,12 @@
 						</div>
 						<div class="card__wrap">
 							<div class="card__text">
+								<!-- русский -->
 								<p class="card__price">{{culer.price}} грн</p>
+								<!-- українська -->
+								<p class="card__price">{{culer.price}} грн</p>
+								<!-- english -->
+								<p class="card__price">{{culer.price}} UAH</p>
 								<a href="" class="card__link">
 									<p class="card__name">{{culer.title}}</p>
 								</a>
@@ -344,7 +536,8 @@
 		</section>
 		@@include('_subscribe.html')
 
-		<section class="seo">
+		<!-- русский -->
+		<section class="seo" v-if="rus">
 			<div class="container">
 				<p class="seo__content">
 					CEO текст
@@ -361,6 +554,46 @@
 				</p>
 			</div>
 		</section>
+		<!-- українська -->
+		<section class="seo" v-if="ukr">
+			<div class="container">
+				<p class="seo__content">
+					CEO текст
+				</p>
+				<p class="seo__content">
+					Бутильована питна вода «AVANA» - це щоденний внесок в Ваше здоров'я. Коли чиста питна вода завжди
+					під
+					рукою, можна бути впевненим, що одна з найважливіших складових здорового способу життя повністю
+					безпечна
+					і приносить тільки користь.
+				</p>
+				<p class="seo__content">
+					Питна вода «AVANA» - вибір серйозних сучасних людей, яким важлива стабільність, престиж і безпеку в
+					усіх
+					питаннях і, в першу чергу, в питаннях здоров'я.
+				</p>
+			</div>
+		</section>
+		<!-- english -->
+		<section class="seo" v-if="usa">
+			<div class="container">
+				<p class="seo__content">
+					SEO text
+				</p>
+				<p class="seo__content">
+					Bottled drinking water "AVANA" - it`s a daily contribution to your health. When clean drinking water
+					is
+					always at hand, you can be sure that one of the most important components of a healthy lifestyle is
+					completely safe and brings only benefits.
+				</p>
+				<p class="seo__content">
+					Drinking water "AVANA" - it`s the choice of serious modern people who value stability, prestige and
+					safety in
+					all matters and, first of all, in matters of health.
+				</p>
+			</div>
+		</section>
+		<!-- end of section seo -->
 
 		@@include('_footer.html')
 	</div>
