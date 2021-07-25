@@ -66,6 +66,9 @@ if (document.getElementById('app')) {
 	new Vue({
 		el: '#app',
 		data: {
+			rus: false,
+			ukr: false,
+			usa: false,
 			pomps: [
 				{
 					id: 123,
@@ -265,6 +268,30 @@ if (document.getElementById('app')) {
 			},
 		},
 		mounted() {
+			if (this.rus == false || this.usa == false) {
+				this.ukr = true
+			}
+			if (localStorage.rus) {
+				if (localStorage.rus == 'false') {
+					this.rus = false
+				} else {
+					this.rus = true
+				}
+			};
+			if (localStorage.usa) {
+				if (localStorage.usa == 'false') {
+					this.usa = false
+				} else {
+					this.usa = true
+				}
+			};
+			if (localStorage.ukr) {
+				if (localStorage.ukr == 'false') {
+					this.ukr = false
+				} else {
+					this.ukr = true
+				}
+			};
 			if (localStorage.getItem('products')) {
 				try {
 					this.products = JSON.parse(localStorage.getItem('products'));
