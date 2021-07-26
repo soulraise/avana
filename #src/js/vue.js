@@ -10,7 +10,7 @@ if (document.getElementById('app')) {
 					id: 123,
 					title: 'Помпа BlueRain',
 					titleUkr: 'Помпа BlueRain',
-					titleUsa: 'Pompa BlueRain',
+					titleUsa: 'Pomp BlueRain',
 					price: 130,
 					rent: 20,
 					img: 'img/HandPomp.png',
@@ -24,7 +24,7 @@ if (document.getElementById('app')) {
 					id: 223,
 					title: 'Помпа BlueRain2',
 					titleUkr: 'Помпа BlueRain2',
-					titleUsa: 'Pompa BlueRain2',
+					titleUsa: 'Pomp BlueRain2',
 					price: 131,
 					img: 'img/HandPomp.png',
 					discription: 'Помпа – то механический насосос, надеваемый на горлышко бутылки. Закрепляется после сняти крышки. Не меняет температуру воды.',
@@ -37,7 +37,7 @@ if (document.getElementById('app')) {
 					id: 323,
 					title: 'Помпа BlueRain3',
 					titleUkr: 'Помпа BlueRain3',
-					titleUsa: 'Pompa BlueRain3',
+					titleUsa: 'Pomp BlueRain3',
 					price: 132,
 					rent: 20,
 					img: 'img/HandPomp.png',
@@ -51,7 +51,7 @@ if (document.getElementById('app')) {
 					id: 423,
 					title: 'Помпа BlueRain4',
 					titleUkr: 'Помпа BlueRain4',
-					titleUsa: 'Pompa BlueRain4',
+					titleUsa: 'Pomp BlueRain4',
 					price: 133,
 					img: 'img/PompBox.jpg',
 					discription: 'Помпа – то механический насосос, надеваемый на горлышко бутылки. Закрепляется после сняти крышки. Не меняет температуру воды.',
@@ -66,7 +66,7 @@ if (document.getElementById('app')) {
 					id: 523,
 					title: 'Ecotronic H1-T (настольный)',
 					titleUkr: 'Ecotronic H1-T (настільний)',
-					titleUsa: 'Ecotronic H1-T (nastilny)',
+					titleUsa: 'Ecotronic H1-T (table)',
 					price: 130,
 					rent: 20,
 					img: 'img/Cooler.png',
@@ -266,13 +266,6 @@ if (document.getElementById('app2')) {
 				'!': { escape: true },
 				'*': { repeat: true }
 			},
-			// options: [
-			// 	{ code: '1', country: '07:00 - 09:00' },
-			// 	{ code: '2', country: '09:00 - 12:00' },
-			// 	{ code: '3', country: '12:00 - 14:00' },
-			// 	{ code: '4', country: '14:00 - 18:00' },
-			// 	{ code: '5', country: '18:00 - 20:00' },
-			// ],
 			options: [
 				'07:00 - 09:00',
 				'09:00 - 12:00',
@@ -288,6 +281,7 @@ if (document.getElementById('app2')) {
 			home: '',
 			flat: '',
 			entrance: '',
+			coment: '',
 			checked: false,
 			addComent: false,
 			validData: '',
@@ -298,6 +292,9 @@ if (document.getElementById('app2')) {
 			deliveryDate: '',
 			deliveryTime: false,
 			payment: '',
+			paymentTitle: '',
+			paymentTitleUkr: '',
+			paymentTitleUsa: '',
 			nameError: false,
 			telError: false,
 			mailError: false,
@@ -311,7 +308,9 @@ if (document.getElementById('app2')) {
 
 		methods: {
 			testF =(argneed, argU) => (argU.search(argneed) != -1) ? true : false,
-
+			CloseInvoice() {
+				this.creatUser = false
+			},
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
 			},
@@ -353,11 +352,6 @@ if (document.getElementById('app2')) {
 				this.saveProduct();
 			},
 			createUser() {
-				let needPassword = /[A-Z]/gm;
-				let needPassword2 = /[a-z]/gm;
-				let needPassword3 = /[0-9+]/gm;
-				let needPassword4 = /[+]/gm;
-				let needPassword5 = /[!@#$%^&*]/gm;
 				let needEmail = /@./gm;
 				let creatUser = true
 
@@ -414,12 +408,27 @@ if (document.getElementById('app2')) {
 					alert('Добавте что-то к заказу')
 				}
 				this.creatUser = creatUser
-				if (creatUser) {
-					alert('уважаемый ' + ' ' + this.name + ' ' + ' ,Ваш заказ принят')
+
+				if (this.payment == "cash") {
+					this.paymentTitle = 'Наличными курьеру'
+					this.paymentTitleUkr = "Готівкою кур'єру"
+					this.paymentTitleUsa = 'Сash courier'
 				}
+				if (this.payment == "paymentWeb") {
+					this.paymentTitle = 'Оплата картой на сайте'
+					this.paymentTitleUkr = "Оплата карткою на сайті"
+					this.paymentTitleUsa = 'Payment by card on the site'
+				}
+				if (this.payment == "cahsless") {
+					this.paymentTitle = 'Безналичный расчет (для юр. лиц)'
+					this.paymentTitleUkr = "Безготівковий розрахунок (для юр. Осіб)"
+					this.paymentTitleUsa = 'Cashless payment (for legal entities)'
+				}
+
 			},
 		},
 		computed: {
+
 			totalProduct() {
 				let res = 0
 				this.products.forEach(element => {

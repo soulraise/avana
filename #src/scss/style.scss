@@ -500,7 +500,6 @@ body {
 .languages,
 .socials {
     padding: 0 20px;
-
     width: 5%;
     flex-shrink: 0;
     display: flex;
@@ -554,6 +553,9 @@ body {
         line-height: 1.4;
         transition: 0.3s;
         margin: 15px 0;
+        border: none;
+        background: #fff;
+        cursor: pointer;
         @media (hover) {
             &:hover {
                 color: $SecondColor;
@@ -2109,6 +2111,7 @@ body {
 .filled {
     background: #ecf8ff;
 }
+
 .invoice {
     position: fixed;
     top: 0;
@@ -2137,6 +2140,7 @@ body {
     &__table {
         border-spacing: 0;
         border: 1px solid #000;
+        width: 100%;
     }
     &__item {
         border: 1px solid #000;

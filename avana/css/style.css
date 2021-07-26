@@ -1172,6 +1172,9 @@ body {
   -o-transition: 0.3s;
   transition: 0.3s;
   margin: 15px 0;
+  border: none;
+  background: #fff;
+  cursor: pointer;
 }
 
 .delivery {
@@ -2933,6 +2936,7 @@ body {
 .invoice__table {
   border-spacing: 0;
   border: 1px solid #000;
+  width: 100%;
 }
 
 .invoice__item {

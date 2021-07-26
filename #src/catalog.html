@@ -108,8 +108,7 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -188,8 +187,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">купить</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">купить</button>
 							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
 								клик</button>
 						</div>
@@ -232,8 +230,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">Придбати</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">Придбати</button>
 							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">в 1
 								клік</button>
 						</div>
@@ -276,8 +273,7 @@
 							</div>
 						</div>
 						<div class="product__wrap">
-							<button class="product__btn btns product__btn_orange"
-								@click="addProduct(modal)">BUY</button>
+							<button class="product__btn btns product__btn_orange" @click="addProduct(modal)">BUY</button>
 							<button class="product__btn btns product__btn_blue" @click="buyOneClick(modal)">in 1
 								click</button>
 						</div>
@@ -439,15 +435,15 @@
 						</div>
 						<!--  -->
 						<div class="general__shell general__shell_center">
-							<img src="img/BottleRotate.png" alt="АВАНА - вода" class="general__img">
+							<img src="img/BottleRotate.png" alt="Питьевая вода «AVANA»" class="general__img">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="languages">
-				<a href="#" class="languages__link">RU</a>
-				<a href="#" class="languages__link">UA</a>
-				<a href="#" class="languages__link">EN</a>
+				<button class="languages__link" @click="langRus">RU</button>
+				<button class="languages__link" @click="langUkr">UA</button>
+				<button class="languages__link" @click="langUsa">EN</button>
 			</div>
 		</section>
 
