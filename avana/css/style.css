@@ -1217,6 +1217,7 @@ body {
   -o-transition: 0.4s;
   transition: 0.4s;
   min-width: 200px;
+  width: 20%;
 }
 
 .item__wrap {
@@ -3026,6 +3027,7 @@ body {
 
   .item {
     margin-bottom: 20px;
+    width: unset;
   }
 }
 
