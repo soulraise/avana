@@ -1446,6 +1446,7 @@ body {
         border: none;
         background: #fff;
         flex-shrink: 0;
+        outline: none;
         @media (hover) {
             &:hover {
                 animation: cardCart 0.5s linear infinite;
@@ -1769,7 +1770,7 @@ body {
         position: absolute;
         z-index: -100;
         opacity: 0;
-        &:checked .userData__label_before,
+        &:checked + .userData__label_before,
         &:checked + .userData__label_round {
             border: 2px solid $ThirdColor;
             background-image: url(../img/Union.svg);

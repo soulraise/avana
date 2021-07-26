@@ -2165,6 +2165,7 @@ body {
   background: #fff;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  outline: none;
 }
 
 .card__link {
@@ -2517,7 +2518,7 @@ body {
   opacity: 0;
 }
 
-.userData__push:checked .userData__label_before,
+.userData__push:checked + .userData__label_before,
 .userData__push:checked + .userData__label_round {
   border: 2px solid #febc38;
   background-image: url(../img/Union.svg);
