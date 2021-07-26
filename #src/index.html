@@ -123,7 +123,8 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -301,9 +302,9 @@
 				</div>
 			</div>
 			<div class="languages">
-				<button class="languages__link" @click="langRus">RU</button>
-				<button class="languages__link" @click="langUkr">UA</button>
-				<button class="languages__link" @click="langUsa">EN</button>
+				<button class="languages__link" :class="{'active':rus}" @click="langRus">RU</button>
+				<button class="languages__link" :class="{'active':ukr}" @click="langUkr">UA</button>
+				<button class="languages__link" :class="{'active':usa}" @click="langUsa">EN</button>
 			</div>
 		</section>
 
