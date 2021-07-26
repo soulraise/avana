@@ -114,8 +114,8 @@
 				<p class="invoice__p">Street: {{street}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Home: {{home}}</p>
-					<p class="invoice__p">Entrance: {{entrance}}</p>
-					<p class="invoice__p">Apartment: {{flat}}</p>
+					<p class="invoice__p" v-if="entrance">Entrance: {{entrance}}</p>
+					<p class="invoice__p" v-if="flat">Apartment: {{flat}}</p>
 				</div>
 				<p class="invoice__p">E-mail: {{eMail}}</p>
 				<p class="invoice__p" v-if="coment">Comment: {{coment}}</p>
