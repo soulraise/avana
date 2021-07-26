@@ -214,7 +214,8 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line "
+								:class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -269,10 +270,11 @@
 							<div class="userData__container userData__container_flexwrap" v-if="rus">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Имя"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Имя" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -284,19 +286,21 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Дом" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Подъезд"
-											v-model="entrance">
-										<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Подъезд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
 									</div>
 								</div>
 							</div>
 							<div class="userData__container userData__container_flexwrap" v-if="ukr">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Ім'я"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Ім'я" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -308,19 +312,21 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Будинок" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Під'їзд"
-											v-model="entrance">
-										<input class="userData__input" type="text" placeholder="Квартира" v-model="flat">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Під'їзд" v-model="entrance">
+										<input class="userData__input" type="text" placeholder="Квартира"
+											v-model="flat">
 									</div>
 								</div>
 							</div>
 							<div class="userData__container userData__container_flexwrap" v-if="usa">
 								<div class="userData__wrap">
 
-									<input class="userData__input" :class="{'error': nameError }" type=" text" placeholder="Name"
-										v-model="name">
-									<input class="userData__input userData__input_m15 " :class="{'error': telError }" type="tel"
-										placeholder="+38(0__) ___-__-__" v-model="tel" v-maska="'+38 (0##) ###-##-##'">
+									<input class="userData__input" :class="{'error': nameError }" type=" text"
+										placeholder="Name" v-model="name">
+									<input class="userData__input userData__input_m15 " :class="{'error': telError }"
+										type="tel" placeholder="+38(0__) ___-__-__" v-model="tel"
+										v-maska="'+38 (0##) ###-##-##'">
 									<input class="userData__input" :class="{'error': mailError }" type="email"
 										placeholder="E-mail" v-model="eMail">
 								</div>
@@ -332,8 +338,8 @@
 									<div class="userData__container userData__container_gap0">
 										<input class="userData__input" :class="{'error': homeError }" type="text"
 											placeholder="Home" v-model="home">
-										<input class="userData__input  userData__input_m10" type="text" placeholder="Entrance"
-											v-model="entrance">
+										<input class="userData__input  userData__input_m10" type="text"
+											placeholder="Entrance" v-model="entrance">
 										<input class="userData__input" type="text" placeholder="Flat" v-model="flat">
 									</div>
 								</div>
@@ -422,8 +428,9 @@
 							<h2 class="cart__pay title__h2" v-if="usa">Payment method</h2>
 							<div class="userData__pay userData__time">
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio1" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cash" v-model='payment'>
+									<input id="userData__radio1" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cash"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio1" class="userData__label " v-if="rus">
 										Наличными курьеру
@@ -436,8 +443,9 @@
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio2" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="paymentWeb" v-model='payment'>
+									<input id="userData__radio2" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="paymentWeb"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio2" class="userData__label " v-if="rus">
 										Оплата картой на сайте
@@ -450,8 +458,9 @@
 									</label>
 								</div>
 								<div class="userData__save userData__save_mb20">
-									<input id="userData__radio3" name="userData__radio" class="userData__radio userData__push"
-										type="radio" value="cahsless" v-model='payment'>
+									<input id="userData__radio3" name="userData__radio"
+										class="userData__radio userData__push" type="radio" value="cahsless"
+										v-model='payment'>
 									<div class="userData__label_round" :class="{'error': paymentError }"></div>
 									<label for="userData__radio3" class="userData__label " v-if="rus">
 										Безналичный расчет (для юр. лиц)
@@ -605,6 +614,11 @@
 
 </footer>
 	</div>
+	<button id="up" class="up">
+		<svg class="up__svg" viewBox="0 0 50 50">
+			<use xlink:href="img/icons/icons.svg#upArrow" />
+		</svg>
+	</button>
 
 
 	<script src="https://unpkg.com/vue@latest"></script>
