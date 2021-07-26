@@ -330,13 +330,6 @@ if (document.getElementById('app2')) {
 				'!': { escape: true },
 				'*': { repeat: true }
 			},
-			// options: [
-			// 	{ code: '1', country: '07:00 - 09:00' },
-			// 	{ code: '2', country: '09:00 - 12:00' },
-			// 	{ code: '3', country: '12:00 - 14:00' },
-			// 	{ code: '4', country: '14:00 - 18:00' },
-			// 	{ code: '5', country: '18:00 - 20:00' },
-			// ],
 			options: [
 				'07:00 - 09:00',
 				'09:00 - 12:00',
@@ -382,7 +375,6 @@ if (document.getElementById('app2')) {
 			CloseInvoice() {
 				this.creatUser = false
 			},
-
 			burgerMenu() {
 				this.burger ? this.burger = false : this.burger = true
 			},
@@ -424,11 +416,6 @@ if (document.getElementById('app2')) {
 				this.saveProduct();
 			},
 			createUser() {
-				let needPassword = /[A-Z]/gm;
-				let needPassword2 = /[a-z]/gm;
-				let needPassword3 = /[0-9+]/gm;
-				let needPassword4 = /[+]/gm;
-				let needPassword5 = /[!@#$%^&*]/gm;
 				let needEmail = /@./gm;
 				let creatUser = true
 
@@ -485,7 +472,6 @@ if (document.getElementById('app2')) {
 					alert('Добавте что-то к заказу')
 				}
 				this.creatUser = creatUser
-
 
 				if (this.payment == "cash") {
 					this.paymentTitle = 'Наличными курьеру'
