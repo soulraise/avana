@@ -202,6 +202,21 @@ if (document.getElementById('app')) {
 				const parsed = JSON.stringify(this.products);
 				localStorage.setItem('products', parsed);
 			},
+			langRus() {
+				this.rus = localStorage.rus = true
+				this.ukr = localStorage.ukr = false
+				this.usa = localStorage.usa = false
+			},
+			langUkr() {
+				this.rus = localStorage.rus = false
+				this.ukr = localStorage.ukr = true
+				this.usa = localStorage.usa = false
+			},
+			langUsa() {
+				this.rus = localStorage.rus = false
+				this.ukr = localStorage.ukr = false
+				this.usa = localStorage.usa = true
+			},
 		},
 		mounted() {
 			if (this.rus == false || this.usa == false) {
@@ -575,21 +590,17 @@ if (document.getElementById('app3')) {
 				this.rus = localStorage.rus = true
 				this.ukr = localStorage.ukr = false
 				this.usa = localStorage.usa = false
-
 			},
 			langUkr() {
 				this.rus = localStorage.rus = false
 				this.ukr = localStorage.ukr = true
 				this.usa = localStorage.usa = false
-
 			},
 			langUsa() {
 				this.rus = localStorage.rus = false
 				this.ukr = localStorage.ukr = false
 				this.usa = localStorage.usa = true
-
 			},
-
 			testF = (argneed, argU) => (argU.search(argneed) != -1) ? true : false,
 			createMail() {
 				let needEmail = /@./gm;

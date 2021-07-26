@@ -44,11 +44,11 @@
 				<p class="invoice__p">Улица: {{street}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Дом: {{home}}</p>
-					<p class="invoice__p">Подъезд: {{entrance}}</p>
-					<p class="invoice__p">Квартира: {{flat}}</p>
+					<p class="invoice__p" v-if="entrance">Подъезд: {{entrance}}</p>
+					<p class="invoice__p" v-if="flat">Квартира: {{flat}}</p>
 				</div>
 				<p class="invoice__p">E-mail: {{eMail}}</p>
-				<p class="invoice__p">Комментарий: {{coment}}</p>
+				<p class="invoice__p" v-if="coment">Комментарий: {{coment}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Дата доставки: {{currentDateTime(deliveryDate)}}</p>
 					<p class="invoice__p">Время доставки: {{selected}}</p>
@@ -77,11 +77,11 @@
 				<p class="invoice__p">Вулиця: {{street}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Будинок: {{home}}</p>
-					<p class="invoice__p">Підїзд: {{entrance}}</p>
-					<p class="invoice__p">Квартира: {{flat}}</p>
+					<p class="invoice__p" v-if="entrance">Підїзд: {{entrance}}</p>
+					<p class="invoice__p" v-if="flat">Квартира: {{flat}}</p>
 				</div>
 				<p class="invoice__p">E-mail: {{eMail}}</p>
-				<p class="invoice__p">Коментарій: {{coment}}</p>
+				<p class="invoice__p" v-if="coment">Коментарій: {{coment}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Дата доставки: {{currentDateTime(deliveryDate)}}</p>
 					<p class="invoice__p">Час доставки: {{selected}}</p>
@@ -114,7 +114,7 @@
 					<p class="invoice__p">Apartment: {{flat}}</p>
 				</div>
 				<p class="invoice__p">E-mail: {{eMail}}</p>
-				<p class="invoice__p">Comment: {{coment}}</p>
+				<p class="invoice__p" v-if="coment">Comment: {{coment}}</p>
 				<div class="invoice__wrap">
 					<p class="invoice__p">Delivery date: {{currentDateTime(deliveryDate)}}</p>
 					<p class="invoice__p">Delivery time: {{selected}}</p>
