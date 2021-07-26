@@ -2138,6 +2138,11 @@ body {
     }
     &__p {
         margin: 0 0 10px 0;
+        &_uppercaseboldcenter {
+            text-transform: uppercase;
+            font-weight: 700;
+            text-align: center;
+        }
     }
     &__table {
         border-spacing: 0;

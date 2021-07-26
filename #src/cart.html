@@ -38,7 +38,9 @@
 
 		<div class="invoice" v-if="creatUser" @click="CloseInvoice">
 			<!-- русский -->
+
 			<div class="invoice__modal" v-if="rus">
+				<p class="invoice__p invoice__p_uppercaseboldcenter">Ваш заказ принят в обработку</p>
 				<p class="invoice__p">Покупатель: {{name}}</p>
 				<p class="invoice__p">Тел.: {{tel}}</p>
 				<p class="invoice__p">Улица: {{street}}</p>
@@ -72,6 +74,7 @@
 			</div>
 			<!-- українська -->
 			<div class="invoice__modal" v-if="ukr">
+				<p class="invoice__p invoice__p_uppercaseboldcenter">Ваше замовлення прийняте в обробку</p>
 				<p class="invoice__p">Покупець: {{name}}</p>
 				<p class="invoice__p">Тел.: {{tel}}</p>
 				<p class="invoice__p">Вулиця: {{street}}</p>
@@ -105,6 +108,7 @@
 			</div>
 			<!-- english -->
 			<div class="invoice__modal" v-if="usa">
+				<p class="invoice__p invoice__p_uppercaseboldcenter">Your order has been accepted for processing</p>
 				<p class="invoice__p">Customer: {{name}}</p>
 				<p class="invoice__p">Tel.: {{tel}}</p>
 				<p class="invoice__p">Street: {{street}}</p>
