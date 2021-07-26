@@ -1362,6 +1362,10 @@ body {
   font-weight: 700;
 }
 
+.schedule__text_wrap {
+  white-space: normal;
+}
+
 .schedule__imgs {
   overflow: hidden;
   width: 53%;

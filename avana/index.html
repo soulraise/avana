@@ -123,8 +123,7 @@
 						<div id="burger" class="burger" title="Меню" @click="burgerMenu">
 							<span id="burgerline1" class="burger__line"
 								:class="[burger ? 'burger__line_reversrotate45' : '']"></span>
-							<span id="burgerline2" class="burger__line "
-								:class="[burger ? 'burger__line_hidden' : '']"></span>
+							<span id="burgerline2" class="burger__line " :class="[burger ? 'burger__line_hidden' : '']"></span>
 							<span id="burgerline3" class="burger__line "
 								:class="[burger ? 'burger__line_rotate45' : '']"></span>
 						</div>
@@ -626,7 +625,7 @@
 								</svg>
 							</div>
 							<div class="schedule__texts">
-								<p class="schedule__text schedule__text_bold">
+								<p class="schedule__text schedule__text_bold schedule__text_wrap">
 									Заказ на сайте - круглосуточно.
 								</p>
 							</div>
@@ -682,7 +681,7 @@
 								</svg>
 							</div>
 							<div class="schedule__texts">
-								<p class="schedule__text schedule__text_bold">
+								<p class="schedule__text schedule__text_bold  schedule__text_wrap">
 									Замовлення на сайті - цілодобово.
 								</p>
 							</div>
@@ -738,7 +737,7 @@
 								</svg>
 							</div>
 							<div class="schedule__texts">
-								<p class="schedule__text schedule__text_bold">
+								<p class="schedule__text schedule__text_bold  schedule__text_wrap">
 									Ordering on the webpage - around the clock.
 								</p>
 							</div>

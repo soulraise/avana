@@ -754,6 +754,9 @@ body {
         &_bold {
             font-weight: 700;
         }
+        &_wrap {
+            white-space: normal;
+        }
     }
     &__imgs {
         overflow: hidden;
