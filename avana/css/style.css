@@ -2934,6 +2934,12 @@ body {
   margin: 0 0 10px 0;
 }
 
+.invoice__p_uppercaseboldcenter {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
 .invoice__table {
   border-spacing: 0;
   border: 1px solid #000;
