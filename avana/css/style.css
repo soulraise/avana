@@ -2165,6 +2165,7 @@ body {
   background: #fff;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  outline: none;
 }
 
 .card__link {
@@ -2920,7 +2921,7 @@ body {
 .invoice__modal {
   background: #fff;
   padding: 20px 30px;
-  max-width: 60vw;
+  max-width: 95%;
   max-height: 95vh;
   overflow-y: auto;
 }
