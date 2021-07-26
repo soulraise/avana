@@ -1769,7 +1769,7 @@ body {
         position: absolute;
         z-index: -100;
         opacity: 0;
-        &:checked + .userData__label_before,
+        &:checked .userData__label_before,
         &:checked + .userData__label_round {
             border: 2px solid $ThirdColor;
             background-image: url(../img/Union.svg);
@@ -2131,7 +2131,7 @@ body {
     &__modal {
         background: #fff;
         padding: 20px 30px;
-        max-width: 60vw;
+        max-width: 95%;
         max-height: 95vh;
         overflow-y: auto;
     }

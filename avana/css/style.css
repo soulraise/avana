@@ -2517,7 +2517,7 @@ body {
   opacity: 0;
 }
 
-.userData__push:checked + .userData__label_before,
+.userData__push:checked .userData__label_before,
 .userData__push:checked + .userData__label_round {
   border: 2px solid #febc38;
   background-image: url(../img/Union.svg);
@@ -2920,7 +2920,7 @@ body {
 .invoice__modal {
   background: #fff;
   padding: 20px 30px;
-  max-width: 60vw;
+  max-width: 95%;
   max-height: 95vh;
   overflow-y: auto;
 }
